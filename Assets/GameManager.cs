@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     int score_P1;
-    int score_P2
+    int score_P2;
 
     // Start is called before the first frame update
     void Start()
