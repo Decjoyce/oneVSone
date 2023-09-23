@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore_P1()
     {
         score_P1++;
+        if (score_P1 == 5)
+        {
+
+        }
     }
 
     public void IncreaseScore_P2()
