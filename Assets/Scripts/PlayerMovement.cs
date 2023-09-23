@@ -16,7 +16,9 @@ public class playermovement : MonoBehaviour
     private Vector2 MoveDirection;
 
     private Vector2 inputVector = Vector2.zero;
-   
+
+    [SerializeField] 
+    private int playerIndex = 0;
     
     // Update is called once per frame
     void Update()
@@ -28,6 +30,13 @@ public class playermovement : MonoBehaviour
     {
         Move();
     }
+
+    public int GetPlayerIndex()
+    {
+        return playerIndex;
+    }
+    
+    
 
     void ProcessInputs()
     {
@@ -45,4 +54,6 @@ public class playermovement : MonoBehaviour
     {
         inputVector = Direction;
     }
+
+    
 }
