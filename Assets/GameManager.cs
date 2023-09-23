@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
 
     #region Functionality
     [Header("Game Functionality")]
-    public bool gamePaused;
-    public bool gameOver;
+    public bool gamePaused = false;
+    public bool gameOver = false;
 
     int score_P1;
     int score_P2;
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel"))
         {
             PauseUnPause();
         }
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
         winnerUI.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(pauseButton);
+        EventSystem.current.SetSelectedGameObject(gameOverButton);
     }
 
     public void Restart()
