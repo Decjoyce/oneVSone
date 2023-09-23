@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class playermovement : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class playermovement : MonoBehaviour
     public Rigidbody2D rb;
 
     private Vector2 MoveDirection;
+
+    private Vector2 inputVector = Vector2.zero;
    
     
     // Update is called once per frame
@@ -36,5 +39,10 @@ public class playermovement : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2(MoveDirection.x  * moveSpeed, MoveDirection.y * moveSpeed);
+    }
+
+    public void SetInputVector(Vector2 Direction)
+    {
+        inputVector = Direction;
     }
 }
