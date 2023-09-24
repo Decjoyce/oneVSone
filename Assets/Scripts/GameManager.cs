@@ -81,9 +81,13 @@ public class GameManager : MonoBehaviour
         {
             PauseUnPause();
         }
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetButtonDown("Fire1"))
         {
             IncreaseScore_P1();
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            IncreaseScore_P2();
         }
         scoreText.text = score_P1 + " - " + score_P2;
         testingSommin();
