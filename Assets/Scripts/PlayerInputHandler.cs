@@ -18,7 +18,8 @@ public class PlayerInputHandler : MonoBehaviour
         var movers = FindObjectsOfType<playermovement>();
         var index = playerInput.playerIndex;
         mover = movers.FirstOrDefault(m => m.GetPlayerIndex() == index);
-        //mover = GetComponent<playermovement>();
+        print(index);
+        
     }
 
     public void OnMove(CallbackContext context)
