@@ -53,27 +53,26 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseUI;
     [SerializeField]
-    private GameObject gameplayUI;    
-    [SerializeField]
-    private GameObject countdownUI;
+    private GameObject gameplayUI, countdownUI, popUpUI;
 
     [SerializeField]
-    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText;
+    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, popUpText;
 
     [SerializeField]
     private GameObject pauseButton, gameOverButton;
 
     private int countdownTime = 3;
+    private string[] popUpsDom = new string[12];
+    //private string[] popUpsClose = new string[12];
 
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        //currentLayout = layouts[Random.Range(0, layouts.Length)];
-        //currentLayout.SetActive(true);
         Cursor.visible = false;
         StartCoroutine(StartGame());
+        PopUpInitialiser();
     }
 
     private void Update()
@@ -157,6 +156,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
 
+        StartCoroutine(PopUpHandler());
         LayoutSetter();
 
         countdownUI.SetActive(true);
@@ -213,6 +213,24 @@ public class GameManager : MonoBehaviour
         currentLayout.SetActive(true);
     }
 
+    IEnumerator PopUpHandler()
+    {
+        
+        if(score_P1 == 4 && score_P2 == 0) 
+        {
+            popUpUI.SetActive(true);
+            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)]; 
+        }
+        else if(score_P2 == 4 && score_P1 == 0)
+        {
+            popUpUI.SetActive(true);
+            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
+        }
+        
+        yield return new WaitForSecondsRealtime(2f);
+        popUpUI.SetActive(false);
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene(1);
@@ -232,4 +250,20 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    void PopUpInitialiser()
+    {
+        popUpsDom[0] = "DEMOLISHMENT";
+        popUpsDom[1] = "OBLITERATION";
+        popUpsDom[2] = "DOMINATION";
+        popUpsDom[3] = "ANNIHILATION";
+        popUpsDom[4] = "EXTERMINATION";
+        popUpsDom[5] = "ERADICATION";
+        popUpsDom[6] = "DECIMATION";
+        popUpsDom[7] = "MASSACRE";
+        popUpsDom[8] = "SLAUGHTER";
+        popUpsDom[8] = "LOPSIDED";
+        popUpsDom[9] = "Are you even trying?";
+    }
+
 }
