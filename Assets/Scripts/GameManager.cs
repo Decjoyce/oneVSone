@@ -231,7 +231,7 @@ public class GameManager : MonoBehaviour
             popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
         }
         
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(3f);
         popUpUI.SetActive(false);
     }
 
