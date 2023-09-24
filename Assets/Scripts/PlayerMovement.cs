@@ -11,12 +11,9 @@ using System.Linq;
 
 public class playermovement : MonoBehaviour
 {
-
     public float moveSpeed;
     
-
     private Vector2 MoveDirection;
-
     private Vector2 inputVector = Vector2.zero;
 
     private CharacterController controller;
@@ -33,14 +30,11 @@ public class playermovement : MonoBehaviour
     void Update()
     {
         ProcessInputs();
-       
-        
     }
 
     public int GetPlayerIndex()
     {
         return playerIndex;
-        
     }
 
     void ProcessInputs()
@@ -56,7 +50,6 @@ public class playermovement : MonoBehaviour
         controller.Move(MoveDirection * Time.deltaTime);
     }
     
-
     public void SetInputVector(Vector2 Direction)
     {
         inputVector = Direction;

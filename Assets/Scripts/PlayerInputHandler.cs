@@ -9,7 +9,6 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerInputHandler : MonoBehaviour
 {
     private playermovement mover;
-
     private PlayerInput playerInput;
 
     private void Awake()
