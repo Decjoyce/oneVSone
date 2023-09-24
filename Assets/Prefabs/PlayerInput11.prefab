@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8716559265535558580}
   - component: {fileID: 1370261982517835366}
-  - component: {fileID: 2163268272292505567}
+  - component: {fileID: -8295842248316562187}
   m_Layer: 0
   m_Name: PlayerInput11
   m_TagString: Untagged
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -8295842248316562187}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -74,12 +74,12 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0450838a-1fc8-489b-9442-d020f799d22c
     m_ActionName: PlayerMovement/movement[/DualShock4GamepadHID/leftStick]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: gamepad
   m_DefaultActionMap: PlayerMovement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2163268272292505567
+--- !u!114 &-8295842248316562187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
