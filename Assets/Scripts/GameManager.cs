@@ -5,6 +5,8 @@ using TMPro;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,18 +28,21 @@ public class GameManager : MonoBehaviour
     [Header("Game Functionality")]
     public bool gamePaused = false;
     public bool gameOver = false;
+    public bool roundOver = false;
 
     int score_P1;
     int score_P2;
 
     public GameObject p1;
     public GameObject p2;
+    public Rigidbody2D p1RB;
 
     public Transform spawn_p1;
     public Transform spawn_p2;
 
     private GameObject currentLayout;
     public GameObject[] layouts;
+
 
     #endregion
 
@@ -48,24 +53,32 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseUI;
     [SerializeField]
-    private GameObject gameplayUI;
+    private GameObject gameplayUI;    
+    [SerializeField]
+    private GameObject countdownUI;
 
     [SerializeField]
-    TextMeshProUGUI winnerText, scoreWinningText, scoreText;
+    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText;
 
     [SerializeField]
     private GameObject pauseButton, gameOverButton;
+
+    private int countdownTime = 3;
+
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        currentLayout = layouts[Random.Range(0, layouts.Length)];
+        //currentLayout = layouts[Random.Range(0, layouts.Length)];
+        //currentLayout.SetActive(true);
+        Cursor.visible = false;
+        StartCoroutine(StartGame());
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && !gameOver && !roundOver)
         {
             PauseUnPause();
         }
@@ -74,6 +87,7 @@ public class GameManager : MonoBehaviour
             IncreaseScore_P1();
         }
         scoreText.text = score_P1 + " - " + score_P2;
+        testingSommin();
     }
 
     public void PauseUnPause()
@@ -105,7 +119,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(GameOver(2));
         }
         else
-            ResetRound();
+            StartCoroutine(ResetRound());
     }
 
     public void IncreaseScore_P2()
@@ -118,15 +132,44 @@ public class GameManager : MonoBehaviour
             StartCoroutine(GameOver(2));
         }
         else
-            ResetRound();
+            StartCoroutine(ResetRound());
     }
 
-    public void ResetRound()
+    IEnumerator StartGame()
     {
-        p1.transform.position = spawn_p1.transform.position;
-        p2.transform.position = spawn_p2.transform.position;
-        currentLayout.SetActive(false);
-        currentLayout = layouts[Random.Range(0, layouts.Length)];
+        roundOver = true;
+        LayoutSetter();
+        countdownUI.SetActive(true);
+        while (countdownTime > 0)
+        {
+            countdownText.text = countdownTime.ToString();
+            yield return new WaitForSecondsRealtime(1f);
+            countdownTime--;
+        }
+        countdownUI.SetActive(false);
+        countdownTime = 3;
+        roundOver = false;
+    }
+
+    public IEnumerator ResetRound()
+    {
+        roundOver = true;
+
+        yield return new WaitForSecondsRealtime(1);
+
+        LayoutSetter();
+
+        countdownUI.SetActive(true);
+        while (countdownTime > 0)
+        {
+            countdownText.text = countdownTime.ToString();
+            yield return new WaitForSecondsRealtime(1f);
+            countdownTime--;
+        }
+        countdownUI.SetActive(false);
+        countdownTime = 3;
+        roundOver = false;
+
     }
 
     public IEnumerator GameOver(byte winner)
@@ -134,7 +177,7 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         Time.timeScale = 0.5f;
 
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(1);
 
         Time.timeScale = 0f;
         gamePaused = true;
@@ -160,6 +203,16 @@ public class GameManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(gameOverButton);
     }
 
+    void LayoutSetter()
+    {
+        p1.transform.position = spawn_p1.transform.position;
+        p2.transform.position = spawn_p2.transform.position;
+        if (currentLayout != null)
+            currentLayout.SetActive(false);
+        currentLayout = layouts[Random.Range(0, layouts.Length)];
+        currentLayout.SetActive(true);
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene(1);
@@ -168,5 +221,15 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Application.Quit();
+    }
+
+    void testingSommin()
+    {
+        if (!roundOver)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            p1RB.MovePosition(new Vector3(mousePosition.x, mousePosition.y, 0));
+        }
+
     }
 }
