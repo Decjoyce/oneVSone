@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEditor;
+using UnityEngine.iOS;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogWarning("More than one instance of Game Manager found");
             return;
@@ -28,7 +29,10 @@ public class GameManager : MonoBehaviour
     [Header("Game Functionality")]
     public bool gamePaused = false;
     public bool gameOver = false;
-    public bool roundOver = false;
+    public bool roundOver = true;
+    bool gameStarted;
+    bool ready_p1 = false;
+    bool ready_p2 = false;
 
     int score_P1;
     int score_P2;
@@ -43,7 +47,7 @@ public class GameManager : MonoBehaviour
     private GameObject currentLayout;
     public GameObject[] layouts;
 
-
+    public PlayerInputManager inputManager;
     #endregion
 
     #region UI
@@ -71,7 +75,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        StartCoroutine(StartGame());
+        //StartCoroutine(StartGame());
         PopUpInitialiser();
     }
 
@@ -89,8 +93,11 @@ public class GameManager : MonoBehaviour
         {
             IncreaseScore_P2();
         }
+        if (inputManager.playerCount == 2 && !gameStarted)
+        {
+            PlayerSelect();
+        }
         scoreText.text = score_P1 + " - " + score_P2;
-        testingSommin();
     }
 
     public void PauseUnPause()
@@ -112,9 +119,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    #region Score Code
     public void IncreaseScore_P1()
     {
-        if(!gameOver)
+        if (!gameOver)
             score_P1++;
 
         if (score_P1 == 5)
@@ -137,10 +146,22 @@ public class GameManager : MonoBehaviour
         else
             StartCoroutine(ResetRound());
     }
+    #endregion
+
+    #region Functionality
+    void PlayerSelect()
+    {  
+        if (ready_p1 && ready_p2)
+        {
+            Debug.Log("Crap");
+            StartCoroutine(StartGame());
+            gameStarted = true;
+        }
+    }
 
     IEnumerator StartGame()
     {
-        roundOver = true;
+        //roundOver = true;
         LayoutSetter();
         countdownUI.SetActive(true);
         while (countdownTime > 0)
@@ -177,7 +198,7 @@ public class GameManager : MonoBehaviour
     }
 
     public IEnumerator GameOver(byte winner)
-    {        
+    {
         gameOver = true;
         Time.timeScale = 0.5f;
 
@@ -186,12 +207,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gamePaused = true;
 
-        if(winner == 1)
+        if (winner == 1)
         {
             winnerText.color = new Color(0, 0, 255);
             scoreWinningText.color = new Color(0, 0, 255);
         }
-        if(winner == 2)
+        if (winner == 2)
         {
             winnerText.color = new Color(255, 0, 0);
             scoreWinningText.color = new Color(255, 0, 0);
@@ -206,7 +227,9 @@ public class GameManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(gameOverButton);
     }
+    #endregion
 
+    #region Setting Up
     void LayoutSetter()
     {
         p1.transform.position = spawn_p1.transform.position;
@@ -219,40 +242,20 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PopUpHandler()
     {
-        
-        if(score_P1 == 4 && score_P2 == 0) 
-        {
-            popUpUI.SetActive(true);
-            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)]; 
-        }
-        else if(score_P2 == 4 && score_P1 == 0)
+
+        if (score_P1 == 4 && score_P2 == 0)
         {
             popUpUI.SetActive(true);
             popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
         }
-        
-        yield return new WaitForSecondsRealtime(3f);
-        popUpUI.SetActive(false);
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void EndGame()
-    {
-        Application.Quit();
-    }
-
-    void testingSommin()
-    {
-        if (!roundOver)
+        else if (score_P2 == 4 && score_P1 == 0)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            p1RB.MovePosition(new Vector3(mousePosition.x, mousePosition.y, 0));
+            popUpUI.SetActive(true);
+            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
         }
 
+        yield return new WaitForSecondsRealtime(3f);
+        popUpUI.SetActive(false);
     }
 
     void PopUpInitialiser()
@@ -269,5 +272,30 @@ public class GameManager : MonoBehaviour
         popUpsDom[8] = "LOPSIDED";
         popUpsDom[9] = "Are you even trying?";
     }
+    #endregion
+
+    #region Button Events
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
+    #endregion
+
+    #region Debugging/Testing
+    /*void testingSommin()
+    {
+        if (!roundOver && gameStarted)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            p1RB.MovePosition(new Vector3(mousePosition.x, mousePosition.y, 0));
+        }
+
+    }*/
+    #endregion
 
 }
