@@ -188,7 +188,10 @@ public class GameManager : MonoBehaviour
         LayoutSetter();
         p1.GetComponent<Weapon>().firePointNum = 0;
         p1.GetComponent<Weapon>().AnimHandler();
+        p1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        p2.GetComponent<Weapon>().firePointNum = 0;
         p2.GetComponent<Weapon>().AnimHandler();
+        p2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         countdownUI.SetActive(true);
         while (countdownTime > 0)
