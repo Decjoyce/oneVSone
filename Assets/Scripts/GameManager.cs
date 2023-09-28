@@ -7,8 +7,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEditor;
-using UnityEngine.iOS;
+//using UnityEngine.iOS;
 using UnityEngine.UI;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {

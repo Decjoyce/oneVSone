@@ -29,4 +29,10 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, 4f);
     }
+
+    private void Update()
+    {
+        if (GameManager.instance.roundOver)
+            Destroy(gameObject);
+    }
 }
