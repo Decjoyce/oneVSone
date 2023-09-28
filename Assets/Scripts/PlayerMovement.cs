@@ -31,7 +31,8 @@ public class playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInputs();
+        if(!GameManager.instance.gamePaused)
+            ProcessInputs();
     }
 
     public int GetPlayerIndex()

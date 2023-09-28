@@ -78,12 +78,15 @@ public class GameManager : MonoBehaviour
         //StartCoroutine(StartGame());
         PopUpInitialiser();
         LayoutSetter();
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     private void Update()
     {
         ReadyPlayers();
         scoreText.text = score_P1 + " - " + score_P2;
+        if (Input.GetButtonDown("Jump"))
+            IncreaseScore_P1();
     }
 
     public void PauseUnPause()
@@ -196,7 +199,7 @@ public class GameManager : MonoBehaviour
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;
-
+        gamePaused = false;
     }
 
     public IEnumerator GameOver(byte winner)
@@ -279,7 +282,7 @@ public class GameManager : MonoBehaviour
     #region Button Events
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void EndGame()

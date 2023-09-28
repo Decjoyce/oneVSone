@@ -18,6 +18,8 @@ public class PlayerInputHandler : MonoBehaviour
         var index = playerInput.playerIndex;
         mover = movers.FirstOrDefault(m => m.GetPlayerIndex() == index);
         print(index);
+        if(!playerInput.enabled)
+            playerInput.enabled = true;
     }
 
     public void OnMove(CallbackContext context)
