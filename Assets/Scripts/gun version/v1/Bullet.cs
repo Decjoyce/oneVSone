@@ -10,13 +10,13 @@ public class Bullet : MonoBehaviour
     {
         if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
         {
-            GameManager.instance.IncreaseScore_P2();
+            GameManager.instance.IncreaseScore_P1();
             Destroy(gameObject);
         }
 
         if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
         {
-            GameManager.instance.IncreaseScore_P1();
+            GameManager.instance.IncreaseScore_P2();
             Destroy(gameObject);
         }
     }
