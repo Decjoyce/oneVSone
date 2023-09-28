@@ -39,9 +39,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void ReadyUp(CallbackContext ctx)
     {
-        if (mover.GetPlayerIndex() == 0)
+        if (mover.GetPlayerIndex() == 0 && !GameManager.instance.gameStarted)
             GameManager.instance.ready_p1 = !GameManager.instance.ready_p1;
-        if (mover.GetPlayerIndex() == 1)
+        if (mover.GetPlayerIndex() == 1 && !GameManager.instance.gameStarted)
             GameManager.instance.ready_p2 = !GameManager.instance.ready_p2;
     }
 
