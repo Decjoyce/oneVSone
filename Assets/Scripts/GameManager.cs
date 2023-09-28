@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEditor;
 using UnityEngine.iOS;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Functionality
-    [Header("Game Functionality")]
     public bool gamePaused = false;
     public bool gameOver = false;
     public bool roundOver = true;
@@ -46,19 +46,18 @@ public class GameManager : MonoBehaviour
     public Transform spawn_p2;
 
     private GameObject currentLayout;
-    public GameObject[] layouts;
+    
 
     public PlayerInputManager inputManager;
     #endregion
 
     #region UI
-    [Header("UI")]
     [SerializeField]
     private GameObject winnerUI;
     [SerializeField]
     private GameObject pauseUI;
     [SerializeField]
-    private GameObject gameplayUI, countdownUI, popUpUI;
+    private GameObject gameplayUI, countdownUI, popUpUI, readyUI, toggle_p1, toggle_p2;
 
     [SerializeField]
     TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, popUpText;
@@ -71,7 +70,7 @@ public class GameManager : MonoBehaviour
     //private string[] popUpsClose = new string[12];
 
     #endregion
-
+    public GameObject[] layouts;
     // Start is called before the first frame update
     void Start()
     {
@@ -146,9 +145,14 @@ public class GameManager : MonoBehaviour
             if (ready_p1 && ready_p2)
             {
                 StartCoroutine(StartGame());
+                readyUI.SetActive(false);
                 gameStarted = true;
             }
         }
+        if (ready_p1)
+            toggle_p1.SetActive(true);
+        if (ready_p2)
+            toggle_p1.SetActive(true);
     }
 
     IEnumerator StartGame()

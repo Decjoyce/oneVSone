@@ -49,7 +49,7 @@ public class playermovement : MonoBehaviour
         MoveDirection = transform.TransformDirection(MoveDirection);
         //MoveDirection *= moveSpeed;
 
-        UnityEngine.Debug.Log(MoveDirection);
+        //UnityEngine.Debug.Log(MoveDirection);
         transform.Translate(MoveDirection * moveSpeed * Time.deltaTime);
     }
     
