@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEditor;
+using UnityEngine.iOS;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogWarning("More than one instance of Game Manager found");
             return;
@@ -25,10 +27,13 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Functionality
-    [Header("Game Functionality")]
     public bool gamePaused = false;
     public bool gameOver = false;
-    public bool roundOver = false;
+    public bool roundOver = true;
+    public bool gameStarted = false;
+    bool waitForReady;
+    public bool ready_p1 = false;
+    public bool ready_p2 = false;
 
     int score_P1;
     int score_P2;
@@ -41,19 +46,18 @@ public class GameManager : MonoBehaviour
     public Transform spawn_p2;
 
     private GameObject currentLayout;
-    public GameObject[] layouts;
+    
 
-
+    public PlayerInputManager inputManager;
     #endregion
 
     #region UI
-    [Header("UI")]
     [SerializeField]
     private GameObject winnerUI;
     [SerializeField]
     private GameObject pauseUI;
     [SerializeField]
-    private GameObject gameplayUI, countdownUI, popUpUI;
+    private GameObject gameplayUI, countdownUI, popUpUI, readyUI, toggle_p1, toggle_p2;
 
     [SerializeField]
     TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, popUpText;
@@ -66,55 +70,52 @@ public class GameManager : MonoBehaviour
     //private string[] popUpsClose = new string[12];
 
     #endregion
-
+    public GameObject[] layouts;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
-        StartCoroutine(StartGame());
+        //StartCoroutine(StartGame());
         PopUpInitialiser();
+        LayoutSetter();
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel") && !gameOver && !roundOver)
-        {
-            PauseUnPause();
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            IncreaseScore_P1();
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
-            IncreaseScore_P2();
-        }
+        ReadyPlayers();
         scoreText.text = score_P1 + " - " + score_P2;
-        testingSommin();
+        if (Input.GetButtonDown("Jump"))
+            IncreaseScore_P1();
     }
 
     public void PauseUnPause()
     {
-        if (!pauseUI.activeSelf)
+        if (!roundOver && !gameOver && gameStarted)
         {
-            gamePaused = true;
-            pauseUI.SetActive(true);
-            Time.timeScale = 0.0f;
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(pauseButton);
-        }
-        else
-        {
-            gamePaused = false;
-            pauseUI.SetActive(false);
-            Time.timeScale = 1f;
-            EventSystem.current.SetSelectedGameObject(null);
+            if (!pauseUI.activeSelf)
+            {
+                gamePaused = true;
+                pauseUI.SetActive(true);
+                Time.timeScale = 0.0f;
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(pauseButton);
+            }
+            else
+            {
+                gamePaused = false;
+                pauseUI.SetActive(false);
+                Time.timeScale = 1f;
+                EventSystem.current.SetSelectedGameObject(null);
+            }
         }
     }
 
+
+    #region Score Code
     public void IncreaseScore_P1()
     {
-        if(!gameOver)
+        if (!gameOver)
             score_P1++;
 
         if (score_P1 == 5)
@@ -137,11 +138,34 @@ public class GameManager : MonoBehaviour
         else
             StartCoroutine(ResetRound());
     }
+    #endregion
+
+    #region Functionality
+    void ReadyPlayers()
+    {
+        if (inputManager.playerCount == 2 && !gameStarted)
+        {
+            if (ready_p1 && ready_p2)
+            {
+                StartCoroutine(StartGame());
+                readyUI.SetActive(false);
+                gameStarted = true;
+            }
+        }
+        if (ready_p1)
+            toggle_p1.SetActive(true);
+        else
+            toggle_p1.SetActive(false);
+
+        if (ready_p2)
+            toggle_p2.SetActive(true);
+        else
+            toggle_p2.SetActive(false);
+    }
 
     IEnumerator StartGame()
     {
-        roundOver = true;
-        LayoutSetter();
+        //LayoutSetter();
         countdownUI.SetActive(true);
         while (countdownTime > 0)
         {
@@ -152,11 +176,13 @@ public class GameManager : MonoBehaviour
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;
+        gamePaused = false;
     }
 
     public IEnumerator ResetRound()
     {
         roundOver = true;
+        gamePaused = true;
 
         yield return new WaitForSecondsRealtime(1);
 
@@ -173,11 +199,11 @@ public class GameManager : MonoBehaviour
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;
-
+        gamePaused = false;
     }
 
     public IEnumerator GameOver(byte winner)
-    {        
+    {
         gameOver = true;
         Time.timeScale = 0.5f;
 
@@ -186,12 +212,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gamePaused = true;
 
-        if(winner == 1)
+        if (winner == 1)
         {
             winnerText.color = new Color(0, 0, 255);
             scoreWinningText.color = new Color(0, 0, 255);
         }
-        if(winner == 2)
+        if (winner == 2)
         {
             winnerText.color = new Color(255, 0, 0);
             scoreWinningText.color = new Color(255, 0, 0);
@@ -206,7 +232,9 @@ public class GameManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(gameOverButton);
     }
+    #endregion
 
+    #region Setting Up
     void LayoutSetter()
     {
         p1.transform.position = spawn_p1.transform.position;
@@ -219,40 +247,20 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PopUpHandler()
     {
-        
-        if(score_P1 == 4 && score_P2 == 0) 
-        {
-            popUpUI.SetActive(true);
-            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)]; 
-        }
-        else if(score_P2 == 4 && score_P1 == 0)
+
+        if (score_P1 == 4 && score_P2 == 0)
         {
             popUpUI.SetActive(true);
             popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
         }
-        
-        yield return new WaitForSecondsRealtime(3f);
-        popUpUI.SetActive(false);
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void EndGame()
-    {
-        Application.Quit();
-    }
-
-    void testingSommin()
-    {
-        if (!roundOver)
+        else if (score_P2 == 4 && score_P1 == 0)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            p1RB.MovePosition(new Vector3(mousePosition.x, mousePosition.y, 0));
+            popUpUI.SetActive(true);
+            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
         }
 
+        yield return new WaitForSecondsRealtime(3f);
+        popUpUI.SetActive(false);
     }
 
     void PopUpInitialiser()
@@ -269,5 +277,30 @@ public class GameManager : MonoBehaviour
         popUpsDom[8] = "LOPSIDED";
         popUpsDom[9] = "Are you even trying?";
     }
+    #endregion
+
+    #region Button Events
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
+    #endregion
+
+    #region Debugging/Testing
+    /*void testingSommin()
+    {
+        if (!roundOver && gameStarted)
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            p1RB.MovePosition(new Vector3(mousePosition.x, mousePosition.y, 0));
+        }
+
+    }*/
+    #endregion
 
 }

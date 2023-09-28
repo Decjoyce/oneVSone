@@ -18,12 +18,46 @@ public class PlayerInputHandler : MonoBehaviour
         var index = playerInput.playerIndex;
         mover = movers.FirstOrDefault(m => m.GetPlayerIndex() == index);
         print(index);
-        
+        if(!playerInput.enabled)
+            playerInput.enabled = true;
     }
 
     public void OnMove(CallbackContext context)
     {
-        mover.SetInputVector(context.ReadValue<Vector2>());
+        if(!GameManager.instance.gamePaused)
+            mover.SetInputVector(context.ReadValue<Vector2>());
     }
 
+    //dec
+    public void Shoot(CallbackContext ctx)
+    {
+        if (!GameManager.instance.gamePaused)
+        {
+
+        }
+    }
+
+    public void ReadyUp(CallbackContext ctx)
+    {
+        if (mover.GetPlayerIndex() == 0 && !GameManager.instance.gameStarted)
+            GameManager.instance.ready_p1 = !GameManager.instance.ready_p1;
+        if (mover.GetPlayerIndex() == 1 && !GameManager.instance.gameStarted)
+            GameManager.instance.ready_p2 = !GameManager.instance.ready_p2;
+    }
+
+    public void OnDisconnected()
+    {
+        if (mover.GetPlayerIndex() == 0)
+            GameManager.instance.ready_p1 = false;
+        if (mover.GetPlayerIndex() == 1)
+            GameManager.instance.ready_p2 = true;
+    }
+
+    public void PauseGame(CallbackContext ctx)
+    {
+        if (GameManager.instance.ready_p1 && GameManager.instance.ready_p2)
+        {            
+            GameManager.instance.PauseUnPause();
+        }
+    }
 }
