@@ -30,9 +30,10 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false;
     public bool gameOver = false;
     public bool roundOver = true;
-    bool gameStarted;
-    bool ready_p1 = false;
-    bool ready_p2 = false;
+    public bool gameStarted = false;
+    bool waitForReady;
+    public bool ready_p1 = false;
+    public bool ready_p2 = false;
 
     int score_P1;
     int score_P2;
@@ -77,45 +78,34 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         //StartCoroutine(StartGame());
         PopUpInitialiser();
+        LayoutSetter();
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel") && !gameOver && !roundOver)
-        {
-            PauseUnPause();
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            IncreaseScore_P1();
-        }
-        if (Input.GetButtonDown("Jump"))
-        {
-            IncreaseScore_P2();
-        }
-        if (inputManager.playerCount == 2 && !gameStarted)
-        {
-            PlayerSelect();
-        }
+        ReadyPlayers();
         scoreText.text = score_P1 + " - " + score_P2;
     }
 
     public void PauseUnPause()
     {
-        if (!pauseUI.activeSelf)
+        if (!roundOver && !gameOver && gameStarted)
         {
-            gamePaused = true;
-            pauseUI.SetActive(true);
-            Time.timeScale = 0.0f;
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(pauseButton);
-        }
-        else
-        {
-            gamePaused = false;
-            pauseUI.SetActive(false);
-            Time.timeScale = 1f;
-            EventSystem.current.SetSelectedGameObject(null);
+            if (!pauseUI.activeSelf)
+            {
+                gamePaused = true;
+                pauseUI.SetActive(true);
+                Time.timeScale = 0.0f;
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(pauseButton);
+            }
+            else
+            {
+                gamePaused = false;
+                pauseUI.SetActive(false);
+                Time.timeScale = 1f;
+                EventSystem.current.SetSelectedGameObject(null);
+            }
         }
     }
 
@@ -149,20 +139,21 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Functionality
-    void PlayerSelect()
-    {  
-        if (ready_p1 && ready_p2)
+    void ReadyPlayers()
+    {
+        if (inputManager.playerCount == 2 && !gameStarted)
         {
-            Debug.Log("Crap");
-            StartCoroutine(StartGame());
-            gameStarted = true;
+            if (ready_p1 && ready_p2)
+            {
+                StartCoroutine(StartGame());
+                gameStarted = true;
+            }
         }
     }
 
     IEnumerator StartGame()
     {
-        //roundOver = true;
-        LayoutSetter();
+        //LayoutSetter();
         countdownUI.SetActive(true);
         while (countdownTime > 0)
         {
@@ -173,11 +164,13 @@ public class GameManager : MonoBehaviour
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;
+        gamePaused = false;
     }
 
     public IEnumerator ResetRound()
     {
         roundOver = true;
+        gamePaused = true;
 
         yield return new WaitForSecondsRealtime(1);
 

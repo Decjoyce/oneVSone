@@ -17,13 +17,15 @@ public class playermovement : MonoBehaviour
     private Vector2 inputVector = Vector2.zero;
 
     private CharacterController controller;
+    private Rigidbody2D rb;
 
     [SerializeField] 
     private int playerIndex = 0;
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        // controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -45,9 +47,10 @@ public class playermovement : MonoBehaviour
         //Move System
         MoveDirection = new Vector2(inputVector.x, inputVector.y);
         MoveDirection = transform.TransformDirection(MoveDirection);
-        MoveDirection *= moveSpeed;
+        //MoveDirection *= moveSpeed;
 
-        controller.Move(MoveDirection * Time.deltaTime);
+        UnityEngine.Debug.Log(MoveDirection);
+        transform.Translate(MoveDirection * moveSpeed * Time.deltaTime);
     }
     
     public void SetInputVector(Vector2 Direction)

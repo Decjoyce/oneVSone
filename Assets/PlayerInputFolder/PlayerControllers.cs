@@ -44,6 +44,24 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""5be25869-22b1-482c-873d-09d776c252ac"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ready"",
+                    ""type"": ""Button"",
+                    ""id"": ""8eb3f31f-0d89-4d0f-801d-0146b8f73483"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -79,6 +97,28 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
                     ""action"": ""shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d8f6793-2e0a-4b15-b88a-82c081d62989"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""47e59a2c-240d-4032-919b-2342099d1853"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +141,8 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
         m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
         m_PlayerMovement_movement = m_PlayerMovement.FindAction("movement", throwIfNotFound: true);
         m_PlayerMovement_shoot = m_PlayerMovement.FindAction("shoot", throwIfNotFound: true);
+        m_PlayerMovement_pause = m_PlayerMovement.FindAction("pause", throwIfNotFound: true);
+        m_PlayerMovement_ready = m_PlayerMovement.FindAction("ready", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -164,12 +206,16 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
     private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
     private readonly InputAction m_PlayerMovement_movement;
     private readonly InputAction m_PlayerMovement_shoot;
+    private readonly InputAction m_PlayerMovement_pause;
+    private readonly InputAction m_PlayerMovement_ready;
     public struct PlayerMovementActions
     {
         private @PlayerControllers m_Wrapper;
         public PlayerMovementActions(@PlayerControllers wrapper) { m_Wrapper = wrapper; }
         public InputAction @movement => m_Wrapper.m_PlayerMovement_movement;
         public InputAction @shoot => m_Wrapper.m_PlayerMovement_shoot;
+        public InputAction @pause => m_Wrapper.m_PlayerMovement_pause;
+        public InputAction @ready => m_Wrapper.m_PlayerMovement_ready;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -185,6 +231,12 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
             @shoot.started += instance.OnShoot;
             @shoot.performed += instance.OnShoot;
             @shoot.canceled += instance.OnShoot;
+            @pause.started += instance.OnPause;
+            @pause.performed += instance.OnPause;
+            @pause.canceled += instance.OnPause;
+            @ready.started += instance.OnReady;
+            @ready.performed += instance.OnReady;
+            @ready.canceled += instance.OnReady;
         }
 
         private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -195,6 +247,12 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
             @shoot.started -= instance.OnShoot;
             @shoot.performed -= instance.OnShoot;
             @shoot.canceled -= instance.OnShoot;
+            @pause.started -= instance.OnPause;
+            @pause.performed -= instance.OnPause;
+            @pause.canceled -= instance.OnPause;
+            @ready.started -= instance.OnReady;
+            @ready.performed -= instance.OnReady;
+            @ready.canceled -= instance.OnReady;
         }
 
         public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -225,5 +283,7 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnReady(InputAction.CallbackContext context);
     }
 }
