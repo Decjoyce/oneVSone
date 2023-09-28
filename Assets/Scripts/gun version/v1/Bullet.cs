@@ -8,21 +8,25 @@ public class Bullet : MonoBehaviour
     byte playerBullet;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
+        if (!GameManager.instance.roundOver)
         {
-            GameManager.instance.IncreaseScore_P1();
-            Destroy(gameObject);
+            if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
+            {
+                GameManager.instance.IncreaseScore_P1();
+                Destroy(gameObject);
+            }
+
+            if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
+            {
+                GameManager.instance.IncreaseScore_P2();
+                Destroy(gameObject);
+            }
         }
 
-        if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
-        {
-            GameManager.instance.IncreaseScore_P2();
-            Destroy(gameObject);
-        }
     }
 
     void Start()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 4f);
     }
 }

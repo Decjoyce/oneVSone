@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -9,10 +10,12 @@ public class Weapon : MonoBehaviour
     public float fireForce = 20f;
     public byte firePointNum = 0;
     bool canShoot = true;
+    
 
     private void Start()
     {
         AnimHandler();
+        //StartCoroutine(RandomFire());
     }
 
     public void Fire()
@@ -28,6 +31,16 @@ public class Weapon : MonoBehaviour
             AnimHandler();
         }
     }
+
+    IEnumerator RandomFire()
+    {
+        yield return new WaitForSeconds(4);
+        firePointNum++;
+        if (firePointNum == firePoints.Length)
+            firePointNum = 0;
+        StartCoroutine(RandomFire());
+    }
+
     IEnumerator FireDelay()
     {
         canShoot = false;

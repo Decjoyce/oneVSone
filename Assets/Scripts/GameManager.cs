@@ -141,9 +141,9 @@ public class GameManager : MonoBehaviour
     #region Functionality
     void ReadyPlayers()
     {
-        if (inputManager.playerCount <= 1 && !gameStarted)
+        if (inputManager.playerCount == 2 && !gameStarted)
         {
-            if (ready_p1 || ready_p2)
+            if (ready_p1 && ready_p2)
             {
                 StartCoroutine(StartGame());
                 readyUI.SetActive(false);
@@ -189,7 +189,7 @@ public class GameManager : MonoBehaviour
         p1.GetComponent<Weapon>().firePointNum = 0;
         p1.GetComponent<Weapon>().AnimHandler();
         p1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        p2.GetComponent<Weapon>().firePointNum = 0;
+        p2.GetComponent<Weapon>().firePointNum = 4;
         p2.GetComponent<Weapon>().AnimHandler();
         p2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
