@@ -9,6 +9,7 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerInputHandler : MonoBehaviour
 {
     private playermovement mover;
+    private Weapon weap;
     private PlayerInput playerInput;
 
     private void Awake()
@@ -20,6 +21,7 @@ public class PlayerInputHandler : MonoBehaviour
         print(index);
         if(!playerInput.enabled)
             playerInput.enabled = true;
+        weap = mover.weap;
     }
 
     public void OnMove(CallbackContext context)
@@ -33,7 +35,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (!GameManager.instance.gamePaused)
         {
-
+            weap.Fire();
         }
     }
 

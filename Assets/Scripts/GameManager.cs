@@ -85,8 +85,6 @@ public class GameManager : MonoBehaviour
     {
         ReadyPlayers();
         scoreText.text = score_P1 + " - " + score_P2;
-        if (Input.GetButtonDown("Jump"))
-            IncreaseScore_P1();
     }
 
     public void PauseUnPause()
@@ -188,6 +186,9 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(PopUpHandler());
         LayoutSetter();
+        p1.GetComponent<Weapon>().firePointNum = 0;
+        p1.GetComponent<Weapon>().AnimHandler();
+        p2.GetComponent<Weapon>().AnimHandler();
 
         countdownUI.SetActive(true);
         while (countdownTime > 0)

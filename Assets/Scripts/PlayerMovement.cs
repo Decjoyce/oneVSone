@@ -16,16 +16,13 @@ public class playermovement : MonoBehaviour
     private Vector2 MoveDirection;
     private Vector2 inputVector = Vector2.zero;
 
-    private CharacterController controller;
-    private Rigidbody2D rb;
+    public Weapon weap;
 
     [SerializeField] 
     private int playerIndex = 0;
 
     private void Awake()
     {
-        // controller = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
