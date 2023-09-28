@@ -151,8 +151,13 @@ public class GameManager : MonoBehaviour
         }
         if (ready_p1)
             toggle_p1.SetActive(true);
+        else
+            toggle_p1.SetActive(false);
+
         if (ready_p2)
-            toggle_p1.SetActive(true);
+            toggle_p2.SetActive(true);
+        else
+            toggle_p2.SetActive(false);
     }
 
     IEnumerator StartGame()

@@ -38,9 +38,9 @@ public class PlayerInputHandler : MonoBehaviour
     public void ReadyUp(CallbackContext ctx)
     {
         if (mover.GetPlayerIndex() == 0)
-            GameManager.instance.ready_p1 = true;
+            GameManager.instance.ready_p1 = !GameManager.instance.ready_p1;
         if (mover.GetPlayerIndex() == 1)
-            GameManager.instance.ready_p2 = true;
+            GameManager.instance.ready_p2 = !GameManager.instance.ready_p2;
     }
 
     public void OnDisconnected()
