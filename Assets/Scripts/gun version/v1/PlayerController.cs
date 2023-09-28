@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-
+    
+    /*
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
         rb.rotation = aimAngle;
         
     }
+    */
 
     IEnumerator TimeDelay2()
     {
