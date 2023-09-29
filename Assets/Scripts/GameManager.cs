@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
 
         if (score_P1 == 5)
         {
-            StartCoroutine(GameOver(2));
+            StartCoroutine(GameOver(1));
         }
         else
             StartCoroutine(ResetRound());
@@ -142,9 +142,9 @@ public class GameManager : MonoBehaviour
     #region Functionality
     void ReadyPlayers()
     {
-        if (inputManager.playerCount == 2 && !gameStarted)
+        if (inputManager.playerCount == 1 && !gameStarted)
         {
-            if (ready_p1 && ready_p2)
+            if (ready_p1 || ready_p2)
             {
                 StartCoroutine(StartGame());
                 readyUI.SetActive(false);
@@ -172,6 +172,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(1f);
             countdownTime--;
         }
+        p1.GetComponent<Weapon>().RandomFireInitiartor();
+        p2.GetComponent<Weapon>().RandomFireInitiartor();
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;

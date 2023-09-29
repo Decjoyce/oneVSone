@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         AnimHandler();
-        //StartCoroutine(RandomFire());
     }
 
     public void Fire()
@@ -24,12 +23,16 @@ public class Weapon : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * fireForce, ForceMode2D.Impulse);
-            firePointNum++;
-            if (firePointNum == firePoints.Length)
-                firePointNum = 0;
-            StartCoroutine(FireDelay());
-            AnimHandler();
+            //firePointNum++;
+            //if (firePointNum == firePoints.Length)
+                //firePointNum = 0;
+            StartCoroutine(FireDelay());           
         }
+    }
+
+    public void RandomFireInitiartor()
+    {
+        StartCoroutine(RandomFire());
     }
 
     IEnumerator RandomFire()
@@ -38,13 +41,14 @@ public class Weapon : MonoBehaviour
         firePointNum++;
         if (firePointNum == firePoints.Length)
             firePointNum = 0;
+        AnimHandler();
         StartCoroutine(RandomFire());
     }
 
     IEnumerator FireDelay()
     {
         canShoot = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         canShoot = true;
     }
 
