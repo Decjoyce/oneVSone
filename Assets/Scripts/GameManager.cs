@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     private GameObject pauseButton, gameOverButton;
 
     private int countdownTime = 3;
-    private string[] popUpsDom = new string[12];
+    private string[] popUpsDom = new string[11];
     //private string[] popUpsClose = new string[12];
 
     #endregion
@@ -189,12 +189,10 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(PopUpHandler());
         LayoutSetter();
-        p1.GetComponent<Weapon>().firePointNum = 0;
-        p1.GetComponent<Weapon>().AnimHandler();
         p1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        p2.GetComponent<Weapon>().firePointNum = 4;
-        p2.GetComponent<Weapon>().AnimHandler();
+        p1.GetComponent<Weapon>().RoundHandler(0);
         p2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        p2.GetComponent<Weapon>().RoundHandler(4);
 
         countdownUI.SetActive(true);
         while (countdownTime > 0)
@@ -205,6 +203,8 @@ public class GameManager : MonoBehaviour
         }
         countdownUI.SetActive(false);
         countdownTime = 3;
+        p1.GetComponent<Weapon>().RandomFireInitiartor();
+        p2.GetComponent<Weapon>().RandomFireInitiartor();
         roundOver = false;
         gamePaused = false;
     }
@@ -281,8 +281,8 @@ public class GameManager : MonoBehaviour
         popUpsDom[6] = "DECIMATION";
         popUpsDom[7] = "MASSACRE";
         popUpsDom[8] = "SLAUGHTER";
-        popUpsDom[8] = "LOPSIDED";
-        popUpsDom[9] = "Are you even trying?";
+        popUpsDom[9] = "LOPSIDED";
+        popUpsDom[10] = "Are you even trying?";
     }
     #endregion
 

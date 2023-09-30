@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -30,6 +31,14 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    public void RoundHandler(byte num)
+    {
+        StopAllCoroutines();
+        firePointNum = num;
+        canShoot = true;
+        AnimHandler();
+    }
+
     public void RandomFireInitiartor()
     {
         StartCoroutine(RandomFire());
@@ -48,7 +57,7 @@ public class Weapon : MonoBehaviour
     IEnumerator FireDelay()
     {
         canShoot = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         canShoot = true;
     }
 
