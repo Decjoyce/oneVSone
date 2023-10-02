@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentLayout;
     
+    
 
     public PlayerInputManager inputManager;
     #endregion
