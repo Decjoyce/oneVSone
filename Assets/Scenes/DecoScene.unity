@@ -4041,6 +4041,15 @@ MonoBehaviour:
   pauseButton: {fileID: 1741687631}
   gameOverButton: {fileID: 765456771}
   layouts:
+  - {fileID: 414547994}
+  - {fileID: 1308466280}
+  - {fileID: 667112683}
+  - {fileID: 672233041}
+  - {fileID: 1307474771}
+  - {fileID: 1512942755}
+  - {fileID: 1432666858}
+  - {fileID: 712508223}
+  - {fileID: 665042210}
   - {fileID: 523768031}
 --- !u!4 &246087619
 Transform:
@@ -6482,7 +6491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &523768032
 Transform:
   m_ObjectHideFlags: 0
@@ -42448,6 +42457,8 @@ MonoBehaviour:
   - {fileID: 1618766258}
   - {fileID: 1508098444}
   fireForce: 20
+  fireDelay: 1.5
+  switchDelay: 2
   firePointNum: 4
   alt_fire: 0
 --- !u!95 &1643229160
@@ -62548,7 +62559,9 @@ MonoBehaviour:
   - {fileID: 2090190323}
   - {fileID: 916272337}
   - {fileID: 224443016}
-  fireForce: 20
+  fireForce: 10
+  fireDelay: 1.5
+  switchDelay: 2
   firePointNum: 0
   alt_fire: 0
 --- !u!95 &1865451993

@@ -27,10 +27,10 @@ public class Weapon : MonoBehaviour
         if (canShoot)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * fireForce, ForceMode2D.Impulse);
-            StopAllCoroutines();
+            bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * fireForce, ForceMode2D.Impulse);         
             if (alt_fire)
             {
+                StopAllCoroutines();
                 firePointNum++;
                 if (firePointNum == firePoints.Length)
                     firePointNum = 0;

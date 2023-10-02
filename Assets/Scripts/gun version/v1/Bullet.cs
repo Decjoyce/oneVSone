@@ -6,6 +6,11 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     byte playerBullet;
+
+    [SerializeField]
+    GameObject trailPrefab;
+
+    LineRenderer trailRenderer;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!GameManager.instance.roundOver)
@@ -22,11 +27,13 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);    
             }
         }
+        NewLine();
 
     }
 
     void Start()
     {
+        NewLine();
         Destroy(gameObject, 4f);
     }
 
@@ -34,5 +41,16 @@ public class Bullet : MonoBehaviour
     {
         if (GameManager.instance.roundOver)
             Destroy(gameObject);
+        if (trailRenderer != null)
+        {
+            trailRenderer.SetPosition(1, transform.position);
+        }
+    }
+    void NewLine()
+    {
+        GameObject aoeTrail = Instantiate(trailPrefab, transform);
+        trailRenderer = aoeTrail.GetComponent<LineRenderer>();
+        trailRenderer.positionCount = 2;
+        trailRenderer.SetPosition(0, transform.position);
     }
 }
