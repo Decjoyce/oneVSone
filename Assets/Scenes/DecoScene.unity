@@ -62461,8 +62461,8 @@ MonoBehaviour:
   playerIndex: 0
   timerAFK: 3
   timerCountdown: 3
-  haveACountdown_A: 0
-  haveACountdown_B: 1
+  haveACountdown_A: 1
+  haveACountdown_B: 0
   countdownDebuff: 1
   animator: {fileID: 1865451993}
 --- !u!50 &1865451990

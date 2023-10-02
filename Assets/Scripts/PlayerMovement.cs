@@ -110,8 +110,9 @@ public class playermovement : MonoBehaviour
 
     IEnumerator AFKCountdown_A()
     {
-        animator.SetBool("pulse", true);
         timerOn = true;
+        yield return new WaitForSeconds(2f);
+        animator.SetBool("pulse", true);
         weap.fireForce = 5f;
 
         yield return new WaitForSeconds(timerCountdown);
