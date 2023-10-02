@@ -29,12 +29,13 @@ public class playermovement : MonoBehaviour
     bool timerOn = false;
 
     [SerializeField]
-    bool haveACountdown = true;
+    bool haveACountdown_A = true, haveACountdown_B = false, countdownDebuff = false;
 
     [SerializeField]
     Animator animator;
     //bool isAfk = true;
 
+    Vector3 lastPos;
     private void Awake()
     {
     }
@@ -46,6 +47,27 @@ public class playermovement : MonoBehaviour
             ProcessInputs();
         if (GameManager.instance.roundOver)
             StopCountdown();
+
+        if (!GameManager.instance.gamePaused && haveACountdown_A)
+        {
+            if(timerAFK <= 0f)
+            {
+                if (Vector3.Distance(transform.position, lastPos) <= 2)
+                {
+                    if (!timerOn)
+                        StartCoroutine(AFKCountdown_A());
+                }
+                lastPos = transform.position;
+                timerAFK = 1f;
+            }
+            if (Vector3.Distance(transform.position, lastPos) > 2)
+            {
+                StopCountdown();
+                weap.fireForce = 20f;
+            }
+            timerAFK -= Time.deltaTime;
+        }
+
     }
 
     public int GetPlayerIndex()
@@ -62,16 +84,17 @@ public class playermovement : MonoBehaviour
         MoveDirection = new Vector2(inputVector.x, inputVector.y);
         MoveDirection = transform.TransformDirection(MoveDirection);
         //MoveDirection *= moveSpeed;
-        if (haveACountdown)
+        if (haveACountdown_B)
         {
             if (inputVector.x == 0 && inputVector.y == 0 && !GameManager.instance.roundOver)
             {
                 if (!timerOn)
-                    StartCoroutine(AFKCountdown());
+                    StartCoroutine(AFKCountdown_B());
             }
             else
             {
                 StopCountdown();
+                weap.fireForce = 20f;
             }
         }
 
@@ -85,18 +108,50 @@ public class playermovement : MonoBehaviour
         inputVector = Direction;
     }
 
-    IEnumerator AFKCountdown()
+    IEnumerator AFKCountdown_A()
     {
+        animator.SetBool("pulse", true);
         timerOn = true;
-        yield return new WaitForSeconds(timerAFK);
-        animator.SetBool("pulse", true);       
+        weap.fireForce = 5f;
 
         yield return new WaitForSeconds(timerCountdown);
-        if (playerIndex == 0)
-            GameManager.instance.IncreaseScore_P1();
-        else if (playerIndex == 1)
-            GameManager.instance.IncreaseScore_P2();
-        StopCountdown();        
+        if (!countdownDebuff)
+        {
+            if (playerIndex == 0)
+                GameManager.instance.IncreaseScore_P2();
+            else if (playerIndex == 1)
+                GameManager.instance.IncreaseScore_P1();
+            StopCountdown();
+        }
+        else
+        {
+            weap.fireForce = 2f;
+        }       
+    }
+
+    IEnumerator AFKCountdown_B()
+    {
+        timerOn = true;
+
+        yield return new WaitForSeconds(timerAFK);
+
+        animator.SetBool("pulse", true);
+        weap.fireForce = 5f;
+
+        yield return new WaitForSeconds(timerCountdown);
+        if (!countdownDebuff)
+        {
+            if (playerIndex == 0)
+                GameManager.instance.IncreaseScore_P2();
+            else if (playerIndex == 1)
+                GameManager.instance.IncreaseScore_P1();
+            StopCountdown();
+        }
+        else
+        {
+            weap.fireForce = 2f;
+        }
+        
     }
 
     void StopCountdown()

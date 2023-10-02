@@ -9,9 +9,13 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject[] firePoints;
     public float fireForce = 20f;
+    public float fireDelay = 1.5f;
+    public float switchDelay = 2f;
     public byte firePointNum = 0;
     bool canShoot = true;
-   
+
+    [SerializeField]
+    bool alt_fire;
 
     private void Start()
     {
@@ -24,10 +28,18 @@ public class Weapon : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * fireForce, ForceMode2D.Impulse);
-            //firePointNum++;
-            //if (firePointNum == firePoints.Length)
-                //firePointNum = 0;
-            StartCoroutine(FireDelay());           
+            StopAllCoroutines();
+            if (alt_fire)
+            {
+                firePointNum++;
+                if (firePointNum == firePoints.Length)
+                    firePointNum = 0;
+                AnimHandler();
+                StartCoroutine(RandomFire());
+            }
+
+            StartCoroutine(FireDelay());
+            
         }
     }
 
@@ -46,7 +58,7 @@ public class Weapon : MonoBehaviour
 
     IEnumerator RandomFire()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(switchDelay);
         firePointNum++;
         if (firePointNum == firePoints.Length)
             firePointNum = 0;
@@ -57,7 +69,7 @@ public class Weapon : MonoBehaviour
     IEnumerator FireDelay()
     {
         canShoot = false;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(fireDelay);
         canShoot = true;
     }
 
