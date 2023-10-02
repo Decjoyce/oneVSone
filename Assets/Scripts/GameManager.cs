@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         //StartCoroutine(StartGame());
         PopUpInitialiser();
         LayoutSetter();
-        EventSystem.current.SetSelectedGameObject(null);
+        Time.timeScale = 1f;
     }
 
     private void Update()
@@ -143,13 +143,14 @@ public class GameManager : MonoBehaviour
     #region Functionality
     void ReadyPlayers()
     {
-        if (inputManager.playerCount == 1 && !gameStarted)
+        if (inputManager.playerCount == 2 && !gameStarted)
         {
-            if (ready_p1 || ready_p2)
+            if (ready_p1 && ready_p2)
             {
                 StartCoroutine(StartGame());
                 readyUI.SetActive(false);
                 gameStarted = true;
+                //EventSystem.current.SetSelectedGameObject(null);
             }
         }
         if (ready_p1)

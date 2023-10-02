@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public float fireForce = 20f;
     public byte firePointNum = 0;
     bool canShoot = true;
-    
+   
 
     private void Start()
     {
