@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
                 pauseUI.SetActive(false);
                 Time.timeScale = 1f;
                 EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(pauseButton);
             }
         }
     }

@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Rocket : MonoBehaviour
 {
     [SerializeField]
     byte playerBullet;
+
+    [SerializeField]
+    float kaboomTimer = 4f;
+
+    [SerializeField]
+    GameObject kaboomExplosion;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!GameManager.instance.roundOver)
@@ -13,21 +19,25 @@ public class Bullet : MonoBehaviour
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
             {
                 GameManager.instance.IncreaseScore_P1();
+                Instantiate(kaboomExplosion, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
 
             if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
             {
                 GameManager.instance.IncreaseScore_P2();
-                Destroy(gameObject);    
+                Instantiate(kaboomExplosion, transform.position, transform.rotation);
+                Destroy(gameObject);
             }
         }
+        Instantiate(kaboomExplosion, transform.position, transform.rotation);
+        Destroy(gameObject);
 
     }
 
     void Start()
     {
-        Destroy(gameObject, 4f);
+        StartCoroutine(Kaboom());
     }
 
     private void Update()
@@ -35,4 +45,12 @@ public class Bullet : MonoBehaviour
         if (GameManager.instance.roundOver)
             Destroy(gameObject);
     }
+
+    IEnumerator Kaboom()
+    {
+        yield return new WaitForSeconds(kaboomTimer);
+        Instantiate(kaboomExplosion, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
 }
