@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     int score_P1;
     int score_P2;
+    static int wins_P1;
+    static int wins_P2;
 
     public GameObject p1;
     public GameObject p2;
@@ -144,9 +146,9 @@ public class GameManager : MonoBehaviour
     #region Functionality
     void ReadyPlayers()
     {
-        if (inputManager.playerCount == 1 && !gameStarted)
+        if (inputManager.playerCount == 2 && !gameStarted)
         {
-            if (ready_p1 || ready_p2)
+            if (ready_p1 && ready_p2)
             {
                 StartCoroutine(StartGame());
                 readyUI.SetActive(false);
@@ -226,11 +228,13 @@ public class GameManager : MonoBehaviour
         {
             winnerText.color = new Color(0, 0, 255);
             scoreWinningText.color = new Color(0, 0, 255);
+            score_P1++;
         }
         if (winner == 2)
         {
             winnerText.color = new Color(255, 0, 0);
             scoreWinningText.color = new Color(255, 0, 0);
+            score_P2++;
         }
         winnerText.text = "Player " + winner + " Wins";
         scoreWinningText.text = score_P1 + " - " + score_P2;

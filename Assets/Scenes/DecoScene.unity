@@ -42358,9 +42358,9 @@ MonoBehaviour:
   playerIndex: 1
   timerAFK: 3
   timerCountdown: 3
-  haveACountdown_A: 0
+  haveACountdown_A: 1
   haveACountdown_B: 0
-  countdownDebuff: 0
+  countdownDebuff: 1
   animator: {fileID: 1643229160}
 --- !u!50 &1643229157
 Rigidbody2D:
