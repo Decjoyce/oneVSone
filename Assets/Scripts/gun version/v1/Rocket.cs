@@ -12,8 +12,11 @@ public class Rocket : MonoBehaviour
 
     [SerializeField]
     GameObject kaboomExplosion;
+
+    int bounces = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        bounces++;
         if (!GameManager.instance.roundOver)
         {
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
@@ -30,9 +33,11 @@ public class Rocket : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        Instantiate(kaboomExplosion, transform.position, transform.rotation);
-        Destroy(gameObject);
-
+        if(bounces > 2)
+        {
+            Instantiate(kaboomExplosion, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 
     void Start()

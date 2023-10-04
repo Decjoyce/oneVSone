@@ -43,7 +43,7 @@ public class playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!GameManager.instance.gamePaused)
+        //if(!GameManager.instance.gamePaused)
             ProcessInputs();
         if (GameManager.instance.roundOver)
             StopCountdown();
@@ -98,6 +98,8 @@ public class playermovement : MonoBehaviour
             }
         }
 
+        if (GameManager.instance.gamePaused)
+            MoveDirection = Vector2.zero;
 
         //UnityEngine.Debug.Log(MoveDirection);
         transform.Translate(MoveDirection * moveSpeed * Time.deltaTime);

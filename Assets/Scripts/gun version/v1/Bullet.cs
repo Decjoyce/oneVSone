@@ -5,14 +5,20 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    byte playerBullet;
+    byte playerBullet;    
+    
+    [SerializeField]
+    bool hasTrail;
 
     [SerializeField]
     GameObject trailPrefab;
 
     LineRenderer trailRenderer;
+
+    int bounce = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        bounce++;
         if (!GameManager.instance.roundOver)
         {
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
@@ -27,13 +33,34 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);    
             }
         }
-        NewLine();
+        if (hasTrail)
+        {
+            //NewLineTest();
+            NewLine();
+        }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter") && hasTrail)
+        {
+            NewLine();
+            Destroy(trailRenderer.gameObject);           
+        }
+            
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter") && hasTrail)
+            NewLine();
     }
 
     void Start()
     {
-        NewLine();
+        if(hasTrail)
+            NewLine();
+        //StartNewLine();
         Destroy(gameObject, 4f);
     }
 
@@ -41,12 +68,25 @@ public class Bullet : MonoBehaviour
     {
         if (GameManager.instance.roundOver)
             Destroy(gameObject);
-        if (trailRenderer != null)
+        if (trailRenderer != null && hasTrail)
         {
             trailRenderer.SetPosition(1, transform.position);
+            //trailRenderer.SetPosition(bounce + 1, transform.position);
         }
     }
     void NewLine()
+    {
+        GameObject aoeTrail = Instantiate(trailPrefab, transform);
+        trailRenderer = aoeTrail.GetComponent<LineRenderer>();
+        trailRenderer.positionCount = 2;
+        trailRenderer.SetPosition(0, transform.position);
+    }
+    void NewLineTest()
+    {
+        trailRenderer.positionCount = bounce + 2;
+        trailRenderer.SetPosition(bounce, transform.position);
+    }
+    void StartNewLine()
     {
         GameObject aoeTrail = Instantiate(trailPrefab, transform);
         trailRenderer = aoeTrail.GetComponent<LineRenderer>();
