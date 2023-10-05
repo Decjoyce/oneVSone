@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     private GameObject gameplayUI, countdownUI, popUpUI, readyUI, toggle_p1, toggle_p2;
 
     [SerializeField]
-    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, popUpText;
+    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, popUpText, win1Text, win2Text;
 
     [SerializeField]
     private GameObject pauseButton, gameOverButton;
@@ -83,6 +83,8 @@ public class GameManager : MonoBehaviour
         PopUpInitialiser();
         LayoutSetter();
         Time.timeScale = 1f;
+        win1Text.text = "Wins: " + wins_P1;
+        win2Text.text = "Wins: " + wins_P2;
     }
 
     private void Update()
@@ -228,13 +230,13 @@ public class GameManager : MonoBehaviour
         {
             winnerText.color = new Color(0, 0, 255);
             scoreWinningText.color = new Color(0, 0, 255);
-            score_P1++;
+            wins_P1++;
         }
         if (winner == 2)
         {
             winnerText.color = new Color(255, 0, 0);
             scoreWinningText.color = new Color(255, 0, 0);
-            score_P2++;
+            wins_P2++;
         }
         winnerText.text = "Player " + winner + " Wins";
         scoreWinningText.text = score_P1 + " - " + score_P2;
