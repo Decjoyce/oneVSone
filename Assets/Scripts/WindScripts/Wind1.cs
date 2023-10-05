@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WInd : MonoBehaviour
+public class Wind1 : MonoBehaviour
 {
     public Transform player;
     private Rigidbody2D playerBody;
