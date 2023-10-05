@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    //Audio
+    public AudioSource source;
+    public AudioClip shot;
+    public AudioClip shotTick;
+    
     public GameObject bulletPrefab;
     public GameObject[] firePoints;
     public float fireForce = 20f;
@@ -26,6 +31,8 @@ public class Weapon : MonoBehaviour
     {
         if (canShoot)
         {
+            source.PlayOneShot(shot);
+            
             GameObject bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * fireForce, ForceMode2D.Impulse);         
             if (alt_fire)
@@ -59,6 +66,7 @@ public class Weapon : MonoBehaviour
     IEnumerator RandomFire()
     {
         yield return new WaitForSeconds(switchDelay);
+        source.PlayOneShot(shotTick);
         firePointNum++;
         if (firePointNum == firePoints.Length)
             firePointNum = 0;

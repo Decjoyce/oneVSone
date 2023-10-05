@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip clip;
+    public AudioClip death;
     [SerializeField]
     byte playerBullet;    
     
@@ -21,15 +25,18 @@ public class Bullet : MonoBehaviour
         bounce++;
         if (!GameManager.instance.roundOver)
         {
+            source.PlayOneShot(clip);
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
             {
                 GameManager.instance.IncreaseScore_P1();
+                source.PlayOneShot(death);
                 Destroy(gameObject);
             }
 
             if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
             {
                 GameManager.instance.IncreaseScore_P2();
+                source.PlayOneShot(death);
                 Destroy(gameObject);    
             }
         }

@@ -104,6 +104,8 @@ public class playermovement : MonoBehaviour
         //UnityEngine.Debug.Log(MoveDirection);
         transform.Translate(MoveDirection * moveSpeed * Time.deltaTime);
     }
+
+    
     
     public void SetInputVector(Vector2 Direction)
     {

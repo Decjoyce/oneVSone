@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    
+    
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Weapon weapon;
