@@ -6,8 +6,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public AudioSource source;
-    public AudioClip clip;
-    public AudioClip death;
+    public AudioClip Riochet;
+    
     [SerializeField]
     byte playerBullet;    
     
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
         bounce++;
         if (!GameManager.instance.roundOver)
         {
-            source.PlayOneShot(clip);
+            source.PlayOneShot(Riochet);
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
             {
                 GameManager.instance.IncreaseScore_P1();
