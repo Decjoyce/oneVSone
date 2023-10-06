@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - source: {instanceID: 0}
-  - Riochet: {fileID: 8300000, guid: 2eb6c40bfd5cb2f41ac24a129c95e282, type: 3}
+  - Riochet: {instanceID: 0}
   - trailPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

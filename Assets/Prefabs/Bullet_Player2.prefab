@@ -163,8 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 661776793323736123}
-  clip: {fileID: 8300000, guid: 2eb6c40bfd5cb2f41ac24a129c95e282, type: 3}
-  death: {fileID: 0}
+  Riochet: {fileID: 8300000, guid: 2eb6c40bfd5cb2f41ac24a129c95e282, type: 3}
   playerBullet: 1
   hasTrail: 1
   trailPrefab: {fileID: 2881394418546118763, guid: dacc1e92b302adf4a99f8275d4c5cbf6, type: 3}
