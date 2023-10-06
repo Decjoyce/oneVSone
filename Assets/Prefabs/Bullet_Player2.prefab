@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 661776793323736123}
-  clip: {fileID: 8300000, guid: 2eb6c40bfd5cb2f41ac24a129c95e282, type: 3}
+  clip: {fileID: 8300000, guid: 3bb3f6386911ff2449f0680983cadcf4, type: 3}
   death: {fileID: 8300000, guid: 0993b4ec80737cd45b656f333562dea1, type: 3}
   playerBullet: 1
   hasTrail: 1
@@ -180,13 +180,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 250
+  Priority: 240
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
