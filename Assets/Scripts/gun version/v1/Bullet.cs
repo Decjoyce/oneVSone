@@ -29,15 +29,13 @@ public class Bullet : MonoBehaviour
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
             {
                 GameManager.instance.IncreaseScore_P1();
-                source.PlayOneShot(death);
                 Destroy(gameObject);
             }
 
             if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
             {
                 GameManager.instance.IncreaseScore_P2();
-                source.PlayOneShot(death);
-                Destroy(gameObject);    
+                Destroy(gameObject);   
             }
         }
         if (hasTrail)
