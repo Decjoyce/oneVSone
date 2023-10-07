@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public bool roundOver = true;
     public bool gameStarted = false;
-    bool waitForReady;
     public bool ready_p1 = false;
     public bool ready_p2 = false;
 
@@ -46,7 +45,6 @@ public class GameManager : MonoBehaviour
 
     public GameObject p1;
     public GameObject p2;
-    public Rigidbody2D p1RB;
 
     public Transform spawn_p1;
     public Transform spawn_p2;
@@ -230,6 +228,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
 
+        GameEnded.Invoke();
         Time.timeScale = 0f;
         gamePaused = true;
 
