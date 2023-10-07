@@ -4072,6 +4072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 246087619}
   - component: {fileID: 246087618}
+  - component: {fileID: 246087620}
   m_Layer: 0
   m_Name: GameManagement
   m_TagString: Untagged
@@ -4091,6 +4092,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804fd7ca4fae71d47bc2a5ebf624de15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPlayer1:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1865451994}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: set_clip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0993b4ec80737cd45b656f333562dea1, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1865451994}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0993b4ec80737cd45b656f333562dea1, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  HitPlayer2:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1643229161}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0993b4ec80737cd45b656f333562dea1, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GameEnded:
+    m_PersistentCalls:
+      m_Calls: []
   gamePaused: 1
   gameOver: 0
   roundOver: 1
@@ -4107,7 +4153,6 @@ MonoBehaviour:
   pauseUI: {fileID: 2071396011}
   gameplayUI: {fileID: 413788029}
   countdownUI: {fileID: 714093214}
-  popUpUI: {fileID: 866051642}
   readyUI: {fileID: 692671274}
   toggle_p1: {fileID: 966292229}
   toggle_p2: {fileID: 2081750514}
@@ -4115,11 +4160,11 @@ MonoBehaviour:
   scoreWinningText: {fileID: 358735093}
   scoreText: {fileID: 1111452258}
   countdownText: {fileID: 815959521}
-  popUpText: {fileID: 1238124818}
   win1Text: {fileID: 776651964}
   win2Text: {fileID: 905296674}
   pauseButton: {fileID: 1741687631}
   gameOverButton: {fileID: 765456771}
+  popUpHandler: {fileID: 0}
   layouts:
   - {fileID: 414547994}
   - {fileID: 1308466280}
@@ -4148,6 +4193,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &246087620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246087617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c49f12ff40f64445a7873c98b9679be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpUI: {fileID: 0}
+  popUpText: {fileID: 0}
+  popupTime: 0
 --- !u!1 &257719564
 GameObject:
   m_ObjectHideFlags: 0
@@ -56025,7 +56085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0cfa7c25c25b24a8a2ef38f571a40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 16
+  moveSpeed: 10
   weap: {fileID: 1643229159}
   playerIndex: 1
   timerAFK: 3
@@ -56132,6 +56192,7 @@ MonoBehaviour:
   - {fileID: 1618766258}
   - {fileID: 1508098444}
   fireForce: 20
+  currentFireForce: 20
   fireDelay: 1.5
   switchDelay: 2
   firePointNum: 4
@@ -56168,7 +56229,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -78430,7 +78491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0cfa7c25c25b24a8a2ef38f571a40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 16
+  moveSpeed: 10
   weap: {fileID: 1865451992}
   playerIndex: 0
   timerAFK: 3
@@ -78524,7 +78585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1643229161}
-  shot: {fileID: 8300000, guid: 5742ac57e39ae8847b6a8128dc043578, type: 3}
+  shot: {fileID: 8300000, guid: 26e0fa7ae22048f4eaa6906efca44d46, type: 3}
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
   bulletPrefab: {fileID: 1310056251848431289, guid: 310f202bf2011ed4a9874382818e6a98, type: 3}
   firePoints:
@@ -78537,6 +78598,7 @@ MonoBehaviour:
   - {fileID: 916272337}
   - {fileID: 224443016}
   fireForce: 10
+  currentFireForce: 20
   fireDelay: 1.5
   switchDelay: 2
   firePointNum: 0
@@ -78573,7 +78635,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

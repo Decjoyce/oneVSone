@@ -57,9 +57,14 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void PauseGame(CallbackContext ctx)
     {
-        if (GameManager.instance.ready_p1 && GameManager.instance.ready_p2)
+        if (GameManager.instance.ready_p1 || GameManager.instance.ready_p2)
         {            
             GameManager.instance.PauseUnPause();
+        }
+        else
+        {
+            if(ctx.performed)
+                GameManager.instance.ChangeMap();
         }
     }
 }

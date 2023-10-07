@@ -63,7 +63,7 @@ public class playermovement : MonoBehaviour
             if (Vector3.Distance(transform.position, lastPos) > 2)
             {
                 StopCountdown();
-                weap.fireForce = 20f;
+                weap.currentFireForce = weap.fireForce;
             }
             timerAFK -= Time.deltaTime;
         }
@@ -94,7 +94,7 @@ public class playermovement : MonoBehaviour
             else
             {
                 StopCountdown();
-                weap.fireForce = 20f;
+                weap.currentFireForce = weap.fireForce;
             }
         }
 
@@ -117,7 +117,7 @@ public class playermovement : MonoBehaviour
         timerOn = true;
         yield return new WaitForSeconds(2f);
         animator.SetBool("pulse", true);
-        weap.fireForce = 5f;
+        weap.currentFireForce = 5f;
 
         yield return new WaitForSeconds(timerCountdown);
         if (!countdownDebuff)
@@ -130,7 +130,7 @@ public class playermovement : MonoBehaviour
         }
         else
         {
-            weap.fireForce = 2f;
+            weap.currentFireForce = 2f;
         }       
     }
 
@@ -141,7 +141,7 @@ public class playermovement : MonoBehaviour
         yield return new WaitForSeconds(timerAFK);
 
         animator.SetBool("pulse", true);
-        weap.fireForce = 5f;
+        weap.currentFireForce = 5f;
 
         yield return new WaitForSeconds(timerCountdown);
         if (!countdownDebuff)
@@ -154,7 +154,7 @@ public class playermovement : MonoBehaviour
         }
         else
         {
-            weap.fireForce = 2f;
+            weap.currentFireForce = 2f;
         }
         
     }

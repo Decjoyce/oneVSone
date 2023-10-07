@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public AudioSource source;
-    public AudioClip Riochet;
+    public AudioClip riochet;
     
     [SerializeField]
     byte playerBullet;    
@@ -20,22 +20,32 @@ public class Bullet : MonoBehaviour
     LineRenderer trailRenderer;
 
     int bounce = 0;
+
+    //When ever this object collides with something bounce is incremented.
+    //It also checks if the round is over and if it has a trail or not.
+    //If the round isn't over then it checks which player it is for and if the object it's colliding with has the tag Player
     private void OnCollisionEnter2D(Collision2D collision)
     {
         bounce++;
+        source.PlayOneShot(riochet);
         if (!GameManager.instance.roundOver)
         {
-            source.PlayOneShot(Riochet);
-            if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
+            switch (playerBullet)
             {
-                GameManager.instance.IncreaseScore_P1();
-                Destroy(gameObject);
-            }
-
-            if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
-            {
-                GameManager.instance.IncreaseScore_P2();
-                Destroy(gameObject);   
+                case 0:
+                    if (collision.gameObject.CompareTag("Player2"))
+                    {
+                        GameManager.instance.IncreaseScore_P1();
+                        Destroy(gameObject);
+                    }
+                    break;
+                case 1:
+                    if (collision.gameObject.CompareTag("Player1"))
+                    {
+                        GameManager.instance.IncreaseScore_P2();
+                        Destroy(gameObject);
+                    }
+                    break;
             }
         }
         if (hasTrail)
@@ -45,21 +55,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Teleporter") && hasTrail)
-        {
-            NewLine();
-            Destroy(trailRenderer.gameObject);           
-        }
-            
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Teleporter") && hasTrail)
-            NewLine();
-    }
 
     void Start()
     {
@@ -73,12 +69,16 @@ public class Bullet : MonoBehaviour
     {
         if (GameManager.instance.roundOver)
             Destroy(gameObject);
+
+        //Sets the trails furthest point to the transform of the bullet
         if (trailRenderer != null && hasTrail)
         {
             trailRenderer.SetPosition(1, transform.position);
             //trailRenderer.SetPosition(bounce + 1, transform.position);
         }
     }
+
+    #region Trail_v1
     void NewLine()
     {
         //if (trailRenderer != null)
@@ -87,7 +87,27 @@ public class Bullet : MonoBehaviour
         trailRenderer = aoeTrail.GetComponent<LineRenderer>();
         trailRenderer.positionCount = 2;
         trailRenderer.SetPosition(0, transform.position);
+    }    
+    
+    //Helps with Telleporter functionality
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter") && hasTrail)
+        {
+            NewLine();
+            Destroy(trailRenderer.gameObject);           
+        }
+            
     }
+    //Helps with Telleporter functionality
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter") && hasTrail)
+            NewLine();
+    }
+    #endregion
+
+    #region Trail_v2
     void NewLineTest()
     {
         trailRenderer.positionCount = bounce + 2;
@@ -100,4 +120,5 @@ public class Bullet : MonoBehaviour
         trailRenderer.positionCount = 2;
         trailRenderer.SetPosition(0, transform.position);
     }
+    #endregion
 }

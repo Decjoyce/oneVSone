@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Functionality
+
+    public UnityEvent HitPlayer1, HitPlayer2, GameEnded;
+
     public bool gamePaused = false;
     public bool gameOver = false;
     public bool roundOver = true;
@@ -49,10 +52,10 @@ public class GameManager : MonoBehaviour
     public Transform spawn_p2;
 
     private GameObject currentLayout;
-    
-    
+    int layoutNum;
 
     public PlayerInputManager inputManager;
+
     #endregion
 
     #region UI
@@ -61,18 +64,20 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseUI;
     [SerializeField]
-    private GameObject gameplayUI, countdownUI, popUpUI, readyUI, toggle_p1, toggle_p2;
+    private GameObject gameplayUI, countdownUI, readyUI, toggle_p1, toggle_p2;
 
     [SerializeField]
-    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, popUpText, win1Text, win2Text;
+    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, win1Text, win2Text;
 
     [SerializeField]
     private GameObject pauseButton, gameOverButton;
 
     private int countdownTime = 3;
-    private string[] popUpsDom = new string[11];
-    //private string[] popUpsClose = new string[12];
 
+    [SerializeField]
+    PopUpHandler popUpHandler;
+
+    bool comeback = false;
     #endregion
     public GameObject[] layouts;
     // Start is called before the first frame update
@@ -80,7 +85,6 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = false;
         //StartCoroutine(StartGame());
-        PopUpInitialiser();
         LayoutSetter();
         Time.timeScale = 1f;
         win1Text.text = "Wins: " + wins_P1;
@@ -120,6 +124,7 @@ public class GameManager : MonoBehaviour
     #region Score Code
     public void IncreaseScore_P1()
     {
+        HitPlayer1.Invoke();
         if (!gameOver)
             score_P1++;
 
@@ -133,6 +138,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScore_P2()
     {
+        HitPlayer2.Invoke();
         if (!gameOver)
             score_P2++;
 
@@ -194,8 +200,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
 
-        StartCoroutine(PopUpHandler());
         LayoutSetter();
+        CheckScore();
         p1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         p1.GetComponent<Weapon>().RoundHandler(0);
         p2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -257,42 +263,40 @@ public class GameManager : MonoBehaviour
         p2.transform.position = spawn_p2.transform.position;
         if (currentLayout != null)
             currentLayout.SetActive(false);
-        currentLayout = layouts[Random.Range(0, layouts.Length)];
+        layoutNum = Random.Range(0, layouts.Length);
+        currentLayout = layouts[layoutNum];
         currentLayout.SetActive(true);
     }
 
-    IEnumerator PopUpHandler()
+    public void ChangeMap()
     {
-
-        if (score_P1 == 4 && score_P2 == 0)
-        {
-            popUpUI.SetActive(true);
-            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
-        }
-        else if (score_P2 == 4 && score_P1 == 0)
-        {
-            popUpUI.SetActive(true);
-            popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
-        }
-
-        yield return new WaitForSecondsRealtime(3f);
-        popUpUI.SetActive(false);
+        if (currentLayout != null)
+            currentLayout.SetActive(false);
+        layoutNum++;
+        if (layoutNum >= layouts.Length)
+            layoutNum = 0;
+        currentLayout = layouts[layoutNum];
+        currentLayout.SetActive(true);
     }
 
-    void PopUpInitialiser()
+    void CheckScore()
     {
-        popUpsDom[0] = "DEMOLISHMENT";
-        popUpsDom[1] = "OBLITERATION";
-        popUpsDom[2] = "DOMINATION";
-        popUpsDom[3] = "ANNIHILATION";
-        popUpsDom[4] = "EXTERMINATION";
-        popUpsDom[5] = "ERADICATION";
-        popUpsDom[6] = "DECIMATION";
-        popUpsDom[7] = "MASSACRE";
-        popUpsDom[8] = "SLAUGHTER";
-        popUpsDom[9] = "LOPSIDED";
-        popUpsDom[10] = "Are you even trying?";
+        if ((score_P1 == 4 && score_P2 == 0) || (score_P1 == 0 && score_P2 == 4))
+        {
+            popUpHandler.PopUpDom();
+            comeback = true;
+        }
+            
+        if (score_P1 == 4 && score_P2 == 4)
+        {
+            if(!comeback)
+                popUpHandler.PopUpClose();
+            else
+                popUpHandler.PopUpComeback();
+        }
+
     }
+
     #endregion
 
     #region Button Events

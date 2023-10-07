@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject[] firePoints;
     public float fireForce = 20f;
+    public float currentFireForce;
     public float fireDelay = 1.5f;
     public float switchDelay = 2f;
     public byte firePointNum = 0;
@@ -25,6 +26,7 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         AnimHandler();
+        currentFireForce = fireForce;
     }
 
     public void Fire()
@@ -34,7 +36,7 @@ public class Weapon : MonoBehaviour
             source.PlayOneShot(shot);
             
             GameObject bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
-            bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * fireForce, ForceMode2D.Impulse);         
+            bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);         
             if (alt_fire)
             {
                 StopAllCoroutines();
