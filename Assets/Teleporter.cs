@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip Teleport;
+    
     [SerializeField]
     Transform sendTo;
 
@@ -22,6 +25,7 @@ public class Teleporter : MonoBehaviour
         {
             if (collision.CompareTag("Bullet") || collision.CompareTag("Player1") || collision.CompareTag("Player2"))
             {
+                source.PlayOneShot(Teleport, 0.6f);
                 if (xAxis)
                 {
                     collision.transform.position = new Vector2(sendTo.position.x, collision.transform.position.y);
@@ -37,6 +41,7 @@ public class Teleporter : MonoBehaviour
         {
             if (collision.CompareTag("Bullet"))
             {
+                source.PlayOneShot(Teleport, 0.6f);
                 if (xAxis)
                 {
                     collision.transform.position = new Vector2(sendTo.position.x, collision.transform.position.y);
