@@ -10921,12 +10921,12 @@ GameObject:
   m_Component:
   - component: {fileID: 364168933}
   m_Layer: 0
-  m_Name: BarrierLayout
+  m_Name: 2PullObject_Layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &364168933
 Transform:
   m_ObjectHideFlags: 0
@@ -14409,7 +14409,7 @@ GameObject:
   - component: {fileID: 511512788}
   - component: {fileID: 511512787}
   m_Layer: 0
-  m_Name: WIndHolder (2)
+  m_Name: VortexHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31379,7 +31379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007553300}
   m_Layer: 0
-  m_Name: Wind
+  m_Name: Vortex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31818,7 +31818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1130460137}
   m_Layer: 0
-  m_Name: BlackHole1_Layout
+  m_Name: Vortex_Layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
