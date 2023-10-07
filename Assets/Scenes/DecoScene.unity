@@ -4097,18 +4097,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1865451994}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_clip
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 0993b4ec80737cd45b656f333562dea1, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1865451994}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
@@ -4164,7 +4152,7 @@ MonoBehaviour:
   win2Text: {fileID: 905296674}
   pauseButton: {fileID: 1741687631}
   gameOverButton: {fileID: 765456771}
-  popUpHandler: {fileID: 0}
+  popUpHandler: {fileID: 246087620}
   layouts:
   - {fileID: 414547994}
   - {fileID: 1308466280}
@@ -4178,6 +4166,7 @@ MonoBehaviour:
   - {fileID: 523768031}
   - {fileID: 498286858}
   - {fileID: 1154116773}
+  shuffleMaps: 1
 --- !u!4 &246087619
 Transform:
   m_ObjectHideFlags: 0
@@ -4205,9 +4194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c49f12ff40f64445a7873c98b9679be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpUI: {fileID: 0}
-  popUpText: {fileID: 0}
-  popupTime: 0
+  popUpUI: {fileID: 866051642}
+  popUpText: {fileID: 1238124818}
+  popupTime: 3
 --- !u!1 &257719564
 GameObject:
   m_ObjectHideFlags: 0
@@ -26889,7 +26878,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -45318,7 +45307,7 @@ Transform:
   m_GameObject: {fileID: 1489119999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55944,7 +55933,7 @@ Transform:
   m_GameObject: {fileID: 1617220966}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56085,7 +56074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0cfa7c25c25b24a8a2ef38f571a40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 14
   weap: {fileID: 1643229159}
   playerIndex: 1
   timerAFK: 3
@@ -78491,7 +78480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0cfa7c25c25b24a8a2ef38f571a40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 14
   weap: {fileID: 1865451992}
   playerIndex: 0
   timerAFK: 3
@@ -78597,7 +78586,7 @@ MonoBehaviour:
   - {fileID: 2090190323}
   - {fileID: 916272337}
   - {fileID: 224443016}
-  fireForce: 10
+  fireForce: 20
   currentFireForce: 20
   fireDelay: 1.5
   switchDelay: 2

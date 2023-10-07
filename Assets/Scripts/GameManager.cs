@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     bool comeback = false;
     #endregion
     public GameObject[] layouts;
+    public bool shuffleMaps;
     // Start is called before the first frame update
     void Start()
     {
@@ -261,11 +262,15 @@ public class GameManager : MonoBehaviour
     {
         p1.transform.position = spawn_p1.transform.position;
         p2.transform.position = spawn_p2.transform.position;
-        if (currentLayout != null)
-            currentLayout.SetActive(false);
-        layoutNum = Random.Range(0, layouts.Length);
-        currentLayout = layouts[layoutNum];
-        currentLayout.SetActive(true);
+        if (shuffleMaps)
+        {
+            if (currentLayout != null)
+                currentLayout.SetActive(false);
+            layoutNum = Random.Range(0, layouts.Length);
+            currentLayout = layouts[layoutNum];
+            currentLayout.SetActive(true);
+        }
+
     }
 
     public void ChangeMap()
