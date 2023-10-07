@@ -13,10 +13,7 @@ public class Wind1 : MonoBehaviour
     void Start()
     {
         playerBody = player.GetComponent<Rigidbody2D>();
-        
     }
-
-   
     void Update()
     {
         distanceToPlayer = Vector2.Distance(player.position, transform.position);

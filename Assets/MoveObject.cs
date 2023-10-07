@@ -12,14 +12,23 @@ public class MoveObject : MonoBehaviour
     public GameObject obj2;
     public GameObject obj3;
     public GameObject obj4;
-    
-    
+
+    public bool Isinvoked = false;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        Invoke(nameof(MoveObj), 3f);
+        Isinvoked = true;
+    }
+
+    // ReSharper disable Unity.PerformanceAnalysis
+    private void InvokedFun()
+    {
+        if (Isinvoked == true)
+        {
+            Invoke(nameof(MoveObj), 5f);
+        }
     }
 
     private  void MoveObj()
@@ -31,10 +40,11 @@ public class MoveObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveObj();
+        
     }
 
     private void FixedUpdate()
     {
+        InvokedFun();
     }
 }
