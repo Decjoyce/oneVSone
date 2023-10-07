@@ -13,7 +13,9 @@ public class WInd : MonoBehaviour
     void Start()
     {
         playerBody = player.GetComponent<Rigidbody2D>();
+        
     }
+    
 
    
     void Update()

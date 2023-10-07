@@ -13,6 +13,7 @@ public class Wind1 : MonoBehaviour
     void Start()
     {
         playerBody = player.GetComponent<Rigidbody2D>();
+        
     }
 
    
