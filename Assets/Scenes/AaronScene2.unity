@@ -5730,6 +5730,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804fd7ca4fae71d47bc2a5ebf624de15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPlayer1:
+    m_PersistentCalls:
+      m_Calls: []
+  HitPlayer2:
+    m_PersistentCalls:
+      m_Calls: []
+  GameEnded:
+    m_PersistentCalls:
+      m_Calls: []
   gamePaused: 1
   gameOver: 0
   roundOver: 1
@@ -5746,7 +5755,6 @@ MonoBehaviour:
   pauseUI: {fileID: 2071396011}
   gameplayUI: {fileID: 413788029}
   countdownUI: {fileID: 714093214}
-  popUpUI: {fileID: 866051642}
   readyUI: {fileID: 692671274}
   toggle_p1: {fileID: 966292229}
   toggle_p2: {fileID: 2081750514}
@@ -5754,11 +5762,11 @@ MonoBehaviour:
   scoreWinningText: {fileID: 358735093}
   scoreText: {fileID: 1111452258}
   countdownText: {fileID: 815959521}
-  popUpText: {fileID: 1238124818}
   win1Text: {fileID: 0}
   win2Text: {fileID: 0}
   pauseButton: {fileID: 1741687631}
   gameOverButton: {fileID: 765456771}
+  popUpHandler: {fileID: 0}
   layouts:
   - {fileID: 414547994}
   - {fileID: 1308466280}
@@ -5769,6 +5777,7 @@ MonoBehaviour:
   - {fileID: 1432666858}
   - {fileID: 712508223}
   - {fileID: 665042210}
+  shuffleMaps: 0
 --- !u!4 &246087619
 Transform:
   m_ObjectHideFlags: 0
@@ -49972,6 +49981,7 @@ MonoBehaviour:
   - {fileID: 1618766258}
   - {fileID: 1508098444}
   fireForce: 20
+  currentFireForce: 0
   fireDelay: 1.5
   switchDelay: 2
   firePointNum: 4
@@ -65568,6 +65578,7 @@ MonoBehaviour:
   - {fileID: 916272337}
   - {fileID: 224443016}
   fireForce: 20
+  currentFireForce: 0
   fireDelay: 1.5
   switchDelay: 2
   firePointNum: 0
