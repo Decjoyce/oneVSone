@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
     {
         if (canShoot)
         {
-            source.PlayOneShot(shot);
+            source.PlayOneShot(shot, 1f);
             
             GameObject bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);         
@@ -68,7 +68,7 @@ public class Weapon : MonoBehaviour
     IEnumerator RandomFire()
     {
         yield return new WaitForSeconds(switchDelay);
-        source.PlayOneShot(shotTick);
+        source.PlayOneShot(shotTick, 0.2f);
         firePointNum++;
         if (firePointNum == firePoints.Length)
             firePointNum = 0;

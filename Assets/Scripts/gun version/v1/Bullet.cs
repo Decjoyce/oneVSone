@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         bounce++;
-        source.PlayOneShot(riochet, 0.7f);
+        source.PlayOneShot(riochet, 0.1f);
         if (!GameManager.instance.roundOver)
         {
             switch (playerBullet)
