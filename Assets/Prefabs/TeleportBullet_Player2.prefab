@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6862083063914748693}
   - component: {fileID: 209666314517146858}
   - component: {fileID: -6675970902860702638}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: TeleportBullet_Player2
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -162,4 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBullet: 1
+  tpTime: 0
   trailPrefab: {fileID: 2881394418546118763, guid: 8fa76e77da2761c45830b37a9b4f0ff0, type: 3}

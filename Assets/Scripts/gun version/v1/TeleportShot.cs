@@ -12,7 +12,7 @@ public class TeleportShot : MonoBehaviour
 
     [SerializeField]
     GameObject trailPrefab;
-
+    bool canTeleport = true;
     LineRenderer trailRenderer;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,28 +30,28 @@ public class TeleportShot : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        NewLine();
+        //NewLine();
 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Teleporter"))
-            NewLine();
+        //if (collision.CompareTag("Teleporter"))
+            //NewLine();
     }
 
     void Start()
     {
-        NewLine();
+        //NewLine();
         StartCoroutine(TeleportPlayer());
     }
 
     IEnumerator TeleportPlayer()
     {
         yield return new WaitForSeconds(tpTime);
-        if (playerBullet == 0 && !GameManager.instance.roundOver)
+        if (playerBullet == 0 && !GameManager.instance.roundOver && canTeleport)
             GameManager.instance.p1.transform.position = transform.position;
-        if (playerBullet == 2 && !GameManager.instance.roundOver)
+        if (playerBullet == 2 && !GameManager.instance.roundOver && canTeleport)
             GameManager.instance.p2.transform.position = transform.position;
         Destroy(gameObject);
     }
