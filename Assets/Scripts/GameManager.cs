@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerInputManager inputManager;
 
+    public bool poweredUp = false;
+
     #endregion
 
     #region UI
@@ -153,9 +155,9 @@ public class GameManager : MonoBehaviour
     #region Functionality
     void ReadyPlayers()
     {
-        if (inputManager.playerCount == 1 && !gameStarted)
+        if (inputManager.playerCount == 2 && !gameStarted)
         {
-            if (ready_p1 || ready_p2)
+            if (ready_p1 && ready_p2)
             {
                 StartCoroutine(StartGame());
                 readyUI.SetActive(false);

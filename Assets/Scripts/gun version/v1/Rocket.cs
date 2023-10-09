@@ -33,11 +33,9 @@ public class Rocket : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if(bounces > 2)
-        {
+
             Instantiate(kaboomExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
-        }
     }
 
     void Start()

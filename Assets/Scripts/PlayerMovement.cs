@@ -12,6 +12,7 @@ using System.Linq;
 public class playermovement : MonoBehaviour
 {
     public float moveSpeed;
+    public float ogSpeed;
     
     private Vector2 MoveDirection;
     private Vector2 inputVector = Vector2.zero;
@@ -38,6 +39,11 @@ public class playermovement : MonoBehaviour
     Vector3 lastPos;
     private void Awake()
     {
+    }
+
+    private void Start()
+    {
+        moveSpeed = ogSpeed;
     }
 
     // Update is called once per frame

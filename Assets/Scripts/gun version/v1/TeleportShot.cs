@@ -46,6 +46,8 @@ public class TeleportShot : MonoBehaviour
         StartCoroutine(TeleportPlayer());
     }
 
+
+
     IEnumerator TeleportPlayer()
     {
         yield return new WaitForSeconds(tpTime);
