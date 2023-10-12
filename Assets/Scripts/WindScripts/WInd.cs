@@ -19,6 +19,11 @@ public class WInd : MonoBehaviour
    
     void Update()
     {
+        wind();
+    }
+
+    void wind()
+    {
         distanceToPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceToPlayer <= influenceRange)
         {
