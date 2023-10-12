@@ -21,18 +21,21 @@ public class Wind1 : MonoBehaviour
 
     void Wind()
     {
-        distanceToPlayer = Vector2.Distance(player.position, transform.position);
-        if (distanceToPlayer <= influenceRange)
+        if (Vector3.Distance(player.transform.position, transform.position) >= 10f)
         {
-            pullForce = (transform.position - player.position).normalized / distanceToPlayer * intensity;
-            playerBody.AddForce(pullForce, ForceMode2D.Force);
-        }
-        
-        else if (GameManager.instance.roundOver)
-        {
-            pullForce = Vector2.zero;
-            playerBody.AddForce(pullForce, ForceMode2D.Force);
+            distanceToPlayer = Vector2.Distance(player.position, transform.position);
+            if (distanceToPlayer <= influenceRange)
+            {
+                pullForce = (transform.position - player.position).normalized / distanceToPlayer * intensity;
+                playerBody.AddForce(pullForce, ForceMode2D.Force);
+            }
+
+            else if (GameManager.instance.roundOver)
+            {
+                pullForce = Vector2.zero;
+                playerBody.AddForce(pullForce, ForceMode2D.Force);
             
+            }
         }
         
     }

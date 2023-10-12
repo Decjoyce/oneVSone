@@ -33,8 +33,14 @@ public class MoveObject : MonoBehaviour
 
     private  void MoveObj()
     {
-        Barrier.transform.position = Vector3.MoveTowards(Barrier.transform.position, P1.transform.position, Speed);
-        Barrier_.transform.position = Vector3.MoveTowards(Barrier_.transform.position, P2.transform.position, Speed);
+        if (GameManager.instance.gameStarted && !GameManager.instance.roundOver)
+        {
+            if (Vector3.Distance(Barrier.transform.position, P1.transform.position) >= 1f) 
+            {
+                Barrier.transform.position = Vector3.MoveTowards(Barrier.transform.position, P1.transform.position, Speed);
+                Barrier_.transform.position = Vector3.MoveTowards(Barrier_.transform.position, P2.transform.position, Speed);
+            }
+        }
     }
 
     // Update is called once per frame
