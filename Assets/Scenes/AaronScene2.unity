@@ -9494,7 +9494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &174974866
 Transform:
   m_ObjectHideFlags: 0
@@ -14331,6 +14331,7 @@ GameObject:
   - component: {fileID: 509428340}
   - component: {fileID: 509428343}
   - component: {fileID: 509428344}
+  - component: {fileID: 509428345}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14552,6 +14553,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &509428345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509428339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3be8ec5d0852db4e91f76d743f2431d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 509428344}
+  clip: {fileID: 8300000, guid: 78531d4270d0dd04e851fb46523ff07b, type: 3}
 --- !u!1 &511512785
 GameObject:
   m_ObjectHideFlags: 0
@@ -20016,7 +20031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
   influenceRange: 6
-  intensity: 1
+  intensity: 5
   distanceToPlayer: 0
 --- !u!114 &635177012
 MonoBehaviour:
@@ -20032,7 +20047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
   influenceRange: 6
-  intensity: 1
+  intensity: 5
   distanceToPlayer: 0
 --- !u!212 &635177013
 SpriteRenderer:
