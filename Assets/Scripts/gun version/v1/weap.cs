@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
     public string weaponType;
 
     [SerializeField]
-    public GameObject bulletPrefab;
+    private GameObject bulletPrefab;
 
     public GameObject currentBulletPrefab;
 
