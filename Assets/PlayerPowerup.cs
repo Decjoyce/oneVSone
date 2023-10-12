@@ -12,6 +12,12 @@ public class PlayerPowerup : MonoBehaviour
 
     public void AddPlayerPowerup(PowerupEffect powerupEffect)
     {
+        if(powerup != null)
+        {
+            powerup.Remove(gameObject);
+            Destroy(effect);
+        }
+            
         powerup = powerupEffect;
         powerup.Apply(gameObject);
         if (playerNum == 0)

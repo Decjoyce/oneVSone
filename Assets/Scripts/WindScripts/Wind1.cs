@@ -21,7 +21,7 @@ public class Wind1 : MonoBehaviour
 
     void Wind()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) >= 10f)
+        if (!GameManager.instance.roundOver && GameManager.instance.gameStarted)
         {
             distanceToPlayer = Vector2.Distance(player.position, transform.position);
             if (distanceToPlayer <= influenceRange)
@@ -29,14 +29,13 @@ public class Wind1 : MonoBehaviour
                 pullForce = (transform.position - player.position).normalized / distanceToPlayer * intensity;
                 playerBody.AddForce(pullForce, ForceMode2D.Force);
             }
-
-            else if (GameManager.instance.roundOver)
+            else
             {
                 pullForce = Vector2.zero;
                 playerBody.AddForce(pullForce, ForceMode2D.Force);
-            
+
             }
         }
-        
+
     }
 }

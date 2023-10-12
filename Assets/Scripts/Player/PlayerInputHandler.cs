@@ -37,8 +37,8 @@ public class PlayerInputHandler : MonoBehaviour
         {
             weap.Fire();
         }
-        if (!GameManager.instance.gameStarted && ctx.performed)
-            GameManager.instance.shuffleMaps = !GameManager.instance.shuffleMaps;
+/*        if (!GameManager.instance.gameStarted && ctx.performed)
+            GameManager.instance.shuffleMaps = !GameManager.instance.shuffleMaps;*/
     }
 
     public void ReadyUp(CallbackContext ctx)

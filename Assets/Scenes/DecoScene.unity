@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 298171902}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 247227319}
@@ -6992,8 +6992,6 @@ MonoBehaviour:
   spawn_p1: {fileID: 1148000961}
   spawn_p2: {fileID: 1604352379}
   inputManager: {fileID: 1170154464}
-  powerup_P1: {fileID: 0}
-  powerup_P2: {fileID: 0}
   winnerUI: {fileID: 89156961}
   pauseUI: {fileID: 2071396011}
   gameplayUI: {fileID: 413788029}
@@ -7008,7 +7006,7 @@ MonoBehaviour:
   win1Text: {fileID: 776651964}
   win2Text: {fileID: 905296674}
   pauseButton: {fileID: 1741687631}
-  gameOverButton: {fileID: 765456771}
+  gameOverButton: {fileID: 662756731}
   popUpHandler: {fileID: 246087620}
   layouts:
   - {fileID: 414547994}
@@ -13733,7 +13731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 699384965}
   spawnPoint2: {fileID: 803917616}
   fakes: {fileID: 0}
@@ -25418,7 +25416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 0
   powerupPrefab: {fileID: 0}
-  spawnTime: 0
+  spawnTime: 5
   spawnPoint1: {fileID: 0}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -25587,7 +25585,7 @@ Transform:
   m_GameObject: {fileID: 519116108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0, z: 0.000087173656}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25607,7 +25605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
   influenceRange: 20
-  intensity: 7
+  intensity: 20
   distanceToPlayer: 0
 --- !u!114 &519116111
 MonoBehaviour:
@@ -25623,7 +25621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
   influenceRange: 20
-  intensity: 4
+  intensity: 20
   distanceToPlayer: 0
 --- !u!212 &519116112
 SpriteRenderer:
@@ -25947,7 +25945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 1176958993}
   spawnPoint2: {fileID: 685752762}
   fakes: {fileID: 0}
@@ -32677,7 +32675,7 @@ Transform:
   m_GameObject: {fileID: 601994032}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalPosition: {x: -4.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33162,7 +33160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 1058225722}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -33216,7 +33214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 1008810144}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -33268,7 +33266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 2089013458}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -33671,7 +33669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 537157704}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -44972,7 +44970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 1808923322}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -46538,7 +46536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 1919343726}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -49234,7 +49232,7 @@ Transform:
   m_GameObject: {fileID: 1247846534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 4.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54041,7 +54039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 2110500425}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -54094,7 +54092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 780160258}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -61104,7 +61102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 1700476845}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -65600,7 +65598,7 @@ Transform:
   m_GameObject: {fileID: 1461365363}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04, y: -0.21, z: 0.000087173656}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65622,7 +65620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
   influenceRange: 20
-  intensity: 7
+  intensity: 20
   distanceToPlayer: 0
 --- !u!114 &1461365366
 MonoBehaviour:
@@ -65638,7 +65636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
   influenceRange: 20
-  intensity: 1
+  intensity: 20
   distanceToPlayer: 0
 --- !u!212 &1461365367
 SpriteRenderer:
@@ -74774,7 +74772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 813609415}
   spawnPoint2: {fileID: 1053963326}
   fakes: {fileID: 0}
@@ -90296,8 +90294,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 20
+  m_Mass: 65
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -111738,7 +111736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 10
+  spawnTime: 5
   spawnPoint1: {fileID: 1120864169}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 472004452}
@@ -114756,7 +114754,7 @@ MonoBehaviour:
   source: {fileID: 1643229161}
   shot: {fileID: 8300000, guid: 26e0fa7ae22048f4eaa6906efca44d46, type: 3}
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
-  weaponType: 
+  weaponType: ROCKET
   bulletPrefab: {fileID: 1310056251848431289, guid: 310f202bf2011ed4a9874382818e6a98, type: 3}
   currentBulletPrefab: {fileID: 0}
   firePoints:
@@ -114913,7 +114911,7 @@ MonoBehaviour:
       m_Calls: []
   powerupType: 
   playerNum: 0
-  playerDeathEffect: {fileID: 0}
+  playerDeathEffect: {fileID: 210948635}
 --- !u!114 &1865451996
 MonoBehaviour:
   m_ObjectHideFlags: 0

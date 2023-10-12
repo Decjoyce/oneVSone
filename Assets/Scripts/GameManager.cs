@@ -54,8 +54,6 @@ public class GameManager : MonoBehaviour
 
     public PlayerInputManager inputManager;
 
-    public PowerupEffect powerup_P1 = null, powerup_P2 = null;
-
     #endregion
 
     #region UI

@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839804263648316588}
   - component: {fileID: 9117393160644826165}
-  - component: {fileID: 1515083073944506166}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BulletTrail_Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +97,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.06607056, g: 0, b: 1, a: 0.78431374}
+      key0: {r: 0.06607056, g: 0, b: 1, a: 0}
       key1: {r: 0.16647482, g: 0, b: 1, a: 0.39215687}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0.49019608}
@@ -115,7 +114,7 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 193
-      atime1: 1157
+      atime1: 19853
       atime2: 55705
       atime3: 65535
       atime4: 0
@@ -137,16 +136,3 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &1515083073944506166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2881394418546118763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ccb7805f817df44ab4e8ef199bd568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerBullet: 0

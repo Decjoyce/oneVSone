@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
   m_Name: Powerup_Rocket
   m_EditorClassIdentifier: 
-  visualEffect_P1: {fileID: 9196179376695656871, guid: 66981f669698a0241a02a56732a27975, type: 3}
-  visualEffect_P2: {fileID: 9196179376695656871, guid: 66981f669698a0241a02a56732a27975, type: 3}
+  visualEffect_P1: {fileID: 9196179376695656871, guid: bb7cdeaa2449fa244bd9423ede82f44d, type: 3}
+  visualEffect_P2: {fileID: 9196179376695656871, guid: bb7cdeaa2449fa244bd9423ede82f44d, type: 3}
   weaponType: ROCKET
   fireDelay: 2
   fireForce: 30

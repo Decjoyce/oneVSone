@@ -9,6 +9,8 @@ public class Powerup_Health : PowerupEffect
     public override void Apply(GameObject target)
     {
         target.GetComponent<PlayerHealth>().powerupType = heatlhType;
+        if (heatlhType == "INVINCIBLE")
+            target.GetComponent<PlayerHealth>().StartDisableInvinvincible();
     }
 
     public override void Remove(GameObject target)

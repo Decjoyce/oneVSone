@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
             case "JUGG":
                 powerupType = null;
                 break;
-            case "Invincible":
+            case "INVINCIBLE":
                 break;
             default:
                 PlayerDie();
@@ -47,6 +47,17 @@ public class PlayerHealth : MonoBehaviour
         playerDeathEffect.SetActive(true);
         yield return new WaitForSeconds(1);
         playerDeathEffect.SetActive(false);
+    }
+
+    public void StartDisableInvinvincible()
+    {
+        StartCoroutine(InvincibleDisable());
+    }
+
+    IEnumerator InvincibleDisable()
+    {
+        yield return new WaitForSeconds(5f);
+        GetComponent<PlayerPowerup>().RemovePlayerPowerup();
     }
 
 }

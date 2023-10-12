@@ -82,8 +82,8 @@ public class Bullet : MonoBehaviour
     #region Trail_v1
     void NewLine()
     {
-        //if (trailRenderer != null)
-            //estroy(trailRenderer.gameObject);
+        if (trailRenderer != null)
+            Destroy(trailRenderer.gameObject);
         GameObject aoeTrail = Instantiate(trailPrefab, transform);
         trailRenderer = aoeTrail.GetComponent<LineRenderer>();
         trailRenderer.positionCount = 2;

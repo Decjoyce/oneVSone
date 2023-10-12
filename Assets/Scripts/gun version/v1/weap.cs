@@ -42,8 +42,8 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        AnimHandler();
         ResetWeapon();
+        AnimHandler();
     }
 
     public void Fire()
@@ -60,6 +60,7 @@ public class Weapon : MonoBehaviour
                     break;
                 case "DOUBLE":
                     DoubleFire();
+                    AnimHandler();
                     StartCoroutine(FireDelay());
                     break;
                 case "AOE":
@@ -185,7 +186,7 @@ public class Weapon : MonoBehaviour
         {
             if (i == firePointNum)
                 firePoints[i].GetComponentInChildren<SpriteRenderer>().enabled = true;
-            else if(i == secondFirePoint && weaponType == "Double")
+            else if(i == secondFirePoint && weaponType == "DOUBLE")
                 firePoints[i].GetComponentInChildren<SpriteRenderer>().enabled = true;
             else
                 firePoints[i].GetComponentInChildren<SpriteRenderer>().enabled = false;

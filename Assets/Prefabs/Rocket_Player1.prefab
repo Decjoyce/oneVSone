@@ -164,3 +164,5 @@ MonoBehaviour:
   playerBullet: 0
   kaboomTimer: 4
   kaboomExplosion: {fileID: 1466175380097405455, guid: de72b15eb53072f448b0b8b3c97101e9, type: 3}
+  hasTrail: 1
+  trailPrefab: {fileID: 2881394418546118763, guid: 6c4169a4051b5e248980013a90fa6498, type: 3}
