@@ -31,7 +31,7 @@ public class MoveObject : MonoBehaviour
         }
     }
 
-    private  void MoveObj()
+    private void MoveObj()
     {
         if (GameManager.instance.gameStarted && !GameManager.instance.roundOver)
         {
