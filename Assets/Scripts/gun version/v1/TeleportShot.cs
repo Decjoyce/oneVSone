@@ -20,13 +20,13 @@ public class TeleportShot : MonoBehaviour
         {
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
             {
-                GameManager.instance.IncreaseScore_P1();
+                collision.gameObject.GetComponent<PlayerHealth>().PlayerHit();
                 Destroy(gameObject);
             }
 
             if (playerBullet == 1 && collision.gameObject.CompareTag("Player1"))
             {
-                GameManager.instance.IncreaseScore_P2();
+                collision.gameObject.GetComponent<PlayerHealth>().PlayerHit();
                 Destroy(gameObject);
             }
         }

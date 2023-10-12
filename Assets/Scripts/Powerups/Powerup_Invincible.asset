@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e27bd7848ed3e34aa4618f6269690b5, type: 3}
+  m_Name: Powerup_Invincible
+  m_EditorClassIdentifier: 
+  visualEffect_P1: {fileID: 9196179376695656871, guid: 66981f669698a0241a02a56732a27975, type: 3}
+  visualEffect_P2: {fileID: 9196179376695656871, guid: 66981f669698a0241a02a56732a27975, type: 3}
+  heatlhType: INVINCIBLE

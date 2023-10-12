@@ -14,29 +14,27 @@ public class Weapon : MonoBehaviour
     //Weapon Types
     public string weaponType;
 
-    public GameObject bulletPrefab;
-    public GameObject rocketPrefab;
-    public GameObject aoePrefab;
-    public GameObject teleportPrefab;
+    [SerializeField]
+    private GameObject bulletPrefab;
 
-    public GameObject[] firePoints;
+    public GameObject currentBulletPrefab;
+
+    [SerializeField]
+    private GameObject[] firePoints;
 
     public float fireForce = 20f;
     public float defaultFireForce = 20f;
-    public float rocketFireForce = 10f;
-    public float aoeFireForce = 10f;
-    public float teleportFireForce = 25f;
     public float currentFireForce;
 
     public float fireDelay = 1.5f;
-    public float rocketFireDelay = 1.5f;
-    public float aoeFireDelay = 1.5f;
-    public float teleportFireDelay = 1.5f;
-    public float doubleFireDelay = 1.5f;
-    public float burstFireDelay = 1.5f;
+    public float defaultFireDelay = 1.5f;
 
-    public float switchDelay = 2f;
-    public byte firePointNum = 0;
+    [SerializeField]
+    private float switchDelay = 2f;
+    private byte firePointNum = 0;
+    [SerializeField]
+    byte startingFirePointNum;
+
     bool canShoot = true;
 
     [SerializeField]
@@ -45,7 +43,7 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         AnimHandler();
-        currentFireForce = fireForce;
+        ResetWeapon();
     }
 
     public void Fire()
@@ -56,42 +54,39 @@ public class Weapon : MonoBehaviour
             
             switch (weaponType)
             {
-                case "Burst":
+                case "BURST":
                     StartCoroutine(BurstFire());
-                    StartCoroutine(FireDelay(burstFireDelay));
+                    StartCoroutine(FireDelay());
                     break;
-                case "Double":
+                case "DOUBLE":
                     DoubleFire();
-                    StartCoroutine(FireDelay(doubleFireDelay));
+                    StartCoroutine(FireDelay());
                     break;
                 case "AOE":
-                    fireForce = aoeFireForce;
-                    NormalFire(aoePrefab);
-                    StartCoroutine(FireDelay(aoeFireDelay));
+                    NormalFire();
+                    StartCoroutine(FireDelay());
                     break;
-                case "Teleport":
-                    fireForce = teleportFireForce;
-                    NormalFire(teleportPrefab);
-                    StartCoroutine(FireDelay(teleportFireDelay));
+                case "TELEPORT":
+                    NormalFire();
+                    StartCoroutine(FireDelay());
                     break;
-                case "Rocket":
-                    fireForce = rocketFireForce;
-                    NormalFire(rocketPrefab);
-                    StartCoroutine(FireDelay(rocketFireDelay));
+                case "ROCKET":
+                    NormalFire();
+                    StartCoroutine(FireDelay());
                     break;
                 default:
                     fireForce = defaultFireForce;
-                    NormalFire(bulletPrefab);
-                    StartCoroutine(FireDelay(fireDelay));
+                    NormalFire();
+                    StartCoroutine(FireDelay());
                     break;
             }
             
         }
     }
 
-    void NormalFire(GameObject prefab)
+    void NormalFire()
     {
-        GameObject bullet = Instantiate(prefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
+        GameObject bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         if (alt_fire)
         {
@@ -106,13 +101,13 @@ public class Weapon : MonoBehaviour
 
     IEnumerator BurstFire()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
+        GameObject bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.5f);
-        bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
+        bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.5f);
-        bullet = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
+        bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         if (alt_fire)
         {
@@ -127,7 +122,7 @@ public class Weapon : MonoBehaviour
 
     void DoubleFire()
     {
-        GameObject bullet1 = Instantiate(bulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
+        GameObject bullet1 = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet1.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         int secondFirePoint = 0;
         if (firePointNum < 4)
@@ -135,16 +130,14 @@ public class Weapon : MonoBehaviour
         else
             secondFirePoint = firePointNum - 4;
 
-        GameObject bullet2 = Instantiate(bulletPrefab, firePoints[secondFirePoint].transform.position, firePoints[firePointNum].transform.rotation);
+        GameObject bullet2 = Instantiate(currentBulletPrefab, firePoints[secondFirePoint].transform.position, firePoints[firePointNum].transform.rotation);
         bullet2.GetComponent<Rigidbody2D>().AddForce(firePoints[secondFirePoint].transform.up * currentFireForce, ForceMode2D.Impulse);
     }
 
-    public void RoundHandler(byte num)
+    public void RoundHandler()
     {
         StopAllCoroutines();
-        weaponType = null;
-        firePointNum = num;
-        canShoot = true;
+        ResetWeapon();
         AnimHandler();
     }
 
@@ -164,11 +157,21 @@ public class Weapon : MonoBehaviour
         StartCoroutine(RandomFire());
     }
 
-    IEnumerator FireDelay(float delay)
+    IEnumerator FireDelay()
     {
         canShoot = false;
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(fireDelay);
         canShoot = true;
+    }
+
+    public void ResetWeapon()
+    {
+        weaponType = null;
+        firePointNum = startingFirePointNum;
+        canShoot = true;
+        currentFireForce = defaultFireForce;
+        fireDelay = defaultFireDelay;
+        currentBulletPrefab = bulletPrefab;
     }
 
     public void AnimHandler()

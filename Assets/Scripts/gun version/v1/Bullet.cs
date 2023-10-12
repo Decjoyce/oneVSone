@@ -35,14 +35,14 @@ public class Bullet : MonoBehaviour
                 case 0:
                     if (collision.gameObject.CompareTag("Player2"))
                     {
-                        CheckPowerUp(collision.gameObject);
+                        collision.gameObject.GetComponent<PlayerHealth>().PlayerHit();
                         Destroy(gameObject);
                     }
                     break;
                 case 1:
                     if (collision.gameObject.CompareTag("Player1"))
                     {
-                        CheckPowerUp(collision.gameObject);
+                        collision.gameObject.GetComponent<PlayerHealth>().PlayerHit();
                         Destroy(gameObject);
                     }
                     break;
@@ -78,40 +78,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void CheckPowerUp(GameObject player)
-    {
-        if (GameManager.instance.poweredUp)
-        {
-            if (player.GetComponent<Powerup_Jugg>())
-            {
-                Powerup_Jugg jugg = player.GetComponent<Powerup_Jugg>();
-                if (!jugg.hasBeenShot)
-                    jugg.hasBeenShot = true;
-                else
-                {
-                    PlayerHit();
-                }
-
-            }
-            else if (player.GetComponent<Powerup_Invincible>())
-            {
-                Debug.Log("Hit");
-            }
-            else
-                PlayerHit();
-        }
-        else
-            PlayerHit();
-
-    }
-
-    void PlayerHit()
-    {
-        if (playerBullet == 0)
-            GameManager.instance.IncreaseScore_P1();
-        else if (playerBullet == 1)
-            GameManager.instance.IncreaseScore_P2();
-    }
 
     #region Trail_v1
     void NewLine()

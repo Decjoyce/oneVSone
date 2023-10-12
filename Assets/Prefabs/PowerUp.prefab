@@ -165,3 +165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138addd0522e28c44accafb78b653ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerups:
+  - {fileID: 11400000, guid: 844f1ed79d9831e45a9eec4e79a6b7f2, type: 2}
+  - {fileID: 11400000, guid: 443280ce1a7a1bd40b85d0609cab77f8, type: 2}
+  - {fileID: 11400000, guid: 7ad2c1c757a72464ab8f0ed0224ca3d5, type: 2}
+  - {fileID: 11400000, guid: b3de0221a68e6d044a42d08a4f51b90e, type: 2}
+  - {fileID: 11400000, guid: 1b0f8f5038d70ac41940ad93cd7ff29c, type: 2}
+  - {fileID: 11400000, guid: a7c99fe67d7d8bc43b2b422cf56af2a6, type: 2}
+  - {fileID: 11400000, guid: a4d9c1df549ed284080cb10829a6cc2e, type: 2}
+  - {fileID: 11400000, guid: e0c5dbe806cb87744893bdf16a2e7b65, type: 2}

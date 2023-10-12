@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerInputManager inputManager;
 
-    public bool poweredUp = false;
+    public PowerupEffect powerup_P1 = null, powerup_P2 = null;
 
     #endregion
 
@@ -188,6 +188,7 @@ public class GameManager : MonoBehaviour
         }
         p1.GetComponent<Weapon>().RandomFireInitiartor();
         p2.GetComponent<Weapon>().RandomFireInitiartor();
+        currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;
@@ -198,15 +199,18 @@ public class GameManager : MonoBehaviour
     {
         roundOver = true;
         gamePaused = true;
+        currentLayout.GetComponent<PowerUpSpawner>().PowerupGone();
 
         yield return new WaitForSecondsRealtime(1);
 
         LayoutSetter();
         CheckScore();
         p1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        p1.GetComponent<Weapon>().RoundHandler(0);
+        p1.GetComponent<Weapon>().RoundHandler();
         p2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        p2.GetComponent<Weapon>().RoundHandler(4);
+        p2.GetComponent<Weapon>().RoundHandler();
+        p1.GetComponent<PlayerPowerup>().RemovePlayerPowerup();
+        p2.GetComponent<PlayerPowerup>().RemovePlayerPowerup();
 
         countdownUI.SetActive(true);
         while (countdownTime > 0)
@@ -219,6 +223,7 @@ public class GameManager : MonoBehaviour
         countdownTime = 3;
         p1.GetComponent<Weapon>().RandomFireInitiartor();
         p2.GetComponent<Weapon>().RandomFireInitiartor();
+        currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
         roundOver = false;
         gamePaused = false;
     }
