@@ -15,9 +15,9 @@ public class WInd : MonoBehaviour
     {
         playerBody = player.GetComponent<Rigidbody2D>();
     }
-    
 
-   
+
+
     void Update()
     {
         wind();
@@ -25,7 +25,7 @@ public class WInd : MonoBehaviour
 
     void wind()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) >= 3f)
+        if (!GameManager.instance.roundOver && GameManager.instance.gameStarted)
         {
             distanceToPlayer = Vector2.Distance(player.position, transform.position);
             if (distanceToPlayer <= influenceRange)
@@ -33,16 +33,13 @@ public class WInd : MonoBehaviour
                 pullForce = (transform.position - player.position).normalized / distanceToPlayer * intensity;
                 playerBody.AddForce(pullForce, ForceMode2D.Force);
             }
-
-            else if (GameManager.instance.roundOver)
+            else
             {
                 pullForce = Vector2.zero;
                 playerBody.AddForce(pullForce, ForceMode2D.Force);
-            
+
             }
         }
-        
     }
-    
-    
+
 }

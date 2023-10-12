@@ -35,7 +35,7 @@ public class MoveObject : MonoBehaviour
     {
         if (GameManager.instance.gameStarted && !GameManager.instance.roundOver)
         {
-            if (Vector3.Distance(Barrier.transform.position, P1.transform.position) >= 1f) 
+            if (Vector3.Distance(Barrier.transform.position, P1.transform.position) >= 3f) 
             {
                 Barrier.transform.position = Vector3.MoveTowards(Barrier.transform.position, P1.transform.position, Speed);
                 Barrier_.transform.position = Vector3.MoveTowards(Barrier_.transform.position, P2.transform.position, Speed);
