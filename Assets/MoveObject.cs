@@ -8,12 +8,12 @@ public class MoveObject : MonoBehaviour
 {
     public float Speed = 0f;
     
-    public GameObject obj1;
-    public GameObject obj2;
-    public GameObject obj3;
-    public GameObject obj4;
+    public GameObject Barrier;
+    public GameObject P1;
+    public GameObject Barrier_;
+    public GameObject P2;
 
-    public bool Isinvoked = false;
+    private bool Isinvoked = false;
     
     
     // Start is called before the first frame update
@@ -33,8 +33,8 @@ public class MoveObject : MonoBehaviour
 
     private  void MoveObj()
     {
-        obj1.transform.position = Vector3.MoveTowards(obj1.transform.position, obj2.transform.position, Speed);
-        obj3.transform.position = Vector3.MoveTowards(obj3.transform.position, obj4.transform.position, Speed);
+        Barrier.transform.position = Vector3.MoveTowards(Barrier.transform.position, P1.transform.position, Speed);
+        Barrier_.transform.position = Vector3.MoveTowards(Barrier_.transform.position, P2.transform.position, Speed);
     }
 
     // Update is called once per frame

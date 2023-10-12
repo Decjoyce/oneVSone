@@ -27,5 +27,6 @@ public class Wind1 : MonoBehaviour
             pullForce = (transform.position - player.position).normalized / distanceToPlayer * intensity;
             playerBody.AddForce(pullForce, ForceMode2D.Force);
         }
+        
     }
 }

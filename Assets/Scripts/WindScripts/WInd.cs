@@ -30,5 +30,6 @@ public class WInd : MonoBehaviour
             pullForce = (transform.position - player.position).normalized / distanceToPlayer * intensity;
             playerBody.AddForce(pullForce, ForceMode2D.Force);
         }
+
     }
 }
