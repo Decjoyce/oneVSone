@@ -5044,13 +5044,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 149927398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce54838734c7374f9d021b93afcee49, type: 3}
+  m_Script: {fileID: 11500000, guid: c42efc72414278b4a954e104e9f5fb30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  Barrier: {fileID: 149927398}
+  Barrier: {fileID: 645939948}
   P1: {fileID: 1865451985}
-  Barrier_: {fileID: 149927398}
+  Barrier_: {fileID: 645939948}
   P2: {fileID: 1643229152}
 --- !u!114 &149927401
 MonoBehaviour:
@@ -5061,7 +5061,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 149927398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be0d4ea123d3204bbb64137dc108930, type: 3}
+  m_Script: {fileID: 11500000, guid: 61ef481629a6a4d4aa9c467964ddbe35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
@@ -5077,7 +5077,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 149927398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53650c2cce0273347a3aa5ebac320946, type: 3}
+  m_Script: {fileID: 11500000, guid: d97d77b89684f4c49839efb409b6d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
@@ -10415,7 +10415,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 243398121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be0d4ea123d3204bbb64137dc108930, type: 3}
+  m_Script: {fileID: 11500000, guid: d97d77b89684f4c49839efb409b6d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
@@ -10483,12 +10483,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 243398121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce54838734c7374f9d021b93afcee49, type: 3}
+  m_Script: {fileID: 11500000, guid: c42efc72414278b4a954e104e9f5fb30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.01
-  Barrier: {fileID: 0}
-  P1: {fileID: 0}
+  Barrier: {fileID: 243398121}
+  P1: {fileID: 1643229152}
   Barrier_: {fileID: 0}
   P2: {fileID: 0}
 --- !u!60 &243398127
@@ -10665,7 +10665,8 @@ MonoBehaviour:
   spawn_p1: {fileID: 1148000961}
   spawn_p2: {fileID: 1604352379}
   inputManager: {fileID: 1170154464}
-  poweredUp: 0
+  powerup_P1: {fileID: 0}
+  powerup_P2: {fileID: 0}
   winnerUI: {fileID: 89156961}
   pauseUI: {fileID: 2071396011}
   gameplayUI: {fileID: 413788029}
@@ -14594,7 +14595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 511512785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be0d4ea123d3204bbb64137dc108930, type: 3}
+  m_Script: {fileID: 11500000, guid: 61ef481629a6a4d4aa9c467964ddbe35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
@@ -14610,7 +14611,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 511512785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53650c2cce0273347a3aa5ebac320946, type: 3}
+  m_Script: {fileID: 11500000, guid: d97d77b89684f4c49839efb409b6d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
@@ -20010,7 +20011,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 635177009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be0d4ea123d3204bbb64137dc108930, type: 3}
+  m_Script: {fileID: 11500000, guid: 61ef481629a6a4d4aa9c467964ddbe35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
@@ -20026,7 +20027,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 635177009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53650c2cce0273347a3aa5ebac320946, type: 3}
+  m_Script: {fileID: 11500000, guid: d97d77b89684f4c49839efb409b6d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
@@ -30536,7 +30537,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 826984357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53650c2cce0273347a3aa5ebac320946, type: 3}
+  m_Script: {fileID: 11500000, guid: 61ef481629a6a4d4aa9c467964ddbe35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
@@ -30604,14 +30605,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 826984357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce54838734c7374f9d021b93afcee49, type: 3}
+  m_Script: {fileID: 11500000, guid: c42efc72414278b4a954e104e9f5fb30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.01
   Barrier: {fileID: 0}
   P1: {fileID: 0}
-  Barrier_: {fileID: 0}
-  P2: {fileID: 0}
+  Barrier_: {fileID: 826984357}
+  P2: {fileID: 1865451985}
 --- !u!60 &826984363
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31923,7 +31924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1130460137
 Transform:
   m_ObjectHideFlags: 0
@@ -64137,9 +64138,7 @@ MonoBehaviour:
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
   weaponType: 
   bulletPrefab: {fileID: 1310056251848431289, guid: 3c6b48f4a1d65eb45ac688f8fb1d0994, type: 3}
-  rocketPrefab: {fileID: 0}
-  aoePrefab: {fileID: 0}
-  teleportPrefab: {fileID: 0}
+  currentBulletPrefab: {fileID: 0}
   firePoints:
   - {fileID: 1891246926}
   - {fileID: 1727913844}
@@ -64151,18 +64150,11 @@ MonoBehaviour:
   - {fileID: 1508098444}
   fireForce: 20
   defaultFireForce: 20
-  rocketFireForce: 10
-  aoeFireForce: 10
-  teleportFireForce: 25
   currentFireForce: 0
   fireDelay: 1.5
-  rocketFireDelay: 1.5
-  aoeFireDelay: 1.5
-  teleportFireDelay: 1.5
-  doubleFireDelay: 1.5
-  burstFireDelay: 1.5
+  defaultFireDelay: 1.5
   switchDelay: 2
-  firePointNum: 4
+  startingFirePointNum: 0
   alt_fire: 0
 --- !u!82 &1643229160
 AudioSource:
@@ -79748,9 +79740,7 @@ MonoBehaviour:
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
   weaponType: 
   bulletPrefab: {fileID: 1310056251848431289, guid: 310f202bf2011ed4a9874382818e6a98, type: 3}
-  rocketPrefab: {fileID: 0}
-  aoePrefab: {fileID: 0}
-  teleportPrefab: {fileID: 0}
+  currentBulletPrefab: {fileID: 0}
   firePoints:
   - {fileID: 266743696}
   - {fileID: 592488114}
@@ -79762,18 +79752,11 @@ MonoBehaviour:
   - {fileID: 224443016}
   fireForce: 20
   defaultFireForce: 20
-  rocketFireForce: 10
-  aoeFireForce: 10
-  teleportFireForce: 25
   currentFireForce: 0
   fireDelay: 1.5
-  rocketFireDelay: 1.5
-  aoeFireDelay: 1.5
-  teleportFireDelay: 1.5
-  doubleFireDelay: 1.5
-  burstFireDelay: 1.5
+  defaultFireDelay: 1.5
   switchDelay: 2
-  firePointNum: 0
+  startingFirePointNum: 0
   alt_fire: 0
 --- !u!82 &1865451993
 AudioSource:
