@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
     private playermovement mover;
     private Weapon weap;
     private PlayerInput playerInput;
+    
 
     private void Awake()
     {
