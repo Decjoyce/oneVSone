@@ -28,5 +28,12 @@ public class Wind1 : MonoBehaviour
             playerBody.AddForce(pullForce, ForceMode2D.Force);
         }
         
+        else if (GameManager.instance.roundOver)
+        {
+            pullForce = Vector2.zero;
+            playerBody.AddForce(pullForce, ForceMode2D.Force);
+            
+        }
+        
     }
 }
