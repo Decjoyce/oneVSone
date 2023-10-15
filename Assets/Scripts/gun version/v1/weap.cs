@@ -168,7 +168,8 @@ public class Weapon : MonoBehaviour
     public void ResetWeapon()
     {
         weaponType = null;
-        firePointNum = startingFirePointNum;
+        if(GameManager.instance.roundOver)
+            firePointNum = startingFirePointNum;
         canShoot = true;
         currentFireForce = defaultFireForce;
         fireDelay = defaultFireDelay;

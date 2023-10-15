@@ -29,17 +29,19 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if(!GameManager.instance.gamePaused)
             mover.SetInputVector(context.ReadValue<Vector2>());
+        else
+            mover.SetInputVector(Vector2.zero);
     }
 
     //dec
     public void Shoot(CallbackContext ctx)
     {
-        if (!GameManager.instance.gamePaused)
+        if (!GameManager.instance.gamePaused && ctx.performed)
         {
             weap.Fire();
         }
-/*        if (!GameManager.instance.gameStarted && ctx.performed)
-            GameManager.instance.shuffleMaps = !GameManager.instance.shuffleMaps;*/
+    if (!GameManager.instance.gameStarted && ctx.performed)
+            GameManager.instance.shuffleMaps = !GameManager.instance.shuffleMaps;
     }
 
     public void ReadyUp(CallbackContext ctx)

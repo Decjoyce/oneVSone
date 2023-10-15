@@ -18,4 +18,4 @@ MonoBehaviour:
   fireDelay: 2
   fireForce: 10
   bulletPrefab_P1: {fileID: 1310056251848431289, guid: 5a576b546df0c38498fe76f74002950b, type: 3}
-  bulletPrefab_P2: {fileID: 1310056251848431289, guid: 35ddcdfbf2af7bd44a41d622eace4e74, type: 3}
+  bulletPrefab_P2: {fileID: 1310056251848431289, guid: b62bf5c5c5adc1f4d9186fa89fff923e, type: 3}

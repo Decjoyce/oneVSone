@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 298171902}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 247227319}
@@ -13731,7 +13731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 699384965}
   spawnPoint2: {fileID: 803917616}
   fakes: {fileID: 0}
@@ -25416,7 +25416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 0
   powerupPrefab: {fileID: 0}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 0}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -25702,7 +25702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
   influenceRange: 20
-  intensity: 20
+  intensity: 500
   distanceToPlayer: 0
 --- !u!114 &519116111
 MonoBehaviour:
@@ -25718,7 +25718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
   influenceRange: 20
-  intensity: 20
+  intensity: 500
   distanceToPlayer: 0
 --- !u!212 &519116112
 SpriteRenderer:
@@ -26042,7 +26042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 1176958993}
   spawnPoint2: {fileID: 685752762}
   fakes: {fileID: 0}
@@ -33257,7 +33257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 1058225722}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -33311,7 +33311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 1008810144}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -33363,7 +33363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 2089013458}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -33766,7 +33766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 537157704}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -45067,7 +45067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 1808923322}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -46633,7 +46633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 1919343726}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -54136,7 +54136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 2110500425}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -54189,7 +54189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 780160258}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -61199,7 +61199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 1700476845}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 0}
@@ -65717,7 +65717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1643229154}
   influenceRange: 20
-  intensity: 20
+  intensity: 500
   distanceToPlayer: 0
 --- !u!114 &1461365366
 MonoBehaviour:
@@ -65733,7 +65733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1865451987}
   influenceRange: 20
-  intensity: 20
+  intensity: 500
   distanceToPlayer: 0
 --- !u!212 &1461365367
 SpriteRenderer:
@@ -74869,7 +74869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 813609415}
   spawnPoint2: {fileID: 1053963326}
   fakes: {fileID: 0}
@@ -111833,7 +111833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPowerup: 1
   powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
-  spawnTime: 5
+  spawnTime: 3
   spawnPoint1: {fileID: 1120864169}
   spawnPoint2: {fileID: 0}
   fakes: {fileID: 472004452}
@@ -114867,7 +114867,7 @@ MonoBehaviour:
   defaultFireForce: 20
   currentFireForce: 20
   fireDelay: 1.5
-  defaultFireDelay: 1.5
+  defaultFireDelay: 0.98
   switchDelay: 2
   startingFirePointNum: 0
   alt_fire: 0
