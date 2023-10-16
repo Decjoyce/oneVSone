@@ -53,7 +53,7 @@ public class TeleportShot : MonoBehaviour
         yield return new WaitForSeconds(tpTime);
         if (playerBullet == 0 && !GameManager.instance.roundOver && canTeleport)
             GameManager.instance.p1.transform.position = transform.position;
-        if (playerBullet == 2 && !GameManager.instance.roundOver && canTeleport)
+        if (playerBullet == 1 && !GameManager.instance.roundOver && canTeleport)
             GameManager.instance.p2.transform.position = transform.position;
         Destroy(gameObject);
     }
