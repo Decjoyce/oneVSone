@@ -10665,8 +10665,6 @@ MonoBehaviour:
   spawn_p1: {fileID: 1148000961}
   spawn_p2: {fileID: 1604352379}
   inputManager: {fileID: 1170154464}
-  powerup_P1: {fileID: 0}
-  powerup_P2: {fileID: 0}
   winnerUI: {fileID: 89156961}
   pauseUI: {fileID: 2071396011}
   gameplayUI: {fileID: 413788029}
