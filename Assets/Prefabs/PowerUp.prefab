@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8292196847402948999}
   - component: {fileID: 3903960719852761940}
-  - component: {fileID: 6805092092938579036}
+  - component: {fileID: 32633903818512363}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: Untagged
@@ -153,7 +153,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6805092092938579036
+--- !u!114 &32633903818512363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,15 +162,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5865310445873286298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 138addd0522e28c44accafb78b653ddd, type: 3}
+  m_Script: {fileID: 11500000, guid: 875bb1db32928b544b1b15a7079c5a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   powerups:
   - {fileID: 11400000, guid: 844f1ed79d9831e45a9eec4e79a6b7f2, type: 2}
   - {fileID: 11400000, guid: 443280ce1a7a1bd40b85d0609cab77f8, type: 2}
+  - {fileID: 11400000, guid: ddf913a0ce385f646a042048916673cb, type: 2}
   - {fileID: 11400000, guid: 7ad2c1c757a72464ab8f0ed0224ca3d5, type: 2}
-  - {fileID: 11400000, guid: 767d980e75772054bb0cbc99e3ec145c, type: 2}
-  - {fileID: 11400000, guid: 1b0f8f5038d70ac41940ad93cd7ff29c, type: 2}
   - {fileID: 11400000, guid: a7c99fe67d7d8bc43b2b422cf56af2a6, type: 2}
   - {fileID: 11400000, guid: a4d9c1df549ed284080cb10829a6cc2e, type: 2}
   - {fileID: 11400000, guid: e0c5dbe806cb87744893bdf16a2e7b65, type: 2}

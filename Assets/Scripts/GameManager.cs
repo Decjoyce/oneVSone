@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
     public bool ready_p1 = false;
     public bool ready_p2 = false;
 
+    public string[] gameModes;
+    static int currentGameMode;
+
     int score_P1;
     int score_P2;
     static int wins_P1;
@@ -68,7 +71,7 @@ public class GameManager : MonoBehaviour
     private GameObject gameplayUI, countdownUI, readyUI, toggle_p1, toggle_p2;
 
     [SerializeField]
-    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, win1Text, win2Text;
+    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, win1Text, win2Text, gameModeText;
 
     [SerializeField]
     private GameObject pauseButton, gameOverButton;
@@ -89,14 +92,15 @@ public class GameManager : MonoBehaviour
         //StartCoroutine(StartGame());
         LayoutSetter();
         Time.timeScale = 1f;
+        scoreText.text = score_P1 + " - " + score_P2;
         win1Text.text = "Wins: " + wins_P1;
         win2Text.text = "Wins: " + wins_P2;
+        gameModeText.text = "Game Mode: " + gameModes[currentGameMode];
     }
 
     private void Update()
     {
         ReadyPlayers();
-        scoreText.text = score_P1 + " - " + score_P2;
     }
 
     public void PauseUnPause()
@@ -136,6 +140,7 @@ public class GameManager : MonoBehaviour
         }
         else
             StartCoroutine(ResetRound());
+        scoreText.text = score_P1 + " - " + score_P2;
     }
 
     public void IncreaseScore_P2()
@@ -150,6 +155,7 @@ public class GameManager : MonoBehaviour
         }
         else
             StartCoroutine(ResetRound());
+        scoreText.text = score_P1 + " - " + score_P2;
     }
     #endregion
 
@@ -181,7 +187,7 @@ public class GameManager : MonoBehaviour
     {
         //LayoutSetter();
         countdownUI.SetActive(true);
-        powerUp.SelectPowerup();
+        powerUp.SelectPowerup(gameModes[currentGameMode]);
         while (countdownTime > 0)
         {
             countdownText.text = countdownTime.ToString();
@@ -190,8 +196,10 @@ public class GameManager : MonoBehaviour
         }
         p1.GetComponent<Weapon>().RandomFireInitiartor();
         p2.GetComponent<Weapon>().RandomFireInitiartor();
-        //currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
-        powerUp.GivePlayersPowerup(p1, p2);
+        if (gameModes[currentGameMode] == "Chaos" || gameModes[currentGameMode] == "Default" || gameModes[currentGameMode] == null)
+            powerUp.GivePlayersPowerup(p1, p2);
+        else if (gameModes[currentGameMode] == "Old School")
+            currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;
@@ -202,19 +210,22 @@ public class GameManager : MonoBehaviour
     {
         roundOver = true;
         gamePaused = true;
-        //currentLayout.GetComponent<PowerUpSpawner>().PowerupGone();
+        
+        if(gameModes[currentGameMode] == "Old School")
+            currentLayout.GetComponent<PowerUpSpawner>().PowerupGone();
 
         yield return new WaitForSecondsRealtime(1);
 
         LayoutSetter();
         CheckScore();
         p1.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        p1.GetComponent<Weapon>().RoundHandler();
         p2.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        p1.GetComponent<Weapon>().RoundHandler();    
         p2.GetComponent<Weapon>().RoundHandler();
         p1.GetComponent<PlayerPowerup>().RemovePlayerPowerup();
         p2.GetComponent<PlayerPowerup>().RemovePlayerPowerup();
-        powerUp.SelectPowerup();
+        if (gameModes[currentGameMode] == "Chaos" || gameModes[currentGameMode] == "Default" || gameModes[currentGameMode] == null)
+            powerUp.SelectPowerup(gameModes[currentGameMode]);
 
         countdownUI.SetActive(true);
         while (countdownTime > 0)
@@ -225,12 +236,17 @@ public class GameManager : MonoBehaviour
         }
         countdownUI.SetActive(false);
         countdownTime = 3;
+
+        //Weapons
         p1.GetComponent<Weapon>().RandomFireInitiartor();
         p2.GetComponent<Weapon>().RandomFireInitiartor();
 
         //Powerups
-        ///currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
-        powerUp.GivePlayersPowerup(p1, p2);
+        if (gameModes[currentGameMode] == "Chaos" || gameModes[currentGameMode] == "Default" || gameModes[currentGameMode] == null)
+            powerUp.GivePlayersPowerup(p1, p2);
+        else if (gameModes[currentGameMode] == "Old School")
+            currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
+
         roundOver = false;
         gamePaused = false;
     }
@@ -297,6 +313,14 @@ public class GameManager : MonoBehaviour
         currentLayout.SetActive(true);
     }
 
+    public void ChangeGameMode()
+    {
+        currentGameMode++;
+        if (currentGameMode == gameModes.Length)
+            currentGameMode = 0;
+        gameModeText.text = "Game Mode: " + gameModes[currentGameMode];
+    }
+
     void CheckScore()
     {
         if ((score_P1 == 4 && score_P2 == 0) || (score_P1 == 0 && score_P2 == 4))
@@ -327,18 +351,6 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-    #endregion
-
-    #region Debugging/Testing
-    /*void testingSommin()
-    {
-        if (!roundOver && gameStarted)
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            p1RB.MovePosition(new Vector3(mousePosition.x, mousePosition.y, 0));
-        }
-
-    }*/
     #endregion
 
 }

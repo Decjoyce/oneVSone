@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e27bd7848ed3e34aa4618f6269690b5, type: 3}
   m_Name: Powerup_Jugg
   m_EditorClassIdentifier: 
-  visualEffect_P1: {fileID: 9196179376695656871, guid: 6b4c82cae8aac2249a8a5f82697816fc, type: 3}
-  visualEffect_P2: {fileID: 9196179376695656871, guid: 6b4c82cae8aac2249a8a5f82697816fc, type: 3}
+  visualEffect: {fileID: -1428036413, guid: 806c56af507d5fa4b9f001684e579f67, type: 3}
   powerupArt: {fileID: 2800000, guid: 806c56af507d5fa4b9f001684e579f67, type: 3}
   heatlhType: JUGG

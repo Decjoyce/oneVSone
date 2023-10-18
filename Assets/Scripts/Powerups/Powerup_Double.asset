@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
   m_Name: Powerup_Double
   m_EditorClassIdentifier: 
-  visualEffect_P1: {fileID: 9196179376695656871, guid: cc77668799dc8254284d7d3d1ea08ea1, type: 3}
-  visualEffect_P2: {fileID: 9196179376695656871, guid: cc77668799dc8254284d7d3d1ea08ea1, type: 3}
+  visualEffect: {fileID: 0}
   powerupArt: {fileID: -3604256930052969394, guid: d03ed43fc9d8a4f2e9fa70c1c7916eb9, type: 2}
   weaponType: DOUBLE
   fireDelay: 1.5

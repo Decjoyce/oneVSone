@@ -24,8 +24,7 @@ public class PlayerHealth : MonoBehaviour
         switch (powerupType)
         {
             case "JUGG":
-                if (playerPowerup.effect != null)
-                    Destroy(playerPowerup.effect);
+                playerPowerup.effect.enabled = false;
                 powerupType = null;
                 break;
             case "INVINCIBLE":

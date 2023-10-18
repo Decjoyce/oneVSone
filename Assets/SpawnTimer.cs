@@ -11,9 +11,6 @@ public class SpawnTimer : MonoBehaviour
     bool waitUntilStart = true;
 
     [SerializeField]
-    bool disable = true;
-
-    [SerializeField]
     private GameObject objectToEnable;
 
     // Start is called before the first frame update
