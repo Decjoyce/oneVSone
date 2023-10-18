@@ -7,6 +7,9 @@ public class TeleportShot : MonoBehaviour
     [SerializeField]
     byte playerBullet;
 
+    public AudioSource source;
+    public AudioClip riochet;
+
     [SerializeField]
     float tpTime = 2f;
 
@@ -16,6 +19,7 @@ public class TeleportShot : MonoBehaviour
     LineRenderer trailRenderer;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        source.PlayOneShot(riochet, 0.1f);
         if (!GameManager.instance.roundOver)
         {
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))

@@ -7,6 +7,9 @@ public class Rocket : MonoBehaviour
     [SerializeField]
     byte playerBullet;
 
+    public AudioSource source;
+    public AudioClip riochet;
+
     [SerializeField]
     float kaboomTimer = 4f;
 
@@ -24,6 +27,7 @@ public class Rocket : MonoBehaviour
     int bounces = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        source.PlayOneShot(riochet, 0.1f);
         bounces++;
         if (!GameManager.instance.roundOver)
         {

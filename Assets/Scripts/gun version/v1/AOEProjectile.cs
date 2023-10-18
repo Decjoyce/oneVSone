@@ -7,6 +7,9 @@ public class AOEProjectile : MonoBehaviour
     [SerializeField]
     byte playerBullet;
 
+    public AudioSource source;
+    public AudioClip riochet;
+
     [SerializeField]
     GameObject trailPrefab, trailColliderPrefab;
 
@@ -18,6 +21,7 @@ public class AOEProjectile : MonoBehaviour
     public Transform helperPoint;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        source.PlayOneShot(riochet, 0.1f);
         if (!GameManager.instance.roundOver)
         {
             if (playerBullet == 0 && collision.gameObject.CompareTag("Player2"))
