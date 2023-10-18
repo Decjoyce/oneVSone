@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPowerup : MonoBehaviour
 {
     PowerupEffect powerup;
-    GameObject effect;
+    public GameObject effect;
 
     [SerializeField]
     byte playerNum; 
@@ -20,9 +20,9 @@ public class PlayerPowerup : MonoBehaviour
             
         powerup = powerupEffect;
         powerup.Apply(gameObject);
-        if (playerNum == 0)
+        if (playerNum == 0 && powerup.visualEffect_P1 != null)
             effect = Instantiate(powerup.visualEffect_P1, transform);
-        else if(playerNum == 1)
+        else if(playerNum == 1 && powerup.visualEffect_P2 != null)
             effect = Instantiate(powerup.visualEffect_P2, transform);
     }
 
@@ -32,7 +32,8 @@ public class PlayerPowerup : MonoBehaviour
         {
             powerup.Remove(gameObject);
             powerup = null;
-            Destroy(effect);
+            if(effect != null)
+                Destroy(effect);
             effect = null;
         }
     }

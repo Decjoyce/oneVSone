@@ -18,6 +18,7 @@ public class Powerup_Weapon : PowerupEffect
         weap.fireDelay = fireDelay;
         weap.fireForce = fireForce;
         weap.weaponType = weaponType;
+        weap.AnimHandler();
         if(target.CompareTag("Player1"))
             weap.currentBulletPrefab = bulletPrefab_P1;
         else if(target.CompareTag("Player2"))

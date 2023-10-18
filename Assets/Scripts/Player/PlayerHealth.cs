@@ -16,11 +16,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     GameObject playerDeathEffect;
 
+    [SerializeField]
+    PlayerPowerup playerPowerup;
+
     public void PlayerHit()
     {
         switch (powerupType)
         {
             case "JUGG":
+                if (playerPowerup.effect != null)
+                    Destroy(playerPowerup.effect);
                 powerupType = null;
                 break;
             case "INVINCIBLE":

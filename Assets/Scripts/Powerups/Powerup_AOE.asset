@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualEffect_P1: {fileID: 9196179376695656871, guid: 8aeeb1e483763a945846f1c7cb2b88b6, type: 3}
   visualEffect_P2: {fileID: 9196179376695656871, guid: 8aeeb1e483763a945846f1c7cb2b88b6, type: 3}
+  powerupArt: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
   weaponType: AOE
   fireDelay: 2
   fireForce: 10

@@ -54,6 +54,9 @@ public class GameManager : MonoBehaviour
 
     public PlayerInputManager inputManager;
 
+    [SerializeField]
+    PowerUp powerUp;
+
     #endregion
 
     #region UI
@@ -178,6 +181,7 @@ public class GameManager : MonoBehaviour
     {
         //LayoutSetter();
         countdownUI.SetActive(true);
+        powerUp.SelectPowerup();
         while (countdownTime > 0)
         {
             countdownText.text = countdownTime.ToString();
@@ -186,7 +190,8 @@ public class GameManager : MonoBehaviour
         }
         p1.GetComponent<Weapon>().RandomFireInitiartor();
         p2.GetComponent<Weapon>().RandomFireInitiartor();
-        currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
+        //currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
+        powerUp.GivePlayersPowerup(p1, p2);
         countdownUI.SetActive(false);
         countdownTime = 3;
         roundOver = false;
@@ -197,7 +202,7 @@ public class GameManager : MonoBehaviour
     {
         roundOver = true;
         gamePaused = true;
-        currentLayout.GetComponent<PowerUpSpawner>().PowerupGone();
+        //currentLayout.GetComponent<PowerUpSpawner>().PowerupGone();
 
         yield return new WaitForSecondsRealtime(1);
 
@@ -209,6 +214,7 @@ public class GameManager : MonoBehaviour
         p2.GetComponent<Weapon>().RoundHandler();
         p1.GetComponent<PlayerPowerup>().RemovePlayerPowerup();
         p2.GetComponent<PlayerPowerup>().RemovePlayerPowerup();
+        powerUp.SelectPowerup();
 
         countdownUI.SetActive(true);
         while (countdownTime > 0)
@@ -221,7 +227,10 @@ public class GameManager : MonoBehaviour
         countdownTime = 3;
         p1.GetComponent<Weapon>().RandomFireInitiartor();
         p2.GetComponent<Weapon>().RandomFireInitiartor();
-        currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
+
+        //Powerups
+        ///currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
+        powerUp.GivePlayersPowerup(p1, p2);
         roundOver = false;
         gamePaused = false;
     }
