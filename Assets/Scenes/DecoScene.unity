@@ -71397,7 +71397,7 @@ Transform:
   m_GameObject: {fileID: 1489119999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90091,7 +90091,7 @@ Transform:
   m_GameObject: {fileID: 1617220966}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92123,7 +92123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1643229161}
-  shot: {fileID: 8300000, guid: 5742ac57e39ae8847b6a8128dc043578, type: 3}
+  normalShot: {fileID: 8300000, guid: 26e0fa7ae22048f4eaa6906efca44d46, type: 3}
+  shot: {fileID: 0}
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
   weaponType: 
   bulletPrefab: {fileID: 1310056251848431289, guid: 3c6b48f4a1d65eb45ac688f8fb1d0994, type: 3}
@@ -92141,7 +92142,11 @@ MonoBehaviour:
   defaultFireForce: 20
   currentFireForce: 20
   fireDelay: 1.5
-  defaultFireDelay: 1.5
+  defaultFireDelay: 1
+  defaultCapacity: 3
+  capacity: 0
+  defaultReloadDelay: 4.5
+  reloadDelay: 0
   switchDelay: 2
   startingFirePointNum: 4
   alt_fire: 0
@@ -116582,7 +116587,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1643229161}
-  shot: {fileID: 8300000, guid: 26e0fa7ae22048f4eaa6906efca44d46, type: 3}
+  normalShot: {fileID: 8300000, guid: 26e0fa7ae22048f4eaa6906efca44d46, type: 3}
+  shot: {fileID: 0}
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
   weaponType: 
   bulletPrefab: {fileID: 1310056251848431289, guid: 310f202bf2011ed4a9874382818e6a98, type: 3}
@@ -116600,7 +116606,11 @@ MonoBehaviour:
   defaultFireForce: 20
   currentFireForce: 20
   fireDelay: 1.5
-  defaultFireDelay: 0.98
+  defaultFireDelay: 1
+  defaultCapacity: 3
+  capacity: 0
+  defaultReloadDelay: 4.5
+  reloadDelay: 0
   switchDelay: 2
   startingFirePointNum: 0
   alt_fire: 0

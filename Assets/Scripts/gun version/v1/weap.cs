@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Weapon : MonoBehaviour
 {
     //Audio
     public AudioSource source;
+ 
+    public AudioClip normalShot;
     public AudioClip shot;
     public AudioClip shotTick;
 
@@ -30,6 +33,18 @@ public class Weapon : MonoBehaviour
     public float defaultFireDelay = 1.5f;
 
     [SerializeField]
+    private int defaultCapacity;
+
+    int currentCapacity;
+    public int capacity;
+
+    [SerializeField]
+    private float defaultReloadDelay;
+    public float reloadDelay;
+
+    Coroutine currentlyReloading;
+
+    [SerializeField]
     private float switchDelay = 2f;
     private byte firePointNum = 0;
     [SerializeField]
@@ -48,47 +63,44 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
-        if (canShoot)
-        {
-            source.PlayOneShot(shot, 1f);
-            
+        if (canShoot && currentCapacity > 0)
+        {          
             switch (weaponType)
             {
                 case "BURST":
                     StartCoroutine(BurstFire());
-                    StartCoroutine(FireDelay());
                     break;
                 case "DOUBLE":
                     DoubleFire();
                     AnimHandler();
-                    StartCoroutine(FireDelay());
                     break;
                 case "AOE":
                     NormalFire();
-                    StartCoroutine(FireDelay());
                     break;
                 case "TELEPORT":
                     NormalFire();
-                    StartCoroutine(FireDelay());
                     break;
                 case "ROCKET":
                     NormalFire();
-                    StartCoroutine(FireDelay());
                     break;
                 default:
                     fireForce = defaultFireForce;
                     NormalFire();
-                    StartCoroutine(FireDelay());
                     break;
             }
-            
+            StartCoroutine(FireDelay());
+            if (currentlyReloading != null)
+                StopCoroutine(currentlyReloading);
+            currentlyReloading = StartCoroutine(Reload());
         }
     }
 
     void NormalFire()
     {
+        source.PlayOneShot(shot, 1f);
         GameObject bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
+        currentCapacity--;
         if (alt_fire)
         {
             StopAllCoroutines();
@@ -102,14 +114,18 @@ public class Weapon : MonoBehaviour
 
     IEnumerator BurstFire()
     {
+        source.PlayOneShot(shot, 1f);
         GameObject bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.25f);
+        source.PlayOneShot(shot, 1f);
         bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.25f);
+        source.PlayOneShot(shot, 1f);
         bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
+        currentCapacity--;
         if (alt_fire)
         {
             StopAllCoroutines();
@@ -123,8 +139,10 @@ public class Weapon : MonoBehaviour
 
     void DoubleFire()
     {
+        source.PlayOneShot(shot, 1f);
         GameObject bullet1 = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet1.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
+        currentCapacity--;
         int secondFirePoint = 0;
         if (firePointNum < 4)
             secondFirePoint = firePointNum + 4;
@@ -165,6 +183,15 @@ public class Weapon : MonoBehaviour
         canShoot = true;
     }
 
+    IEnumerator Reload()
+    {
+        while(currentCapacity < capacity)
+        {
+            yield return new WaitForSeconds(reloadDelay);
+            currentCapacity++;
+        }
+    }
+
     public void ResetWeapon()
     {
         weaponType = null;
@@ -173,7 +200,23 @@ public class Weapon : MonoBehaviour
         canShoot = true;
         currentFireForce = defaultFireForce;
         fireDelay = defaultFireDelay;
+        capacity = defaultCapacity;
+        currentCapacity = capacity;
+        reloadDelay = defaultReloadDelay;
         currentBulletPrefab = bulletPrefab;
+        shot = normalShot;
+    }
+
+    public void changeWeapon(float newFireDelay, float newFireForce, int newCapacity, float newReloadDelay, string newWeaponType, AudioClip newShotSound)
+    {
+        fireDelay = newFireDelay;
+        fireForce = newFireForce;
+        capacity = newCapacity;
+        currentCapacity = capacity;
+        reloadDelay = newReloadDelay;
+        weaponType = newWeaponType;
+        shot = newShotSound;
+        AnimHandler();
     }
 
     public void AnimHandler()

@@ -7,18 +7,21 @@ public class Powerup_Weapon : PowerupEffect
     string weaponType;
 
     [SerializeField]
-    float fireDelay, fireForce;
+    float fireDelay, fireForce, reloadDelay;
+
+    [SerializeField]
+    int capacity;
 
     [SerializeField]
     GameObject bulletPrefab_P1, bulletPrefab_P2;
 
+    [SerializeField]
+    AudioClip shotSound;
+
     public override void Apply(GameObject target)
     {
         Weapon weap = target.GetComponent<Weapon>();
-        weap.fireDelay = fireDelay;
-        weap.fireForce = fireForce;
-        weap.weaponType = weaponType;
-        weap.AnimHandler();
+        weap.changeWeapon(fireDelay, fireForce, capacity, reloadDelay, weaponType, shotSound);
         if(target.CompareTag("Player1"))
             weap.currentBulletPrefab = bulletPrefab_P1;
         else if(target.CompareTag("Player2"))

@@ -17,5 +17,8 @@ MonoBehaviour:
   weaponType: TELEPORT
   fireDelay: 1.5
   fireForce: 25
+  reloadDelay: 3
+  capacity: 3
   bulletPrefab_P1: {fileID: 1310056251848431289, guid: 0826f3f9b31c27b42ac2cc40ec8c872d, type: 3}
   bulletPrefab_P2: {fileID: 1310056251848431289, guid: 375eebfa52c9c24499ccad25a384b134, type: 3}
+  shotSound: {fileID: 8300000, guid: 0948ece8cd5a8504d84592ab0d85518e, type: 3}
