@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dfd4f1ef0aa5a3644a80af903b98b216
+guid: a162d8ae19f0a85479863937818b1553
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: brickandwood_0
+      name: cubepixel_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bae1e0ca70eeda4282969071b79d64c
-      internalID: -398637118
+      spriteID: e2e2a9e5667e2074eabc52dc0ebc35cc
+      internalID: -917378906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brickandwood_1
+      name: cubepixel_1
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38c067a0de4e41a469362992aef1d11d
-      internalID: -16388050
+      spriteID: 7728cef5d8ec7d546908a181e2a6ec37
+      internalID: -1640704554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: brickandwood_2
+      name: cubepixel_2
       rect:
         serializedVersion: 2
         x: 0
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64aa035164c4eaa4a8d76959ef07ffe5
-      internalID: 1700328644
+      spriteID: 2d38f3fbc9bdc0b4f9baaeda1a0f7943
+      internalID: 113906828
       vertices: []
       indices: 
       edges: []
@@ -196,9 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      brickandwood_0: -398637118
-      brickandwood_1: -16388050
-      brickandwood_2: 1700328644
+      cubepixel_0: -917378906
+      cubepixel_1: -1640704554
+      cubepixel_2: 113906828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
