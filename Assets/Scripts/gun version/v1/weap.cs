@@ -104,10 +104,10 @@ public class Weapon : MonoBehaviour
     {
         GameObject bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         bullet = Instantiate(currentBulletPrefab, firePoints[firePointNum].transform.position, firePoints[firePointNum].transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoints[firePointNum].transform.up * currentFireForce, ForceMode2D.Impulse);
         if (alt_fire)
