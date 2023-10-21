@@ -6136,7 +6136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  m_Sprite: {fileID: 60707443, guid: 9279713a990658c4e8a20579f013d754, type: 3}
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -36569,7 +36569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &707287548
 Transform:
   m_ObjectHideFlags: 0
@@ -47504,7 +47504,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  m_Sprite: {fileID: 1890534477, guid: 9279713a990658c4e8a20579f013d754, type: 3}
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -47765,7 +47765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &905540736
 Transform:
   m_ObjectHideFlags: 0
@@ -118867,7 +118867,7 @@ MonoBehaviour:
   - {fileID: 2090190323}
   - {fileID: 916272337}
   - {fileID: 224443016}
-  firePoint: {fileID: 1857316779}
+  firePoint: {fileID: 0}
   doubleFirePoint: {fileID: 0}
   weaponArt: {fileID: 0}
   doubleWeaponArt: {fileID: 0}
