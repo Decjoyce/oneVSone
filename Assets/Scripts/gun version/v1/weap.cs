@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     public AudioClip normalShot;
     public AudioClip shot;
     public AudioClip shotTick;
+    public AudioClip reloadSound;
 
     //Weapon Types
     public string weaponType;
@@ -195,6 +196,7 @@ public class Weapon : MonoBehaviour
     IEnumerator Reload()
     {
         yield return new WaitForSeconds(reloadDelay);
+        source.PlayOneShot(reloadSound, 1f);
         currentCapacity = capacity;
         AnimHandler();
     }
@@ -225,7 +227,7 @@ public class Weapon : MonoBehaviour
         fireDelay = newFireDelay;
         fireForce = newFireForce;
         capacity = newCapacity;
-        currentCapacity = capacity;
+        currentCapacity = newCapacity;
         reloadDelay = newReloadDelay;
         weaponType = newWeaponType;
         shot = newShotSound;

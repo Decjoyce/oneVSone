@@ -22,7 +22,7 @@ MonoBehaviour:
   weaponType: AOE
   fireDelay: 0.7
   fireForce: 10
-  reloadDelay: 6
+  reloadDelay: 5
   capacity: 3
   bulletPrefab_P1: {fileID: 1310056251848431289, guid: 5a576b546df0c38498fe76f74002950b, type: 3}
   bulletPrefab_P2: {fileID: 1310056251848431289, guid: b62bf5c5c5adc1f4d9186fa89fff923e, type: 3}
