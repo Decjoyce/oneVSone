@@ -31,6 +31,8 @@ public class Weapon : MonoBehaviour
     private SpriteRenderer weaponArt, doubleWeaponArt;
 
     [SerializeField]
+    private Sprite[] defaultWeaponArts;
+
     private Sprite[] weaponArts;
 
     public float fireForce = 20f;
@@ -192,8 +194,9 @@ public class Weapon : MonoBehaviour
 
     IEnumerator Reload()
     {
-            yield return new WaitForSeconds(reloadDelay);
-            currentCapacity = capacity;
+        yield return new WaitForSeconds(reloadDelay);
+        currentCapacity = capacity;
+        AnimHandler();
     }
 
     public void ResetWeapon()
@@ -213,10 +216,11 @@ public class Weapon : MonoBehaviour
         reloadDelay = defaultReloadDelay;
         currentBulletPrefab = bulletPrefab;
         shot = normalShot;
+        weaponArts = defaultWeaponArts;
         doubleFirePoint.transform.parent.gameObject.SetActive(false);
     }
 
-    public void changeWeapon(float newFireDelay, float newFireForce, int newCapacity, float newReloadDelay, string newWeaponType, AudioClip newShotSound)
+    public void changeWeapon(float newFireDelay, float newFireForce, int newCapacity, float newReloadDelay, string newWeaponType, AudioClip newShotSound, Sprite[] newWeaponaArt)
     {
         fireDelay = newFireDelay;
         fireForce = newFireForce;
@@ -225,6 +229,7 @@ public class Weapon : MonoBehaviour
         reloadDelay = newReloadDelay;
         weaponType = newWeaponType;
         shot = newShotSound;
+        weaponArts = newWeaponaArt;
         if (newWeaponType == "DOUBLE")
             doubleFirePoint.transform.parent.gameObject.SetActive(true);
         AnimHandler();

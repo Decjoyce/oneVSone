@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     private GameObject gameplayUI, countdownUI, readyUI, toggle_p1, toggle_p2;
 
     [SerializeField]
-    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, win1Text, win2Text, gameModeText;
+    TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, win1Text, win2Text, gameModeText, mapText;
 
     [SerializeField]
     private GameObject pauseButton, gameOverButton;
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = score_P1 + " - " + score_P2;
         win1Text.text = "Wins: " + wins_P1;
         win2Text.text = "Wins: " + wins_P2;
-        gameModeText.text = "Game Mode: " + gameModes[currentGameMode];
+        gameModeText.text = "<u>Game Mode</u> " + gameModes[currentGameMode];
     }
 
     private void Update()
@@ -202,6 +202,7 @@ public class GameManager : MonoBehaviour
             currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
         countdownUI.SetActive(false);
         countdownTime = 3;
+        mapText.text = "";
         roundOver = false;
         gamePaused = false;
     }
@@ -247,6 +248,7 @@ public class GameManager : MonoBehaviour
         else if (gameModes[currentGameMode] == "Old School")
             currentLayout.GetComponent<PowerUpSpawner>().SpawnPowerupInitiator();
 
+        mapText.text = "";
         roundOver = false;
         gamePaused = false;
     }
@@ -298,8 +300,8 @@ public class GameManager : MonoBehaviour
             layoutNum = Random.Range(0, layouts.Length);
             currentLayout = layouts[layoutNum];
             currentLayout.SetActive(true);
+            mapText.text = "<u>Current Map</u> " + currentLayout.name;
         }
-
     }
 
     public void ChangeMap()
@@ -311,6 +313,7 @@ public class GameManager : MonoBehaviour
             layoutNum = 0;
         currentLayout = layouts[layoutNum];
         currentLayout.SetActive(true);
+        mapText.text = "<u>Current Map</u> " + currentLayout.name;
     }
 
     public void ChangeGameMode()
@@ -318,7 +321,7 @@ public class GameManager : MonoBehaviour
         currentGameMode++;
         if (currentGameMode == gameModes.Length)
             currentGameMode = 0;
-        gameModeText.text = "Game Mode: " + gameModes[currentGameMode];
+        gameModeText.text = "<u>Game Mode</u> " + gameModes[currentGameMode];
     }
 
     void CheckScore()

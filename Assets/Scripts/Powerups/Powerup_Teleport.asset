@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualEffect: {fileID: 21300000, guid: 6872d3bf543c24e4cbb8de25111dfb30, type: 3}
   powerupArt: {fileID: 2800000, guid: 6872d3bf543c24e4cbb8de25111dfb30, type: 3}
+  weaponArts:
+  - {fileID: 1095231258, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 1132641442, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 786572529, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
   weaponType: TELEPORT
   fireDelay: 1.5
   fireForce: 25

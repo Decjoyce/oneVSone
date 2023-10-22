@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Powerups/Weapon")]
 public class Powerup_Weapon : PowerupEffect
 {
+
+    [SerializeField]
+    Sprite[] weaponArts;
+
     [SerializeField]
     string weaponType;
 
@@ -21,7 +25,7 @@ public class Powerup_Weapon : PowerupEffect
     public override void Apply(GameObject target)
     {
         Weapon weap = target.GetComponent<Weapon>();
-        weap.changeWeapon(fireDelay, fireForce, capacity, reloadDelay, weaponType, shotSound);
+        weap.changeWeapon(fireDelay, fireForce, capacity, reloadDelay, weaponType, shotSound, weaponArts);
         if(target.CompareTag("Player1"))
             weap.currentBulletPrefab = bulletPrefab_P1;
         else if(target.CompareTag("Player2"))

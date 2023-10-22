@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualEffect: {fileID: 2040595536, guid: 0ac3815924d92c84a8508447c3e1f53f, type: 3}
   powerupArt: {fileID: 2800000, guid: 0ac3815924d92c84a8508447c3e1f53f, type: 3}
+  weaponArts:
+  - {fileID: 1095231258, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 1132641442, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
   weaponType: ROCKET
   fireDelay: 2
   fireForce: 30
