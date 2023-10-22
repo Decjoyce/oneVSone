@@ -19,9 +19,9 @@ MonoBehaviour:
   - {fileID: 1132641442, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
   - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
   weaponType: ROCKET
-  fireDelay: 2
+  fireDelay: 1
   fireForce: 30
-  reloadDelay: 6
+  reloadDelay: 4
   capacity: 2
   bulletPrefab_P1: {fileID: 1310056251848431289, guid: b3b67b96df7736e4d98f9bb4d756c79d, type: 3}
   bulletPrefab_P2: {fileID: 1310056251848431289, guid: ceed14251d28799448f5192370677a14, type: 3}

@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 786572529, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
   - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
   weaponType: AOE
-  fireDelay: 1
+  fireDelay: 0.7
   fireForce: 10
   reloadDelay: 6
   capacity: 3

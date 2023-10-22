@@ -63,12 +63,16 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region UI
+
+    [SerializeField]
+    private Camera menuCam, gameCam;
+
     [SerializeField]
     private GameObject winnerUI;
     [SerializeField]
     private GameObject pauseUI;
     [SerializeField]
-    private GameObject gameplayUI, countdownUI, readyUI, toggle_p1, toggle_p2;
+    private GameObject gameplayUI, countdownUI, scoreUI, readyUI, toggle_p1, toggle_p2, background;
 
     [SerializeField]
     TextMeshProUGUI winnerText, scoreWinningText, scoreText, countdownText, win1Text, win2Text, gameModeText, mapText;
@@ -96,6 +100,8 @@ public class GameManager : MonoBehaviour
         win1Text.text = "Wins: " + wins_P1;
         win2Text.text = "Wins: " + wins_P2;
         gameModeText.text = "<u>Game Mode</u> " + gameModes[currentGameMode];
+        scoreUI.SetActive(false);
+        SwitchCameraToMenu();
     }
 
     private void Update()
@@ -114,6 +120,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0.0f;
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(pauseButton);
+                SwitchCameraToMenu();
             }
             else
             {
@@ -122,6 +129,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1f;
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(pauseButton);
+                SwitchCameraToGameplay();
             }
         }
     }
@@ -185,9 +193,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        //LayoutSetter();
+        SwitchCameraToGameplay();
         countdownUI.SetActive(true);
         powerUp.SelectPowerup(gameModes[currentGameMode]);
+        scoreUI.SetActive(true);
         while (countdownTime > 0)
         {
             countdownText.text = countdownTime.ToString();
@@ -260,6 +269,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
 
+        SwitchCameraToMenu();
         GameEnded.Invoke();
         Time.timeScale = 0f;
         gamePaused = true;
@@ -289,6 +299,21 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Setting Up
+
+    void SwitchCameraToGameplay()
+    {
+        background.SetActive(false);
+        gameCam.enabled = true;
+        menuCam.enabled = false;
+    }
+
+    void SwitchCameraToMenu()
+    {
+        background.SetActive(true);
+        menuCam.enabled = true;
+        gameCam.enabled = false;
+    }
+
     void LayoutSetter()
     {
         p1.transform.position = spawn_p1.transform.position;
