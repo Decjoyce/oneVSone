@@ -129,15 +129,15 @@ public class Weapon : MonoBehaviour
         source.PlayOneShot(shot, 1f);
         GameObject bullet = Instantiate(currentBulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * currentFireForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.25f);
-        source.PlayOneShot(shot, 1f);
-        bullet = Instantiate(currentBulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * currentFireForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.25f);
-        source.PlayOneShot(shot, 1f);
-        bullet = Instantiate(currentBulletPrefab, firePoint.position, firePoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * currentFireForce, ForceMode2D.Impulse);
         currentCapacity--;
+        yield return new WaitForSeconds(0.25f);
+        source.PlayOneShot(shot, 1f);
+        bullet = Instantiate(currentBulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * currentFireForce, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.25f);
+        source.PlayOneShot(shot, 1f);
+        bullet = Instantiate(currentBulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * currentFireForce, ForceMode2D.Impulse);
         if (alt_fire)
         {
             StopAllCoroutines();
