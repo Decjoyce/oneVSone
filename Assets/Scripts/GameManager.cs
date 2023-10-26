@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = score_P1 + " - " + score_P2;
         win1Text.text = "Wins: " + wins_P1;
         win2Text.text = "Wins: " + wins_P2;
-        gameModeText.text = "<u>Game Mode</u> " + gameModes[currentGameMode];
+        gameModeText.text = "Game Mode " + gameModes[currentGameMode];
         scoreUI.SetActive(false);
         SwitchCameraToMenu();
     }
@@ -325,7 +325,7 @@ public class GameManager : MonoBehaviour
             layoutNum = Random.Range(0, layouts.Length);
             currentLayout = layouts[layoutNum];
             currentLayout.SetActive(true);
-            mapText.text = "<u>Current Map</u> " + currentLayout.name;
+            mapText.text = "Current Map " + currentLayout.name;
         }
     }
 
@@ -338,7 +338,7 @@ public class GameManager : MonoBehaviour
             layoutNum = 0;
         currentLayout = layouts[layoutNum];
         currentLayout.SetActive(true);
-        mapText.text = "<u>Current Map</u> " + currentLayout.name;
+        mapText.text = "Current Map " + currentLayout.name;
     }
 
     public void ChangeGameMode()
@@ -346,7 +346,7 @@ public class GameManager : MonoBehaviour
         currentGameMode++;
         if (currentGameMode == gameModes.Length)
             currentGameMode = 0;
-        gameModeText.text = "<u>Game Mode</u> " + gameModes[currentGameMode];
+        gameModeText.text = "Game Mode " + gameModes[currentGameMode];
     }
 
     void CheckScore()
