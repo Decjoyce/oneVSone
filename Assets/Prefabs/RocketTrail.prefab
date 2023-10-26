@@ -79,7 +79,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.3
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -98,32 +98,32 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 0}
-      key1: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0.39215687}
-      key2: {r: 0, g: 0, b: 0, a: 1}
-      key3: {r: 0, g: 0, b: 0, a: 0.49019608}
+      key1: {r: 0.19710329, g: 0.19710329, b: 0.19710329, a: 0.39215687}
+      key2: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
+      key3: {r: 1, g: 0.45385426, b: 0, a: 1}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
+      ctime1: 53006
+      ctime2: 63415
+      ctime3: 65535
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 193
-      atime1: 17348
-      atime2: 55705
-      atime3: 65535
+      atime1: 39514
+      atime2: 51079
+      atime3: 49922
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 2
       m_ColorSpace: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 4
       m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 2

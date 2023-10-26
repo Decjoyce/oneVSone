@@ -74,4 +74,21 @@ public class AOEProjectile : MonoBehaviour
         startPos = transform.position;
         points[0] = Vector2.zero;
     }
+
+    //Helps with Telleporter functionality
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter"))
+        {
+            NewLine();
+            Destroy(aoeRenderer.gameObject);
+        }
+
+    }
+    //Helps with Telleporter functionality
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Teleporter"))
+            NewLine();
+    }
 }
