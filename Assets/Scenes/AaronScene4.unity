@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 10187442}
   - component: {fileID: 10187443}
+  - component: {fileID: 10187444}
   m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
@@ -291,6 +292,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &10187444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10187441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 2
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0.000977546, z: 0}
+    m_Extent: {x: 0.5, y: 0.5014663, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &44262398
 GameObject:
   m_ObjectHideFlags: 0
@@ -9014,6 +9065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 219602929}
   - component: {fileID: 219602930}
+  - component: {fileID: 219602931}
   m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
@@ -9088,6 +9140,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &219602931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219602928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 2
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0.000977546, z: 0}
+    m_Extent: {x: 0.5, y: 0.5014663, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &224443016
 GameObject:
   m_ObjectHideFlags: 0
@@ -9332,6 +9434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804fd7ca4fae71d47bc2a5ebf624de15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lit: 0
   HitPlayer1:
     m_PersistentCalls:
       m_Calls:
@@ -9417,23 +9520,23 @@ MonoBehaviour:
   gameOverButton: {fileID: 662756731}
   popUpHandler: {fileID: 246087620}
   layouts:
-  - {fileID: 1047455845}
+  - {fileID: 1509061168}
+  - {fileID: 231393583}
+  - {fileID: 1069038962}
+  - {fileID: 350092043}
+  - {fileID: 167099073}
   - {fileID: 2026983565}
   - {fileID: 974361881}
-  - {fileID: 231393583}
-  - {fileID: 167099073}
-  - {fileID: 434720150}
-  - {fileID: 1320133696}
   - {fileID: 1212799016}
-  - {fileID: 350092043}
-  - {fileID: 1069038962}
   - {fileID: 936548410}
   - {fileID: 322950075}
   - {fileID: 1918707775}
-  - {fileID: 1509061168}
-  - {fileID: 1981389341}
-  - {fileID: 516780241}
+  - {fileID: 434720150}
+  - {fileID: 1047455845}
   - {fileID: 1635886657}
+  - {fileID: 1320133696}
+  - {fileID: 516780241}
+  - {fileID: 1981389341}
   shuffleMaps: 1
 --- !u!4 &246087619
 Transform:
@@ -9575,12 +9678,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerups:
   - {fileID: 11400000, guid: 844f1ed79d9831e45a9eec4e79a6b7f2, type: 2}
-  - {fileID: 11400000, guid: 443280ce1a7a1bd40b85d0609cab77f8, type: 2}
-  - {fileID: 11400000, guid: ddf913a0ce385f646a042048916673cb, type: 2}
-  - {fileID: 11400000, guid: 7ad2c1c757a72464ab8f0ed0224ca3d5, type: 2}
   - {fileID: 11400000, guid: a7c99fe67d7d8bc43b2b422cf56af2a6, type: 2}
-  - {fileID: 11400000, guid: a4d9c1df549ed284080cb10829a6cc2e, type: 2}
-  - {fileID: 11400000, guid: e0c5dbe806cb87744893bdf16a2e7b65, type: 2}
+  - {fileID: 11400000, guid: 0ec03d6c58a26384bb2cfa7570c5e51d, type: 2}
+  - {fileID: 11400000, guid: 5b1cda0c7e96c104ba11ada8d7f75b19, type: 2}
+  - {fileID: 11400000, guid: a4002ee5a4b17104b86da5ece7d48770, type: 2}
+  - {fileID: 11400000, guid: 6be6c1ac519bfb941a228c0a8cdb07f1, type: 2}
+  - {fileID: 11400000, guid: adf7b64d76a85ea498a1d043ea811459, type: 2}
   powerupUI1: {fileID: 1700986009}
   powerupUI2: {fileID: 496137769}
   spawning: 0
@@ -18398,8 +18501,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0032997131, y: -0.0002002716, z: 0}
-    m_Extent: {x: 18.0018, y: 18.006, z: 0}
+    m_Center: {x: 0.0017995834, y: -0.0022001266, z: 0}
+    m_Extent: {x: 18.006, y: 18.006699, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -29576,7 +29679,6 @@ GameObject:
   m_Component:
   - component: {fileID: 532311798}
   - component: {fileID: 532311800}
-  - component: {fileID: 532311799}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -29599,18 +29701,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1509061169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &532311799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532311797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d410aea67feeb15428f4cb1b9e6e5e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &532311800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77706,7 +77796,7 @@ GameObject:
   - component: {fileID: 1047455846}
   - component: {fileID: 1047455847}
   m_Layer: 0
-  m_Name: Trifecta
+  m_Name: Balor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137704,23 +137794,23 @@ Transform:
   m_Children:
   - {fileID: 1604352379}
   - {fileID: 1148000961}
-  - {fileID: 1047455846}
+  - {fileID: 1509061169}
+  - {fileID: 231393584}
+  - {fileID: 1069038963}
+  - {fileID: 350092044}
+  - {fileID: 167099074}
   - {fileID: 2026983566}
   - {fileID: 974361882}
-  - {fileID: 231393584}
-  - {fileID: 167099074}
-  - {fileID: 434720151}
-  - {fileID: 1320133697}
   - {fileID: 1212799017}
-  - {fileID: 350092044}
-  - {fileID: 1069038963}
   - {fileID: 936548411}
   - {fileID: 322950076}
   - {fileID: 1918707776}
-  - {fileID: 1509061169}
-  - {fileID: 1981389342}
-  - {fileID: 516780242}
+  - {fileID: 434720151}
+  - {fileID: 1047455846}
   - {fileID: 1635886658}
+  - {fileID: 1320133697}
+  - {fileID: 516780242}
+  - {fileID: 1981389342}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1934599788
@@ -149855,12 +149945,12 @@ SceneRoots:
   - {fileID: 509428342}
   - {fileID: 1293261431}
   - {fileID: 246087619}
+  - {fileID: 1170154465}
   - {fileID: 1167386121}
   - {fileID: 1935895109}
   - {fileID: 1622756193}
   - {fileID: 1865451987}
   - {fileID: 1643229154}
-  - {fileID: 1170154465}
   - {fileID: 1923434103}
   - {fileID: 1048633341}
   - {fileID: 2024212025}

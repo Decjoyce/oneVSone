@@ -23,6 +23,6 @@ MonoBehaviour:
   fireForce: 20
   reloadDelay: 4
   capacity: 2
-  bulletPrefab_P1: {fileID: 1310056251848431289, guid: 310f202bf2011ed4a9874382818e6a98, type: 3}
-  bulletPrefab_P2: {fileID: 1310056251848431289, guid: 3c6b48f4a1d65eb45ac688f8fb1d0994, type: 3}
+  bulletPrefab_P1: {fileID: 1310056251848431289, guid: ee24984b3760f2d42a1013171d2ade9c, type: 3}
+  bulletPrefab_P2: {fileID: 1310056251848431289, guid: 36bb1935c0889b847bb32b217866957d, type: 3}
   shotSound: {fileID: 8300000, guid: 26e0fa7ae22048f4eaa6906efca44d46, type: 3}

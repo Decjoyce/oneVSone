@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     public Transform spawn_p2;
 
     private GameObject currentLayout;
-    int layoutNum;
+    static int layoutNum = 0;
 
     public PlayerInputManager inputManager;
 
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = false;
         //StartCoroutine(StartGame());
-        LayoutSetter();
+        LayoutStart();
         Time.timeScale = 1f;
         scoreText.text = score_P1 + " - " + score_P2;
         win1Text.text = "Wins: " + wins_P1;
@@ -314,6 +314,16 @@ public class GameManager : MonoBehaviour
         background.SetActive(true);
         menuCam.enabled = true;
         gameCam.enabled = false;
+    }
+
+    void LayoutStart()
+    {
+        p1.transform.position = spawn_p1.transform.position;
+        p2.transform.position = spawn_p2.transform.position;
+        currentLayout = layouts[layoutNum];
+        currentLayout.SetActive(true);
+        mapText.text = "Current Map " + currentLayout.name;
+    
     }
 
     void LayoutSetter()
