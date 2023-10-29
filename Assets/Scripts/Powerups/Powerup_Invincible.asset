@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e27bd7848ed3e34aa4618f6269690b5, type: 3}
   m_Name: Powerup_Invincible
   m_EditorClassIdentifier: 
-  visualEffect_P1: {fileID: 9196179376695656871, guid: deda5e559b350444ea764e6d079e73a1, type: 3}
-  visualEffect_P2: {fileID: 9196179376695656871, guid: deda5e559b350444ea764e6d079e73a1, type: 3}
+  visualEffect: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  powerupArt: {fileID: 0}
   heatlhType: INVINCIBLE
