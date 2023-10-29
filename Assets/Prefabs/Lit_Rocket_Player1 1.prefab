@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 2040621592922514155}
   - component: {fileID: 6862083063914748693}
   - component: {fileID: 209666314517146858}
-  - component: {fileID: -6675970902860702638}
-  - component: {fileID: -3142719978450604048}
-  m_Layer: 13
-  m_Name: TeleportBullet_Player2
+  - component: {fileID: 3707349683963990416}
+  - component: {fileID: 4819970121387556375}
+  - component: {fileID: -3574659815180824869}
+  m_Layer: 8
+  m_Name: Lit_Rocket_Player1 1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.736576, y: -0.6895078, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.88169384, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f75e98c725a6a8943bbf406325306920, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,7 +151,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &-6675970902860702638
+--- !u!114 &3707349683963990416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,15 +160,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310056251848431289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65ed0e86ab427449a4018a2ebb01f36, type: 3}
+  m_Script: {fileID: 11500000, guid: 925749c7f6c772045945e74d5537d72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBullet: 1
-  source: {fileID: -3142719978450604048}
+  playerBullet: 0
+  source: {fileID: 4819970121387556375}
   riochet: {fileID: 8300000, guid: 2eb6c40bfd5cb2f41ac24a129c95e282, type: 3}
-  tpTime: 3
-  trailPrefab: {fileID: 2881394418546118763, guid: 8fa76e77da2761c45830b37a9b4f0ff0, type: 3}
---- !u!82 &-3142719978450604048
+  kaboomTimer: 4
+  kaboomExplosion: {fileID: 1466175380097405455, guid: afc0a79b543c6e143a71541648ca8fb7, type: 3}
+  hasTrail: 1
+  trailPrefab: {fileID: 2881394418546118763, guid: 6c4169a4051b5e248980013a90fa6498, type: 3}
+--- !u!82 &4819970121387556375
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +181,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -263,3 +266,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3574659815180824869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310056251848431289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.4
+  m_Color: {r: 0, g: 0.033423424, b: 1, a: 1}
+  m_Intensity: 0.8
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0.5
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}

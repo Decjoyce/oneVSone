@@ -40,6 +40,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "changeGamemodeUp",
+                    "type": "Button",
+                    "id": "5af9432c-d40c-4b2f-b3cd-765749531672",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "changeGamemodeDown",
+                    "type": "Button",
+                    "id": "ada8cc1f-350c-4804-87e5-10252e606dfd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "changeMapUp",
+                    "type": "Button",
+                    "id": "22b1206b-06c9-4274-b569-e47a3c9ad54d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "changeMapDown",
+                    "type": "Button",
+                    "id": "ffd0324b-4eb6-4dba-bf2b-ca969f83ec83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -95,6 +131,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a602296-78e3-440e-ab1b-6b47d8ff193d",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "changeGamemodeDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71ae8592-b0e5-4f6e-9ed4-59969679cafe",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "changeMapUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "328a529e-fb4e-4e2f-8796-f5927761d88b",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "changeMapDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2fd3ee4c-8a1a-4f31-81ef-49150c8e7d57",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "changeGamemodeUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

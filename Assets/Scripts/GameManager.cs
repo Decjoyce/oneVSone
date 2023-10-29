@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     #region Functionality
 
+    public bool lit;
+
     public UnityEvent HitPlayer1, HitPlayer2, GameEnded;
 
     public bool gamePaused = false;
@@ -329,23 +331,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeMap()
+    public void ChangeMap(bool increment)
     {
         if (currentLayout != null)
             currentLayout.SetActive(false);
-        layoutNum++;
+
+        if(increment) layoutNum++;
+        else layoutNum--;
+
         if (layoutNum >= layouts.Length)
             layoutNum = 0;
+        
+        if (layoutNum < 0)
+            layoutNum = layouts.Length - 1;
+
         currentLayout = layouts[layoutNum];
         currentLayout.SetActive(true);
         mapText.text = "Current Map " + currentLayout.name;
     }
 
-    public void ChangeGameMode()
+    public void ChangeGameMode(bool increment)
     {
-        currentGameMode++;
-        if (currentGameMode == gameModes.Length)
-            currentGameMode = 0;
+        if (increment) currentGameMode++;
+        else currentGameMode--;
+
+        if (currentGameMode >= gameModes.Length)
+            currentGameMode = 0;       
+        if (currentGameMode < 0)
+            currentGameMode = gameModes.Length - 1;
+
         gameModeText.text = "Game Mode " + gameModes[currentGameMode];
     }
 
@@ -369,10 +383,19 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    #region Button Events
+    #region Application Events
+
+    public void LightSwitch()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            SceneManager.LoadScene(1);
+        else if(SceneManager.GetActiveScene().buildIndex == 1)
+            SceneManager.LoadScene(0);
+    }
+
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void EndGame()

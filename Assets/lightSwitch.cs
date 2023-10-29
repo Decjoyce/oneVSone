@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class lightSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Light2D test;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        test.enabled = true;
     }
 }

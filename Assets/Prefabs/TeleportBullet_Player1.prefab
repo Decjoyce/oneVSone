@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2040621592922514155}
   - component: {fileID: 6862083063914748693}
   - component: {fileID: 209666314517146858}
-  - component: {fileID: -6675970902860702638}
-  - component: {fileID: -3142719978450604048}
-  m_Layer: 13
-  m_Name: TeleportBullet_Player2
+  - component: {fileID: 1595050559930117681}
+  - component: {fileID: 851127182180370335}
+  m_Layer: 12
+  m_Name: TeleportBullet_Player1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.88169384, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.86307716, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,7 +150,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &-6675970902860702638
+--- !u!114 &1595050559930117681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,12 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65ed0e86ab427449a4018a2ebb01f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBullet: 1
-  source: {fileID: -3142719978450604048}
+  playerBullet: 0
+  source: {fileID: 851127182180370335}
   riochet: {fileID: 8300000, guid: 2eb6c40bfd5cb2f41ac24a129c95e282, type: 3}
   tpTime: 3
   trailPrefab: {fileID: 2881394418546118763, guid: 8fa76e77da2761c45830b37a9b4f0ff0, type: 3}
---- !u!82 &-3142719978450604048
+--- !u!82 &851127182180370335
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -62,6 +62,42 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""changeGamemodeUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""5af9432c-d40c-4b2f-b3cd-765749531672"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""changeGamemodeDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""ada8cc1f-350c-4804-87e5-10252e606dfd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""changeMapUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""22b1206b-06c9-4274-b569-e47a3c9ad54d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""changeMapDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffd0324b-4eb6-4dba-bf2b-ca969f83ec83"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -119,6 +155,50 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
                     ""action"": ""ready"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a602296-78e3-440e-ab1b-6b47d8ff193d"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""changeGamemodeDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71ae8592-b0e5-4f6e-9ed4-59969679cafe"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""changeMapUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""328a529e-fb4e-4e2f-8796-f5927761d88b"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""changeMapDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2fd3ee4c-8a1a-4f31-81ef-49150c8e7d57"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""changeGamemodeUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +223,10 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
         m_PlayerMovement_shoot = m_PlayerMovement.FindAction("shoot", throwIfNotFound: true);
         m_PlayerMovement_pause = m_PlayerMovement.FindAction("pause", throwIfNotFound: true);
         m_PlayerMovement_ready = m_PlayerMovement.FindAction("ready", throwIfNotFound: true);
+        m_PlayerMovement_changeGamemodeUp = m_PlayerMovement.FindAction("changeGamemodeUp", throwIfNotFound: true);
+        m_PlayerMovement_changeGamemodeDown = m_PlayerMovement.FindAction("changeGamemodeDown", throwIfNotFound: true);
+        m_PlayerMovement_changeMapUp = m_PlayerMovement.FindAction("changeMapUp", throwIfNotFound: true);
+        m_PlayerMovement_changeMapDown = m_PlayerMovement.FindAction("changeMapDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -208,6 +292,10 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_shoot;
     private readonly InputAction m_PlayerMovement_pause;
     private readonly InputAction m_PlayerMovement_ready;
+    private readonly InputAction m_PlayerMovement_changeGamemodeUp;
+    private readonly InputAction m_PlayerMovement_changeGamemodeDown;
+    private readonly InputAction m_PlayerMovement_changeMapUp;
+    private readonly InputAction m_PlayerMovement_changeMapDown;
     public struct PlayerMovementActions
     {
         private @PlayerControllers m_Wrapper;
@@ -216,6 +304,10 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
         public InputAction @shoot => m_Wrapper.m_PlayerMovement_shoot;
         public InputAction @pause => m_Wrapper.m_PlayerMovement_pause;
         public InputAction @ready => m_Wrapper.m_PlayerMovement_ready;
+        public InputAction @changeGamemodeUp => m_Wrapper.m_PlayerMovement_changeGamemodeUp;
+        public InputAction @changeGamemodeDown => m_Wrapper.m_PlayerMovement_changeGamemodeDown;
+        public InputAction @changeMapUp => m_Wrapper.m_PlayerMovement_changeMapUp;
+        public InputAction @changeMapDown => m_Wrapper.m_PlayerMovement_changeMapDown;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -237,6 +329,18 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
             @ready.started += instance.OnReady;
             @ready.performed += instance.OnReady;
             @ready.canceled += instance.OnReady;
+            @changeGamemodeUp.started += instance.OnChangeGamemodeUp;
+            @changeGamemodeUp.performed += instance.OnChangeGamemodeUp;
+            @changeGamemodeUp.canceled += instance.OnChangeGamemodeUp;
+            @changeGamemodeDown.started += instance.OnChangeGamemodeDown;
+            @changeGamemodeDown.performed += instance.OnChangeGamemodeDown;
+            @changeGamemodeDown.canceled += instance.OnChangeGamemodeDown;
+            @changeMapUp.started += instance.OnChangeMapUp;
+            @changeMapUp.performed += instance.OnChangeMapUp;
+            @changeMapUp.canceled += instance.OnChangeMapUp;
+            @changeMapDown.started += instance.OnChangeMapDown;
+            @changeMapDown.performed += instance.OnChangeMapDown;
+            @changeMapDown.canceled += instance.OnChangeMapDown;
         }
 
         private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -253,6 +357,18 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
             @ready.started -= instance.OnReady;
             @ready.performed -= instance.OnReady;
             @ready.canceled -= instance.OnReady;
+            @changeGamemodeUp.started -= instance.OnChangeGamemodeUp;
+            @changeGamemodeUp.performed -= instance.OnChangeGamemodeUp;
+            @changeGamemodeUp.canceled -= instance.OnChangeGamemodeUp;
+            @changeGamemodeDown.started -= instance.OnChangeGamemodeDown;
+            @changeGamemodeDown.performed -= instance.OnChangeGamemodeDown;
+            @changeGamemodeDown.canceled -= instance.OnChangeGamemodeDown;
+            @changeMapUp.started -= instance.OnChangeMapUp;
+            @changeMapUp.performed -= instance.OnChangeMapUp;
+            @changeMapUp.canceled -= instance.OnChangeMapUp;
+            @changeMapDown.started -= instance.OnChangeMapDown;
+            @changeMapDown.performed -= instance.OnChangeMapDown;
+            @changeMapDown.canceled -= instance.OnChangeMapDown;
         }
 
         public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -285,5 +401,9 @@ public partial class @PlayerControllers: IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnReady(InputAction.CallbackContext context);
+        void OnChangeGamemodeUp(InputAction.CallbackContext context);
+        void OnChangeGamemodeDown(InputAction.CallbackContext context);
+        void OnChangeMapUp(InputAction.CallbackContext context);
+        void OnChangeMapDown(InputAction.CallbackContext context);
     }
 }

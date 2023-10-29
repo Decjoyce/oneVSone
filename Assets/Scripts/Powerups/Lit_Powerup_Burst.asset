@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
+  m_Name: Lit_Powerup_Burst
+  m_EditorClassIdentifier: 
+  visualEffect: {fileID: 0}
+  powerupArt: {fileID: 2800000, guid: 63a5a1f2f4c622842b325d606925a81a, type: 3}
+  weaponArts:
+  - {fileID: 1095231258, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 1132641442, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  weaponType: BURST
+  fireDelay: 1.5
+  fireForce: 20
+  reloadDelay: 4
+  capacity: 2
+  bulletPrefab_P1: {fileID: 1310056251848431289, guid: 310f202bf2011ed4a9874382818e6a98, type: 3}
+  bulletPrefab_P2: {fileID: 1310056251848431289, guid: 3c6b48f4a1d65eb45ac688f8fb1d0994, type: 3}
+  shotSound: {fileID: 8300000, guid: 26e0fa7ae22048f4eaa6906efca44d46, type: 3}

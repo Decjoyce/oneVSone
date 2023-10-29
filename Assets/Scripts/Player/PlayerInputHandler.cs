@@ -27,7 +27,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMove(CallbackContext context)
     {
-        if(!GameManager.instance.gamePaused)
+
+        if (!GameManager.instance.gamePaused)
             mover.SetInputVector(context.ReadValue<Vector2>());
         else
             mover.SetInputVector(Vector2.zero);
@@ -40,8 +41,8 @@ public class PlayerInputHandler : MonoBehaviour
         {
             weap.Fire();
         }
-    if (!GameManager.instance.gameStarted && ctx.performed)
-            GameManager.instance.ChangeGameMode();
+    //if (!GameManager.instance.gameStarted && ctx.performed)
+           // GameManager.instance.ChangeGameMode();
     }
 
     public void ReadyUp(CallbackContext ctx)
@@ -69,7 +70,28 @@ public class PlayerInputHandler : MonoBehaviour
         else
         {
             if(ctx.performed)
-                GameManager.instance.ChangeMap();
+                GameManager.instance.LightSwitch();
         }
+    }
+
+    public void MenuUp(CallbackContext ctx)
+    {
+        if (!GameManager.instance.gameStarted && ctx.performed)
+            GameManager.instance.ChangeGameMode(true);
+    }
+    public void MenuDown(CallbackContext ctx)
+    {
+        if (!GameManager.instance.gameStarted && ctx.performed)
+            GameManager.instance.ChangeGameMode(false);
+    }
+    public void MenuRight(CallbackContext ctx)
+    {
+        if (!GameManager.instance.gameStarted && ctx.performed)
+            GameManager.instance.ChangeMap(true);
+    }
+    public void MenuLeft(CallbackContext ctx)
+    {
+        if (!GameManager.instance.gameStarted && ctx.performed)
+            GameManager.instance.ChangeMap(false);
     }
 }

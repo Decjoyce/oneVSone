@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
+  m_Name: Lit_Powerup_Teleport
+  m_EditorClassIdentifier: 
+  visualEffect: {fileID: 0}
+  powerupArt: {fileID: 2800000, guid: 13692c6994ed3bf4eb8958ba3cefe725, type: 3}
+  weaponArts:
+  - {fileID: 1095231258, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 1132641442, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 786572529, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  weaponType: TELEPORT
+  fireDelay: 0.8
+  fireForce: 25
+  reloadDelay: 3
+  capacity: 3
+  bulletPrefab_P1: {fileID: 1310056251848431289, guid: 0826f3f9b31c27b42ac2cc40ec8c872d, type: 3}
+  bulletPrefab_P2: {fileID: 1310056251848431289, guid: 375eebfa52c9c24499ccad25a384b134, type: 3}
+  shotSound: {fileID: 8300000, guid: 0948ece8cd5a8504d84592ab0d85518e, type: 3}
