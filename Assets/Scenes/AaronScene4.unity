@@ -234,8 +234,8 @@ Transform:
   m_GameObject: {fileID: 10187441}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970162500}
@@ -8865,7 +8865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1538702609}
   spawnPoint2: {fileID: 0}
@@ -9082,8 +9082,8 @@ Transform:
   m_GameObject: {fileID: 219602928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016056648}
@@ -9271,7 +9271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1771298044}
   spawnPoint2: {fileID: 0}
@@ -10309,7 +10309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1468333828}
   spawnPoint2: {fileID: 61338188}
@@ -17971,7 +17971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1764760842}
   spawnPoint2: {fileID: 0}
@@ -19538,7 +19538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 843655114}
   spawnPoint2: {fileID: 0}
@@ -67730,6 +67730,7 @@ GameObject:
   - component: {fileID: 914568329}
   - component: {fileID: 914568331}
   - component: {fileID: 914568330}
+  - component: {fileID: 914568332}
   m_Layer: 5
   m_Name: Connect2Text
   m_TagString: Untagged
@@ -67853,6 +67854,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914568328}
   m_CullTransparentMesh: 1
+--- !u!114 &914568332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914568328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58dd7b427f2ae046a77c150896aa124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &915363898
 GameObject:
   m_ObjectHideFlags: 0
@@ -68052,7 +68065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1761189932}
   spawnPoint2: {fileID: 882476817}
@@ -68417,7 +68430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 875848258}
   spawnPoint2: {fileID: 0}
@@ -77969,7 +77982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1976796947}
   spawnPoint2: {fileID: 0}
@@ -78238,7 +78251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1066949011}
   spawnPoint2: {fileID: 0}
@@ -81808,8 +81821,8 @@ Transform:
   m_GameObject: {fileID: 1128155509}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716857655}
@@ -82538,8 +82551,8 @@ Transform:
   m_GameObject: {fileID: 1150020508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalScale: {x: 0.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1136794307}
@@ -86544,7 +86557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 100282177}
   spawnPoint2: {fileID: 0}
@@ -90969,7 +90982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1654766853}
   spawnPoint2: {fileID: 0}
@@ -97029,7 +97042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1875017227}
   spawnPoint2: {fileID: 212763256}
@@ -118987,7 +119000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 1819591384}
   spawnPoint2: {fileID: 0}
@@ -119587,6 +119600,7 @@ GameObject:
   - component: {fileID: 1699655442}
   - component: {fileID: 1699655444}
   - component: {fileID: 1699655443}
+  - component: {fileID: 1699655445}
   m_Layer: 5
   m_Name: Connect1Text
   m_TagString: Untagged
@@ -119710,6 +119724,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699655441}
   m_CullTransparentMesh: 1
+--- !u!114 &1699655445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699655441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58dd7b427f2ae046a77c150896aa124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700986007
 GameObject:
   m_ObjectHideFlags: 0
@@ -144784,7 +144810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 1
-  powerupPrefab: {fileID: 5865310445873286298, guid: 531ea6c5d0892464bbb73dd3692d5bec, type: 3}
+  powerupPrefab: {fileID: 5865310445873286298, guid: 77c5e230c45b04640b78312984876040, type: 3}
   spawnTime: 3
   spawnPoint1: {fileID: 469180037}
   spawnPoint2: {fileID: 545960192}
