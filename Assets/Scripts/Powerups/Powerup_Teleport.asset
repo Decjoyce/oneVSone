@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
   m_Name: Powerup_Teleport
   m_EditorClassIdentifier: 
+  displayName: Teleport Shot
   visualEffect: {fileID: 0}
   powerupArt: {fileID: 2800000, guid: 13692c6994ed3bf4eb8958ba3cefe725, type: 3}
   weaponArts:

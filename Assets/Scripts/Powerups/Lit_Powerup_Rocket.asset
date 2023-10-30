@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
   m_Name: Lit_Powerup_Rocket
   m_EditorClassIdentifier: 
+  displayName: Bomb
   visualEffect: {fileID: 0}
   powerupArt: {fileID: 2800000, guid: f75e98c725a6a8943bbf406325306920, type: 3}
   weaponArts:

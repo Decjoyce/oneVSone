@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
   m_Name: Powerup_Default
   m_EditorClassIdentifier: 
+  displayName: Default
   visualEffect: {fileID: 0}
   powerupArt: {fileID: 2800000, guid: 27e9a333fb5858f4eaa53750763229be, type: 3}
   weaponArts:

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
   m_Name: Powerup_AOE
   m_EditorClassIdentifier: 
+  displayName: Laser
   visualEffect: {fileID: 0}
   powerupArt: {fileID: 2800000, guid: e094e0bc2d898d74888e758b4806f227, type: 3}
   weaponArts:

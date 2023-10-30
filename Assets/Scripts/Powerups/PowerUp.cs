@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,9 @@ public class PowerUp : MonoBehaviour
     RawImage powerupUI1, powerupUI2;
 
     [SerializeField]
+    TextMeshProUGUI powerupText1, powerupText2;
+
+    [SerializeField]
     bool spawning;
 
     private PowerupEffect powerup1, powerup2;
@@ -22,6 +26,8 @@ public class PowerUp : MonoBehaviour
     {
         powerupUI1.enabled = true;
         powerupUI2.enabled = true;
+        powerupText1.enabled = true;
+        powerupText2.enabled = true;
         int index = Random.Range(0, powerups.Length);
         int index1 = Random.Range(0, powerups.Length);
         int index2 = Random.Range(0, powerups.Length);
@@ -34,6 +40,8 @@ public class PowerUp : MonoBehaviour
                 powerup2 = powerup1;
                 powerupUI1.texture = powerup1.powerupArt;
                 powerupUI2.texture = powerup1.powerupArt;
+                powerupText1.text = powerup1.displayName;
+                powerupText2.text = powerup1.displayName;
                 Debug.Log(powerup1.name);
                 yield return new WaitForSecondsRealtime(0.5f);
                 countdownTime--;
@@ -47,6 +55,8 @@ public class PowerUp : MonoBehaviour
                 powerup2 = powerups[index2++ % powerups.Length];
                 powerupUI1.texture = powerup1.powerupArt;
                 powerupUI2.texture = powerup2.powerupArt;
+                powerupText1.text = powerup1.displayName;
+                powerupText2.text = powerup2.displayName;
                 //Debug.Log(powerup1.name);
                 yield return new WaitForSecondsRealtime(0.5f);
                 countdownTime--;
@@ -80,6 +90,8 @@ public class PowerUp : MonoBehaviour
     {
         powerupUI1.enabled = false;
         powerupUI2.enabled = false;
+        powerupText1.enabled = false;
+        powerupText2.enabled = false;
         p1.GetComponent<PlayerPowerup>().AddPlayerPowerup(powerup1);
         p2.GetComponent<PlayerPowerup>().AddPlayerPowerup(powerup2);
     }

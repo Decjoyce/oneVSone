@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f884ff8210cfa8c4ebbee9d1c3d87745, type: 3}
   m_Name: Lit_Powerup_Double
   m_EditorClassIdentifier: 
+  displayName: Double Trouble
   visualEffect: {fileID: 0}
   powerupArt: {fileID: 2800000, guid: 81eb28f74f7565745903aa62040f0d1c, type: 3}
   weaponArts:
