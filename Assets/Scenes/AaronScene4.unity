@@ -9327,7 +9327,6 @@ MonoBehaviour:
   source: {fileID: 0}
   Teleport: {fileID: 0}
   sendTo: {fileID: 167951578}
-  invert: 0
   xAxis: 0
   bulletOnly: 1
 --- !u!50 &242841991
@@ -9686,6 +9685,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: adf7b64d76a85ea498a1d043ea811459, type: 2}
   powerupUI1: {fileID: 1700986009}
   powerupUI2: {fileID: 496137769}
+  powerupText1: {fileID: 0}
+  powerupText2: {fileID: 0}
   spawning: 0
 --- !u!1 &246219054
 GameObject:
@@ -9972,7 +9973,6 @@ MonoBehaviour:
   source: {fileID: 275830570}
   Teleport: {fileID: 8300000, guid: ef22d919f46e63e44862f906432ab035, type: 3}
   sendTo: {fileID: 1938103434}
-  invert: 1
   xAxis: 0
   bulletOnly: 1
 --- !u!50 &275830572
@@ -19772,7 +19772,6 @@ MonoBehaviour:
   source: {fileID: 447683022}
   Teleport: {fileID: 8300000, guid: ef22d919f46e63e44862f906432ab035, type: 3}
   sendTo: {fileID: 1361894916}
-  invert: 0
   xAxis: 1
   bulletOnly: 0
 --- !u!50 &447683024
@@ -29376,7 +29375,6 @@ MonoBehaviour:
   source: {fileID: 0}
   Teleport: {fileID: 0}
   sendTo: {fileID: 736886437}
-  invert: 0
   xAxis: 0
   bulletOnly: 1
 --- !u!50 &518954142
@@ -50566,7 +50564,6 @@ MonoBehaviour:
   source: {fileID: 761913330}
   Teleport: {fileID: 8300000, guid: ef22d919f46e63e44862f906432ab035, type: 3}
   sendTo: {fileID: 1165039318}
-  invert: 1
   xAxis: 0
   bulletOnly: 1
 --- !u!50 &761913332
@@ -61606,7 +61603,6 @@ MonoBehaviour:
   source: {fileID: 840294555}
   Teleport: {fileID: 8300000, guid: ef22d919f46e63e44862f906432ab035, type: 3}
   sendTo: {fileID: 1165039318}
-  invert: 0
   xAxis: 0
   bulletOnly: 1
 --- !u!50 &840294557
@@ -77858,7 +77854,6 @@ MonoBehaviour:
   source: {fileID: 1041197972}
   Teleport: {fileID: 8300000, guid: ef22d919f46e63e44862f906432ab035, type: 3}
   sendTo: {fileID: 1938103434}
-  invert: 0
   xAxis: 0
   bulletOnly: 1
 --- !u!50 &1041197974
@@ -86320,7 +86315,6 @@ MonoBehaviour:
   source: {fileID: 1184749833}
   Teleport: {fileID: 8300000, guid: ef22d919f46e63e44862f906432ab035, type: 3}
   sendTo: {fileID: 1001671824}
-  invert: 0
   xAxis: 1
   bulletOnly: 0
 --- !u!50 &1184749835
