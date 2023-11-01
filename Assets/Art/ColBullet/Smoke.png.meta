@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f57d53effa0d8140ba11255040a19c0
+guid: d76381b7b2f57894c90e489d3137329d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 10Bullet_0
+      name: Smoke_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12288
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0757ac41237f3fc41bc7fe6f561399fc
+      internalID: 28249546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11264
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3848abb951e9240bb94c162d26575d
+      internalID: 7552023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10240
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d133e7b70611249962787d6939e230
+      internalID: -386060174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke_3
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a31fc58efe76f1c47ab6f0681c397340
-      internalID: -1960232953
+      spriteID: 884defb2c718fd34581c219e3e319d00
+      internalID: -1647145618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_1
+      name: Smoke_4
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c7d2e076047b7458b71fe44fbe576d
-      internalID: -1117909943
+      spriteID: c06d28427f823674db5dec2f5be18188
+      internalID: 331299231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_2
+      name: Smoke_5
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef7e230cf539f24a9dafa49c67eecb9
-      internalID: -1100084519
+      spriteID: 52164422302f8e247b04f8096cc3ece6
+      internalID: 1904863919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_3
+      name: Smoke_6
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 193053ad00ada234e99f2aba5859ff1a
-      internalID: 485863422
+      spriteID: 728ef9c9baad3bd41bd074eb7022c25c
+      internalID: 1466979882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_4
+      name: Smoke_7
       rect:
         serializedVersion: 2
         x: 0
@@ -221,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34275a12d9a5a4e40bcabf0fb6738ffd
-      internalID: 1431961329
+      spriteID: ce49eee8d8ddae24b80b51ce55c99b19
+      internalID: -1918851733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_5
+      name: Smoke_8
       rect:
         serializedVersion: 2
         x: 0
@@ -242,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3843093e51eabb741a7d17b44bfcfa3f
-      internalID: 2143052827
+      spriteID: 206cb17905f0e2f48a642044a0af9706
+      internalID: -444157848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_6
+      name: Smoke_9
       rect:
         serializedVersion: 2
         x: 0
@@ -263,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2022d264363311b48b078bbd732da9aa
-      internalID: 1144187854
+      spriteID: d79ac5a546604f94e8d010c0c6a18e3e
+      internalID: -884582329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_7
+      name: Smoke_10
       rect:
         serializedVersion: 2
         x: 0
@@ -284,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3d2b83c5c3d85241802dc8d810b5563
-      internalID: -1477232689
+      spriteID: 6c02059ca9c55a644ad458409cb0e52d
+      internalID: -1559144087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_8
+      name: Smoke_11
       rect:
         serializedVersion: 2
         x: 0
@@ -305,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8028e8199600bfe4a8eb787a6d163573
-      internalID: -249739763
+      spriteID: ee4fb89d46422ba438d36ec7416ce2dc
+      internalID: -911587551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 10Bullet_9
+      name: Smoke_12
       rect:
         serializedVersion: 2
         x: 0
@@ -326,8 +389,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1995a9e8fcc0614fb11e42f360b2d2a
-      internalID: -796574746
+      spriteID: 0a66cf165861b1f4cb05d7abdf7e883c
+      internalID: 767075524
       vertices: []
       indices: 
       edges: []
@@ -343,16 +406,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      10Bullet_0: -1960232953
-      10Bullet_1: -1117909943
-      10Bullet_2: -1100084519
-      10Bullet_3: 485863422
-      10Bullet_4: 1431961329
-      10Bullet_5: 2143052827
-      10Bullet_6: 1144187854
-      10Bullet_7: -1477232689
-      10Bullet_8: -249739763
-      10Bullet_9: -796574746
+      Smoke_0: 28249546
+      Smoke_1: 7552023
+      Smoke_10: -1559144087
+      Smoke_11: -911587551
+      Smoke_12: 767075524
+      Smoke_2: -386060174
+      Smoke_3: -1647145618
+      Smoke_4: 331299231
+      Smoke_5: 1904863919
+      Smoke_6: 1466979882
+      Smoke_7: -1918851733
+      Smoke_8: -444157848
+      Smoke_9: -884582329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
