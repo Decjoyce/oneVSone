@@ -22,6 +22,15 @@ public class PowerUp : MonoBehaviour
 
     float countdownTime = 5f;
 
+    AudioSource source;
+
+    string gameMode;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     IEnumerator RandomisePowerup(bool both)
     {
         powerupUI1.enabled = true;
@@ -46,6 +55,8 @@ public class PowerUp : MonoBehaviour
                 yield return new WaitForSecondsRealtime(0.5f);
                 countdownTime--;
             }
+            if (gameMode == "Default")
+                source.PlayOneShot(powerup1.announcerSound);
         }
         else
         {
@@ -75,12 +86,15 @@ public class PowerUp : MonoBehaviour
                 break;
             case "Chaos":
                 StartCoroutine(RandomisePowerup(false));
+                gameMode = type;
                 break;
             case "Default":
                 StartCoroutine(RandomisePowerup(true));
+                gameMode = type;
                 break;
             default:
                 StartCoroutine(RandomisePowerup(true));
+                gameMode = type;
                 break;
         }
         

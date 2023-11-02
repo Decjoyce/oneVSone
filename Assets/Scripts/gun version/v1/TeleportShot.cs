@@ -8,7 +8,9 @@ public class TeleportShot : MonoBehaviour
     byte playerBullet;
 
     public AudioSource source;
+    public AudioSource source2;
     public AudioClip riochet;
+    public AudioClip teleportSound;
 
     [SerializeField]
     float tpTime = 2f;
@@ -54,11 +56,15 @@ public class TeleportShot : MonoBehaviour
 
     IEnumerator TeleportPlayer()
     {
-        yield return new WaitForSeconds(tpTime);
+        yield return new WaitForSeconds(tpTime - teleportSound.length);
+        source.PlayOneShot(teleportSound);
+        source2.Stop();
+        yield return new WaitForSeconds(teleportSound.length);
         if (playerBullet == 0 && !GameManager.instance.roundOver && canTeleport)
             GameManager.instance.p1.transform.position = transform.position;
         if (playerBullet == 1 && !GameManager.instance.roundOver && canTeleport)
             GameManager.instance.p2.transform.position = transform.position;
+        
         Destroy(gameObject);
     }
 

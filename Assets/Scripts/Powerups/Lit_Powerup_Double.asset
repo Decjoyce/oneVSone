@@ -15,6 +15,7 @@ MonoBehaviour:
   displayName: Double Trouble
   visualEffect: {fileID: 0}
   powerupArt: {fileID: 2800000, guid: 81eb28f74f7565745903aa62040f0d1c, type: 3}
+  announcerSound: {fileID: 8300000, guid: 5b53f552230cad846bc763e9fa9d0208, type: 3}
   weaponArts:
   - {fileID: 971669868, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   - {fileID: -376222349, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}

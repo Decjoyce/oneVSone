@@ -12,13 +12,19 @@ public class PopUpHandler : MonoBehaviour
     [SerializeField]
     float popupTime;
 
+    AudioSource source;
+
     string[] popUpsDom = new string[11];
+    public AudioClip[] popUpsDomAudio = new AudioClip[11];
     string[] popUpsClose = new string[3];
+    public AudioClip[] popUpsCloseAudio = new AudioClip[3];
     string[] popUpsComeback = new string[3];
+    public AudioClip[] popUpsComebackAudio = new AudioClip[3];
 
     private void Start()
     {
         PopUpInitialiser();
+        source = GetComponent<AudioSource>();
     }
 
     public void PopUpDom()
@@ -42,13 +48,19 @@ public class PopUpHandler : MonoBehaviour
         switch (type)
         {
             case "DOM":
-                popUpText.text = popUpsDom[Random.Range(0, popUpsDom.Length)];
+                int ranDom = Random.Range(0, popUpsDom.Length);
+                popUpText.text = popUpsDom[ranDom];
+                source.PlayOneShot(popUpsDomAudio[ranDom]);
                 break;
             case "CLOSE":
-                popUpText.text = popUpsClose[Random.Range(0, popUpsClose.Length)];
+                int ranClose = Random.Range(0, popUpsClose.Length);
+                popUpText.text = popUpsClose[ranClose];
+                source.PlayOneShot(popUpsCloseAudio[ranClose]);
                 break;
             case "COMEBACK":
-                popUpText.text = popUpsComeback[Random.Range(0, popUpsComeback.Length)];
+                int ranComeback = Random.Range(0, popUpsComeback.Length);
+                popUpText.text = popUpsComeback[ranComeback];
+                source.PlayOneShot(popUpsComebackAudio[ranComeback]);
                 break;
         }        
         yield return new WaitForSecondsRealtime(3f);

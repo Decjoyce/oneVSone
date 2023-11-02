@@ -15,6 +15,7 @@ MonoBehaviour:
   displayName: Laser
   visualEffect: {fileID: 0}
   powerupArt: {fileID: 2800000, guid: e094e0bc2d898d74888e758b4806f227, type: 3}
+  announcerSound: {fileID: 8300000, guid: 3b5c06448d4b7dd448a22b6f1d95dc9b, type: 3}
   weaponArts:
   - {fileID: 971669868, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   - {fileID: -376222349, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
@@ -27,4 +28,4 @@ MonoBehaviour:
   capacity: 3
   bulletPrefab_P1: {fileID: 1310056251848431289, guid: 5a576b546df0c38498fe76f74002950b, type: 3}
   bulletPrefab_P2: {fileID: 1310056251848431289, guid: b62bf5c5c5adc1f4d9186fa89fff923e, type: 3}
-  shotSound: {fileID: 8300000, guid: 650bc975a7b4bb641b5e2af5e5746632, type: 3}
+  shotSound: {fileID: 8300000, guid: 0948ece8cd5a8504d84592ab0d85518e, type: 3}

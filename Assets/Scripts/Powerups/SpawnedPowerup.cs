@@ -27,5 +27,6 @@ public class SpawnedPowerup : MonoBehaviour
     {
         int powerupIndex = Random.Range(0, powerups.Length);
         player.GetComponent<PlayerPowerup>().AddPlayerPowerup(powerups[powerupIndex]);
+        player.GetComponent<AudioSource>().PlayOneShot(powerups[powerupIndex].announcerSound);
     }
 }

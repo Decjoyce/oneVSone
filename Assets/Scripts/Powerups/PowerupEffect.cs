@@ -6,6 +6,7 @@ public abstract class PowerupEffect : ScriptableObject
     public string displayName;
     public Sprite visualEffect;
     public Texture powerupArt;
+    public AudioClip announcerSound;
     public abstract void Apply(GameObject target);
     public abstract void Remove(GameObject target);
 }

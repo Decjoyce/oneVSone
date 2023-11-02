@@ -19,6 +19,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     PlayerPowerup playerPowerup;
 
+    [SerializeField]
+    AudioClip juggHit;
+
+    AudioSource source;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     public void PlayerHit()
     {
         switch (powerupType)
@@ -26,8 +36,10 @@ public class PlayerHealth : MonoBehaviour
             case "JUGG":
                 playerPowerup.effect.enabled = false;
                 powerupType = null;
+                source.PlayOneShot(juggHit);
                 break;
             case "INVINCIBLE":
+                source.PlayOneShot(juggHit);
                 break;
             default:
                 PlayerDie();

@@ -15,4 +15,5 @@ MonoBehaviour:
   displayName: Invincible
   visualEffect: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   powerupArt: {fileID: 0}
+  announcerSound: {fileID: 8300000, guid: 0ef0730126e3639408264e320aa31f85, type: 3}
   heatlhType: INVINCIBLE
