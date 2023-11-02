@@ -16,6 +16,8 @@ public class DestroyTimer : MonoBehaviour
     [SerializeField]
      private GameObject objectToDisable;
 
+    bool canGo = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,18 +27,20 @@ public class DestroyTimer : MonoBehaviour
 
     private void Update()
     {
-        if(waitUntilStart && GameManager.instance.gameStarted && !GameManager.instance.roundOver)
+        if(waitUntilStart && GameManager.instance.gameStarted && !GameManager.instance.roundOver && canGo)
         {
             if (!disable)
                 Destroy(gameObject, timer);
             else if(objectToDisable.activeSelf)
                 StartCoroutine(DisableObject());
+            canGo = false;
         }
             
 
-        if(GameManager.instance.gameStarted && GameManager.instance.roundOver && !objectToDisable.activeSelf)
+        if(GameManager.instance.gameStarted && GameManager.instance.roundOver)
         {
             objectToDisable.SetActive(true);
+            canGo = true;
         }
     }
 

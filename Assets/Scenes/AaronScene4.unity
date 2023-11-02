@@ -117500,7 +117500,7 @@ MonoBehaviour:
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
   reloadSound: {fileID: 8300000, guid: faccf334443d3c04b80b9cab3b55572d, type: 3}
   weaponType: 
-  bulletPrefab: {fileID: 1310056251848431289, guid: 3c6b48f4a1d65eb45ac688f8fb1d0994, type: 3}
+  bulletPrefab: {fileID: 1310056251848431289, guid: 36bb1935c0889b847bb32b217866957d, type: 3}
   currentBulletPrefab: {fileID: 0}
   firePoints:
   - {fileID: 1891246926}
@@ -135924,7 +135924,7 @@ MonoBehaviour:
   shotTick: {fileID: 8300000, guid: 5cb9c4ecfe772a441ae5bedb83344bb5, type: 3}
   reloadSound: {fileID: 8300000, guid: faccf334443d3c04b80b9cab3b55572d, type: 3}
   weaponType: 
-  bulletPrefab: {fileID: 1310056251848431289, guid: 310f202bf2011ed4a9874382818e6a98, type: 3}
+  bulletPrefab: {fileID: 1310056251848431289, guid: ee24984b3760f2d42a1013171d2ade9c, type: 3}
   currentBulletPrefab: {fileID: 0}
   firePoints:
   - {fileID: 266743696}
