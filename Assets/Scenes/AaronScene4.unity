@@ -9303,19 +9303,19 @@ MonoBehaviour:
   popUpText: {fileID: 1238124818}
   popupTime: 2.5
   popUpsDomAudio:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: a16090992332a8c42b98bb92f9986ee8, type: 3}
+  - {fileID: 8300000, guid: b46a17b3d6fe669499be9afb18f6cd20, type: 3}
+  - {fileID: 8300000, guid: 4cb5e8fca3b65a14cb1fbb4fe496ae4a, type: 3}
+  - {fileID: 8300000, guid: ff8382ec4f6674a4e9ed198fd2585f7e, type: 3}
+  - {fileID: 8300000, guid: a1200a83e9326e34eb072aad81464502, type: 3}
+  - {fileID: 8300000, guid: 7923464b6ecc8674582c37d345296bae, type: 3}
+  - {fileID: 8300000, guid: 973a87fc6221f7d42ab0d84747859b07, type: 3}
+  - {fileID: 8300000, guid: c59fb2ce07b883a469ea4d26da778958, type: 3}
+  - {fileID: 8300000, guid: 781d5d425bcddb344b6a6b13a94acce2, type: 3}
   - {fileID: 8300000, guid: 60ec0e866f65feb4a9fb70d366d1f8f2, type: 3}
   - {fileID: 8300000, guid: c64459205a9116449977024146bda014, type: 3}
   popUpsCloseAudio:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: b2a6a08540e411249b2418ad1ed71982, type: 3}
   - {fileID: 8300000, guid: 1158ac50ca525834792466995d4a03bf, type: 3}
   - {fileID: 8300000, guid: 34af5c57d2eab224d9136d0c17b17859, type: 3}
   popUpsComebackAudio:
@@ -10306,15 +10306,15 @@ RectTransform:
   m_GameObject: {fileID: 304347813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 680016168}
   m_Father: {fileID: 1360184401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: -20}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 150, y: -65}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &304347815
@@ -117903,15 +117903,15 @@ RectTransform:
   m_GameObject: {fileID: 1688683851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1245787776}
   m_Father: {fileID: 1360184401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: -20}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -150, y: -65}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688683853

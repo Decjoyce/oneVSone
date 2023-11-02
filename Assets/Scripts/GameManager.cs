@@ -266,6 +266,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameOver(byte winner)
     {
+        roundOver = true;
         gameOver = true;
         Time.timeScale = 0.5f;
 
