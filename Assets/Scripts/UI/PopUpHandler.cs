@@ -73,8 +73,8 @@ public class PopUpHandler : MonoBehaviour
         popUpsClose[1] = "TIE-BREAKER";
         popUpsClose[2] = "CLOSE MATCH";
 
-        popUpsClose[0] = "COMEBACK!";
-        popUpsClose[1] = "AGAINST ALL ODDS";
-        popUpsClose[2] = "FUMBLE";
+        popUpsComeback[0] = "COMEBACK!";
+        popUpsComeback[1] = "AGAINST ALL ODDS";
+        popUpsComeback[2] = "FUMBLE";
     }
 }
