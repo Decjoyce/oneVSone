@@ -289,7 +289,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.45, z: 0}
-  m_LocalScale: {x: 0.25, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970162500}
@@ -335,7 +335,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -879395581, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4676,7 +4676,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.45, z: 0}
-  m_LocalScale: {x: 0.25, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016056648}
@@ -4722,7 +4722,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -879395581, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -47861,7 +47861,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.45, z: 0}
-  m_LocalScale: {x: 0.25, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716857655}
@@ -47907,7 +47907,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  m_Sprite: {fileID: -879395581, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -48177,7 +48177,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.45, z: 0}
-  m_LocalScale: {x: 0.25, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1136794307}
@@ -48223,7 +48223,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  m_Sprite: {fileID: -879395581, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93066,10 +93066,10 @@ MonoBehaviour:
   weaponArt: {fileID: 1150020510}
   doubleWeaponArt: {fileID: 10187443}
   defaultWeaponArts:
-  - {fileID: 1095231258, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
-  - {fileID: -204976932, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
-  - {fileID: 1132641442, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
-  - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 971669868, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
+  - {fileID: -376222349, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
+  - {fileID: -169851505, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
+  - {fileID: -879395581, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   fireForce: 20
   defaultFireForce: 20
   currentFireForce: 20
@@ -117707,10 +117707,10 @@ MonoBehaviour:
   weaponArt: {fileID: 1128155511}
   doubleWeaponArt: {fileID: 219602930}
   defaultWeaponArts:
-  - {fileID: 1095231258, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
-  - {fileID: -204976932, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
-  - {fileID: 1132641442, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
-  - {fileID: 329085096, guid: 8f564263f9aee6e45b34a6df01eb321f, type: 3}
+  - {fileID: 971669868, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
+  - {fileID: -376222349, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
+  - {fileID: -169851505, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
+  - {fileID: -879395581, guid: 63674f77b84c0ad4291b47bf321b2bb3, type: 3}
   fireForce: 20
   defaultFireForce: 20
   currentFireForce: 20
